@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_wifi_sim_menu">打开功能菜单</string>
+    <string name="help_wifi_sim_add">手动添加 WiFi</string>
+    <string name="help_wifi_sim_start">开始模拟</string>
+    <string name="help_wifi_sim_stop">停止模拟</string>
+    <string name="help_wifi_sim_scan_empty">扫描附近 WiFi</string>
+    <string name="help_wifi_sim_scan_list">扫描 / 刷新附近 WiFi</string>
+    <string name="help_wifi_sim_select_all">全选 / 取消全选</string>
+    <string name="help_wifi_sim_item_check">勾选 / 取消勾选该 WiFi</string>
+    <string name="help_wifi_sim_item_row">点击选择该 WiFi</string>
+    <string name="help_wifi_sim_item_rename">重命名该 WiFi</string>
+    <string name="help_wifi_sim_item_delete">删除该 WiFi</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_plan_back">返回上一页</string>
+    <string name="help_route_plan_search">搜索地点</string>
+    <string name="help_route_plan_map_type">切换地图类型（普通 / 卫星）</string>
+    <string name="help_route_plan_history">从历史记录添加途经点</string>
+    <string name="help_route_plan_input">输入坐标定位</string>
+    <string name="help_route_plan_locate">定位到当前位置</string>
+    <string name="help_route_plan_zoom_in">放大地图</string>
+    <string name="help_route_plan_zoom_out">缩小地图</string>
+    <string name="help_route_plan_undo">撤销上一个途经点</string>
+    <string name="help_route_plan_mark_mode">切换标点模式</string>
+    <string name="help_route_plan_wait">设置途经点等待时间</string>
+    <string name="help_route_plan_confirm">确认并保存路线</string>
+</resources>

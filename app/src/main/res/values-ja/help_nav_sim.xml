@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_sim_menu">サイドメニューを開く</string>
+    <string name="help_nav_sim_clear_points">出発点 / 終点をクリア</string>
+    <string name="help_nav_sim_plan_start">ルートを計画またはシミュレーション開始</string>
+    <string name="help_nav_sim_pause_resume">シミュレーションを一時停止 / 再開</string>
+    <string name="help_nav_sim_stop">シミュレーションを停止</string>
+    <string name="help_nav_sim_multi_route">マルチルートモードの有効 / 無効</string>
+    <string name="help_nav_sim_speed">シミュレーション速度を設定</string>
+    <string name="help_nav_sim_plan_fab">ワンタップでルートを計画</string>
+    <string name="help_nav_sim_tab_favorites">お気に入りルートタブ</string>
+    <string name="help_nav_sim_tab_history">履歴ルートタブ</string>
+    <string name="help_nav_sim_search">履歴ルートを検索</string>
+    <string name="help_nav_sim_clear_search">検索内容をクリア</string>
+    <string name="help_nav_sim_history_select">タップで履歴ルートを選択</string>
+    <string name="help_nav_sim_history_rename">履歴ルートの名前を変更</string>
+    <string name="help_nav_sim_history_delete">履歴ルートを削除</string>
+    <string name="help_nav_sim_history_favorite">お気に入り登録 / 解除</string>
+    <string name="help_nav_sim_lock_point">この地点をロックし、次のルート計画時も保持</string>
+    <string name="help_nav_sim_use_my_location">現在地に固定し、毎回自動更新</string>
+</resources>

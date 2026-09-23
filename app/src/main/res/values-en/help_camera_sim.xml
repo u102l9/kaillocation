@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_sim_menu">Open the menu to jump to other modules</string>
+    <string name="help_camera_sim_settings">Open camera simulation settings</string>
+    <string name="help_camera_sim_toggle">Start / stop camera simulation</string>
+    <string name="help_camera_sim_pick_video">Choose a video to simulate</string>
+    <string name="help_camera_sim_select_video">Select this video as the simulated content</string>
+    <string name="help_camera_sim_delete_video">Delete this video</string>
+</resources>

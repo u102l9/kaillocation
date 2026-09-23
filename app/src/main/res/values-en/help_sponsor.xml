@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sponsor_back">Back</string>
+    <string name="help_sponsor_select_plan">Choose a subscription plan</string>
+    <string name="help_sponsor_checkout">Go to payment to activate membership</string>
+    <string name="help_sponsor_copy_address">Copy the donation address</string>
+</resources>

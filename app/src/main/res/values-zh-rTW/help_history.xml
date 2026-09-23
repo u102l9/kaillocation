@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_history_back">返回上一頁</string>
+    <string name="help_history_delete_all">清空全部歷史記錄</string>
+    <string name="help_history_clear_search">清空搜尋關鍵字</string>
+    <string name="help_history_item">點擊選擇此記錄，長按彈出編輯 / 刪除選單</string>
+</resources>

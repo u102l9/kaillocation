@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sponsor_back">前のページに戻る</string>
+    <string name="help_sponsor_select_plan">サブスクリプションプランを選択</string>
+    <string name="help_sponsor_checkout">支払いへ移動して会員を開通</string>
+    <string name="help_sponsor_copy_address">寄付先アドレスをコピー</string>
+</resources>

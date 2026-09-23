@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_cell_sim_menu">Open the menu to jump to other modules</string>
+    <string name="help_cell_sim_add">Add new cell-tower info</string>
+    <string name="help_cell_sim_scan_current">Scan the currently connected cell tower</string>
+    <string name="help_cell_sim_fetch_network">Fetch cell-tower list from the network</string>
+    <string name="help_cell_sim_select_all">Select / deselect all cell towers</string>
+    <string name="help_cell_sim_start_stop">Start / stop cell-tower simulation</string>
+    <string name="help_cell_sim_toggle_select">Check this cell tower to include</string>
+    <string name="help_cell_sim_toggle_select_row">Tap the whole row to check this cell tower</string>
+    <string name="help_cell_sim_edit">Edit this cell-tower info</string>
+    <string name="help_cell_sim_delete">Delete this cell tower</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "650791846092",
+    "project_id": "kaillocation",
+    "storage_bucket": "kaillocation.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650791846092:android:1f12a5f46b7ae8dad30269",
+        "android_client_info": {
+          "package_name": "com.kail.location"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF4ZikAKaXi4jycp1-5vQZsW4zJsnzWc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

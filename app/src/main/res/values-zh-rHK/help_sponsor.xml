@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sponsor_back">返回上一頁</string>
+    <string name="help_sponsor_select_plan">選擇訂閱方案</string>
+    <string name="help_sponsor_checkout">跳轉支付開通會員</string>
+    <string name="help_sponsor_copy_address">複製捐款收款位址</string>
+</resources>

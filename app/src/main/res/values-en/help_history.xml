@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_history_back">Back</string>
+    <string name="help_history_delete_all">Clear all history records</string>
+    <string name="help_history_clear_search">Clear the search keyword</string>
+    <string name="help_history_item">Tap to select this record; long-press for edit / delete</string>
+</resources>

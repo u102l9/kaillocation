@@ -1,0 +1,49 @@
+# Gradle / Android build outputs
+.gradle/
+build/
+**/build/
+.externalNativeBuild/
+**/.externalNativeBuild/
+.cxx/
+**/.cxx/
+captures/
+app/release/
+**/app/release/
+*.apk
+*.aab
+*.ap_
+
+# Local config
+local.properties
+/local.properties
+
+# IDE files
+.idea/
+.vscode/
+.vs/
+*.iml
+.kotlin/
+
+# Logs and OS files
+*.log
+.DS_Store
+
+# Keystore
+*.jks
+*.keystore
+
+# 例外：内置自签发布密钥需随仓库提交，否则 CI checkout 拿不到
+!app/kail-release.jks
+!KailLocationXposed/app/kail-release.jks
+
+CLAUDE.md
+
+do/
+# Added by code-review-graph
+.code-review-graph/
+.codegraph/
+sandboxText/
+
+# AI 助手开发约定（不入库）
+AGENTS.md
+upload.sh

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_faq_back">前のページに戻る</string>
+    <string name="help_faq_retry">FAQ一覧を再読み込み</string>
+    <string name="help_faq_card">タップでQ&amp;A内容を展開 / 折りたたみ</string>
+</resources>

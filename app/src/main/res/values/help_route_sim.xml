@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_sim_menu">打开功能菜单，跳转到其他模块</string>
+    <string name="help_route_sim_add_extend">添加新路线 / 延长当前模拟路线</string>
+    <string name="help_route_sim_start">开始 / 暂停 / 继续 / 停止路线模拟</string>
+    <string name="help_route_sim_speed">打开速度 / 频率设置</string>
+    <string name="help_route_sim_loop">循环开关，开启后路线循环模拟</string>
+    <string name="help_route_sim_tabs">切换「常用 / 历史」路线列表</string>
+    <string name="help_route_sim_search">搜索历史路线</string>
+    <string name="help_route_sim_card_fav">收藏 / 取消收藏此路线</string>
+    <string name="help_route_sim_card_edit">编辑此路线的途经点</string>
+    <string name="help_route_sim_card_rename">重命名此路线</string>
+    <string name="help_route_sim_card_delete">删除此路线</string>
+</resources>

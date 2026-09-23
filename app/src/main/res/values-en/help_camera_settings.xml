@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_settings_back">Back</string>
+    <string name="help_camera_settings_source_local">Use local video / image as the source</string>
+    <string name="help_camera_settings_source_stream">Use a network stream as the source</string>
+    <string name="help_camera_settings_stream_url">Enter the stream URL</string>
+    <string name="help_camera_settings_mode_video">Video replacement mode</string>
+    <string name="help_camera_settings_mode_image">Image replacement mode</string>
+    <string name="help_camera_settings_pick_image">Choose an image to replace it</string>
+    <string name="help_camera_settings_rotation_0">Rotate 0°</string>
+    <string name="help_camera_settings_rotation_90">Rotate 90°</string>
+    <string name="help_camera_settings_rotation_180">Rotate 180°</string>
+    <string name="help_camera_settings_rotation_270">Rotate 270°</string>
+    <string name="help_camera_settings_photo_fake">Toggle photo-forgery feature</string>
+    <string name="help_camera_settings_video_sound">Toggle video sound</string>
+    <string name="help_camera_settings_random_play">Play the video list randomly</string>
+    <string name="help_camera_settings_mic_off">Microphone off</string>
+    <string name="help_camera_settings_mic_mute">Mute microphone</string>
+    <string name="help_camera_settings_mic_replace">Replace microphone with an audio file</string>
+    <string name="help_camera_settings_mic_sync">Synchronize microphone with video</string>
+    <string name="help_camera_settings_pick_audio">Choose an audio file to replace it</string>
+    <string name="help_camera_settings_notification">Show controls in the notification bar</string>
+    <string name="help_camera_settings_overlay">Show floating-window controls</string>
+    <string name="help_camera_settings_search_apps">Search target apps to simulate</string>
+    <string name="help_camera_settings_target_apps">Check apps to simulate camera effects</string>
+</resources>

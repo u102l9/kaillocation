@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_ind_sim_menu">機能メニューを開く</string>
+    <string name="help_ind_sim_target_apps">シミュレーションするアプリを選択</string>
+    <string name="help_ind_sim_toggle">シミュレーションを開始 / 停止</string>
+    <string name="help_ind_sim_add_app">シミュレートするアプリを追加</string>
+    <string name="help_ind_sim_remove_app">このアプリを削除</string>
+</resources>

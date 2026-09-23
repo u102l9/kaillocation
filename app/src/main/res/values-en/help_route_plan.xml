@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_plan_back">Back</string>
+    <string name="help_route_plan_search">Search for a place</string>
+    <string name="help_route_plan_map_type">Switch map type (normal / satellite)</string>
+    <string name="help_route_plan_history">Add a waypoint from history</string>
+    <string name="help_route_plan_input">Locate by entering coordinates</string>
+    <string name="help_route_plan_locate">Go to your current location</string>
+    <string name="help_route_plan_zoom_in">Zoom in</string>
+    <string name="help_route_plan_zoom_out">Zoom out</string>
+    <string name="help_route_plan_undo">Undo the last waypoint</string>
+    <string name="help_route_plan_mark_mode">Toggle marking mode</string>
+    <string name="help_route_plan_wait">Set waypoint wait time</string>
+    <string name="help_route_plan_confirm">Confirm and save the route</string>
+</resources>

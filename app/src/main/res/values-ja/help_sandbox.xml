@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sandbox_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_sandbox_settings">サンドボックス設定を開く</string>
+    <string name="help_sandbox_install">新しいアプリをインストール / クローン</string>
+    <string name="help_sandbox_fab">新しいアプリをインストール / クローン</string>
+    <string name="help_sandbox_app_launch">タップで起動、長押しで詳細操作</string>
+    <string name="help_sandbox_create_shortcut">ホーム画面のショートカットを作成</string>
+    <string name="help_sandbox_clear_data">アプリのデータを削除</string>
+    <string name="help_sandbox_uninstall">アプリをアンインストール / 削除</string>
+</resources>

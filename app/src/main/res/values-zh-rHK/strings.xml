@@ -1,0 +1,843 @@
+<resources>
+    <string name="app_settings">設定</string>
+    <string name="app_history">歷史紀錄</string>
+    <string name="history_title">歷史紀錄</string>
+    <string name="history_search_hint">搜尋歷史紀錄</string>
+    <string name="history_no_record">暫無歷史紀錄</string>
+    <string name="app_service_tips">KailLocation 服務正在執行</string>
+    <string name="app_agreement">使用者協議</string>
+    <string name="app_privacy">隱私政策</string>
+    <string name="app_agreement_privacy">我已閱讀並同意《使用者協議》和《隱私政策》</string>
+    <string name="app_error_agreement">必須先接受《使用者協議》和《隱私政策》</string>
+    <string name="app_error_read">請先閱讀並接受《使用者協議》和《隱私政策》</string>
+    <string name="app_error_gps">定位不可用，請檢查 GPS 是否已開啟</string>
+    <string name="app_error_network">網路不可用，請檢查連線</string>
+    <string name="app_error_permission">權限不足，請授予相關權限</string>
+    <string name="app_error_input">輸入有誤，請檢查輸入是否正確</string>
+    <string name="app_error_input_null">輸入不能為空，請重新輸入內容</string>
+    <string name="app_error_search">搜尋失敗，請檢查網路或定位</string>
+    <string name="app_error_location">請先選擇位置</string>
+    <string name="app_error_dev">開發者選項未開啟，無法跳轉！請自行搜尋開啟方式</string>
+    <string name="app_error_param">非法參數</string>
+    <string name="app_error_protocol">請先閱讀並接受使用者協議</string>
+    <string name="app_error_username">使用者名稱不合法</string>
+    <string name="app_error_code">註冊碼不能為空</string>
+    <string name="app_error_longitude">經度超出範圍！\n取值：-180.0 ~ 180.0</string>
+    <string name="app_error_latitude">緯度超出範圍！\n取值：-90.0 ~ 90.0</string>
+    <string name="app_search_null">沒有符合的結果，請重新搜尋</string>
+    <string name="app_search_tips">請輸入查詢內容</string>
+    <string name="app_location_ok">位置已傳送</string>
+    <string name="app_location_copy">位置已複製到剪貼簿</string>
+    <string name="app_location_save">位置已儲存</string>
+
+    <string name="welcome_btn_txt">進入應用程式</string>
+    <string name="app_btn_agree">同意並繼續</string>
+    <string name="app_btn_disagree">不同意</string>
+
+    <string name="setting_group_move">移動</string>
+    <string name="setting_joystick_type">搖桿類型</string>
+    <string name="setting_joystick_speed">搖桿速度 (m/s)</string>
+    <string name="setting_joystick_speed_default">1.2</string>
+    <string name="setting_walk">步行速度 (m/s)</string>
+    <string name="setting_walk_default">1.2</string>
+    <string name="setting_run">跑步速度 (m/s)</string>
+    <string name="setting_run_default">3.6</string>
+    <string name="setting_bike">騎乘速度 (m/s)</string>
+    <string name="setting_bike_default">10.0</string>
+    <string name="setting_altitude">海拔高度 (公尺)</string>
+    <string name="setting_altitude_default">55.0</string>
+
+    <string name="setting_group_location_offset">位置偏移</string>
+    <string name="setting_random_offset">隨機偏移</string>
+    <string name="setting_random_offset_summary">僅在使用歷史位置時生效</string>
+    <string name="setting_random_offset_default">10.0</string>
+    <string name="setting_lat_max_offset">經度最大偏移距離 (m)</string>
+    <string name="setting_lon_max_offset">緯度最大偏移距離 (m)</string>
+    <string name="setting_group_log">日誌</string>
+    <string name="setting_log_off">關閉日誌</string>
+    <string name="setting_history_expiration">歷史紀錄有效期 (天)</string>
+    <string name="setting_group_about">關於</string>
+    <string name="setting_version">版本號</string>
+    <string name="setting_author">開發者</string>
+
+    <string name="history_expiration">7</string>
+    <string name="history_location_default_name">地圖位置</string>
+    <string name="history_idle">暫無歷史紀錄</string>
+    <string name="history_delete_ok">刪除成功！</string>
+    <string name="history_delete_error">刪除記錄失敗</string>
+    <string name="history_error_location">定位失敗，請手動選取定位點</string>
+    <string name="history_error_search">未搜尋到指定內容</string>
+
+    <string name="note_show">顯示搖桿</string>
+    <string name="note_hide">隱藏搖桿</string>
+    <string name="joystick_map_tips">搜尋或點擊地圖位置</string>
+    <string name="joystick_history_tips">搜尋或點擊歷史位置</string>
+    <string name="joystick_history">歷史紀錄</string>
+    <string name="joystick_map">地圖</string>
+    <string name="joystick_move">移動</string>
+    <string name="joystick_walk">步行</string>
+    <string name="joystick_run">跑步</string>
+    <string name="joystick_bike">騎乘</string>
+    <string name="nav_drawer_open">開啟導覽選單</string>
+    <string name="nav_drawer_close">關閉導覽選單</string>
+    <string name="nav_menu_history">歷史紀錄</string>
+    <string name="nav_menu_location_simulation">位置模擬</string>
+    <string name="nav_menu_route_simulation">路線模擬</string>
+    <string name="nav_menu_sim_group">模擬</string>
+    <string name="nav_menu_independent_sim">獨立模擬</string>
+    <string name="nav_menu_root_app_hide">Root 與應用隱藏</string>
+    <string name="nav_menu_wifi_sim">WiFi 模擬</string>
+    <string name="nav_menu_cell_sim">基站模擬</string>
+    <string name="nav_menu_camera_sim">模擬攝像頭</string>
+    <string name="camera_sim_title">模擬攝像頭</string>
+    <string name="camera_sim_enable">啟用模擬攝像頭</string>
+    <string name="camera_sim_status_on">模擬攝像頭運行中</string>
+    <string name="camera_sim_status_off">模擬攝像頭已停止</string>
+    <string name="camera_sim_summary">已選 %1$d 個目標應用 · 影片: %2$s</string>
+    <string name="camera_sim_no_video">未選擇</string>
+    <string name="camera_sim_pick_video">選擇影片</string>
+    <string name="camera_sim_restart_apps">重啟目標應用</string>
+    <string name="camera_sim_hint">啟用後，目標應用的相機預覽將被替換為所選影片。請確保目標應用已完全退出後再開啟。</string>
+    <string name="camera_sim_settings">攝像頭設定</string>
+    <string name="camera_sim_rotation">旋轉偏移</string>
+    <string name="camera_sim_photo_fake">拍照替換（用影片幀替換拍照結果）</string>
+    <string name="camera_sim_targets">目標應用（已選 %1$d）</string>
+    <string name="camera_sim_search_apps">搜尋應用</string>
+    <string name="camera_sim_video_label">當前影片</string>
+    <string name="camera_sim_apps_count">已選 %1$d 個目標應用</string>
+    <string name="camera_sim_start">開始模擬</string>
+    <string name="camera_sim_stop">停止模擬</string>
+    <string name="camera_sim_apps_section">目標應用</string>
+    <string name="camera_sim_empty_apps">暫無目標應用，請在設定中新增</string>
+    <string name="camera_sim_photo_short">拍照替換</string>
+    <string name="camera_sim_videos_section">影片列表</string>
+    <string name="camera_sim_empty_videos">暫無影片，點卡片右上角 + 匯入</string>
+    <string name="camera_sim_video_in_use">當前使用</string>
+    <string name="camera_sim_media_source">媒體來源</string>
+    <string name="camera_sim_source_local">本地影片</string>
+    <string name="camera_sim_source_stream">網路串流</string>
+    <string name="camera_sim_stream_url_hint">RTSP/HLS/HTTP 網址</string>
+    <string name="camera_sim_replace_mode">替換模式</string>
+    <string name="camera_sim_mode_video">影片</string>
+    <string name="camera_sim_mode_image">圖片</string>
+    <string name="camera_sim_image_pick">選擇圖片</string>
+    <string name="camera_sim_image_repick">重新選擇圖片（已匯入）</string>
+    <string name="camera_sim_video_sound">播放影片聲音</string>
+    <string name="camera_sim_random_play">隨機播放（每次相機啟動隨機選影片）</string>
+    <string name="camera_sim_mic_mode">麥克風替換</string>
+    <string name="camera_sim_mic_off">關閉</string>
+    <string name="camera_sim_mic_mute">靜音</string>
+    <string name="camera_sim_mic_replace">替換</string>
+    <string name="camera_sim_mic_sync">影片同步</string>
+    <string name="camera_sim_audio_pick">選擇音訊</string>
+    <string name="camera_sim_audio_repick">重新選擇音訊（已匯入）</string>
+    <string name="camera_sim_notification_toggle">通知欄控制</string>
+    <string name="camera_sim_overlay_toggle">懸浮窗控制</string>
+    <string name="camera_sim_notification_channel">模擬攝像頭控制</string>
+    <string name="camera_sim_notification_title">模擬攝像頭運行中</string>
+    <string name="camera_sim_notification_text">切換影片或調整旋轉</string>
+    <string name="camera_sim_action_prev">上一個</string>
+    <string name="camera_sim_action_next">下一個</string>
+    <string name="camera_sim_action_rotate">旋轉+90°</string>
+    <string name="camera_sim_action_close">關閉</string>
+    <string name="nav_menu_settings">設定</string>
+    <string name="nav_menu_dev">開發者選項</string>
+    <string name="nav_menu_more">更多</string>
+    <string name="nav_menu_upgrade">檢查更新</string>
+    <string name="nav_menu_feedback">問題回饋</string>
+    <string name="nav_menu_contact">聯絡作者</string>
+    <string name="nav_app_tips">僅供學習使用，否則後果自負！</string>
+    <string name="nav_menu_sponsor">贊助作者</string>
+    <string name="nav_menu_github">開源倉庫</string>
+    <string name="nav_menu_faq">常見問題</string>
+    <string name="faq_title">常見問題</string>
+    <string name="faq_retry">重試</string>
+    <string name="faq_empty">暫無常見問題</string>
+    <string name="faq_updated_at">更新於</string>
+    <string name="nav_menu_run_mode">運行模式</string>
+    <string name="run_mode_dialog_title">選擇運行模式</string>
+    <string name="run_mode_root">Root 模式</string>
+    <string name="run_mode_developer">開發者模式</string>
+    <string name="run_mode_xposed">Xposed 模式</string>
+    <string name="run_mode_sandbox">沙盒模式</string>
+    <string name="xposed_module_not_found">未檢測到 Xposed 模組</string>
+    <string name="xposed_module_download_hint">請先安裝 KailLocation Xposed 模組才能使用 Xposed 模式。</string>
+    <string name="xposed_module_download">前往下載</string>
+    <string name="run_mode_changed">運行模式已切換為 %s</string>
+    <string name="sponsor_title">贊助作者</string>
+    <string name="sponsor_tron_note">僅支援 TRON 資產收款</string>
+
+    <string name="label_longitude">經度</string>
+    <string name="label_latitude">緯度</string>
+    <string name="input_position_ok">傳送</string>
+    <string name="input_position_cancel">取消</string>
+    <string name="input_position_baidu">BD09 坐標系</string>
+    <string name="input_position_gps">GPS 坐標系</string>
+    <string name="input_button">輸入位置</string>
+    <string name="cur_position">返回目前位置</string>
+    <string name="zoom_in">放大</string>
+    <string name="zoom_out">縮小</string>
+
+    <string name="map_pic_sate">衛星圖</string>
+    <string name="map_pic_normal">一般地圖</string>
+
+    <string name="update_title">有新版本可用</string>
+    <string name="update_downloading">正在下載升級檔...</string>
+    <string name="update_last">恭喜，KailLocation 已是最新版</string>
+    <string name="update_download">立即下載</string>
+    <string name="update_ignore">忽略一次</string>
+    <string name="update_time">更新時間：</string>
+    <string name="update_commit">變更資訊：</string>
+    <string name="update_file_size">安裝包大小：%1$s</string>
+
+    <string name="nav_sim_title">導航模擬</string>
+    <string name="nav_sim_start">開始導航</string>
+    <string name="nav_sim_stop">結束模擬</string>
+    <string name="nav_sim_pause">暫停</string>
+    <string name="nav_sim_resume">繼續</string>
+    <string name="nav_sim_planning">規劃中...</string>
+    <string name="nav_sim_start_point">起點：</string>
+    <string name="nav_sim_end_point">終點：</string>
+    <string name="nav_sim_select_start">請選擇起點</string>
+    <string name="nav_sim_select_end">請選擇終點</string>
+    <string name="nav_sim_lock_point">鎖定此點，下次規劃時保留</string>
+    <string name="nav_sim_unlock_point">解鎖此點</string>
+    <string name="nav_sim_use_my_location">固定為當前定位，每次自動更新</string>
+    <string name="nav_sim_both_locked">起點和終點均已固定</string>
+    <string name="nav_sim_multi_route">多條路線</string>
+    <string name="nav_sim_history_title">歷史資料（最多顯示 10 筆）</string>
+    <string name="nav_sim_clear">清除</string>
+    <string name="nav_sim_switch_route">切換路線</string>
+    <string name="nav_sim_choose_route">選擇路線</string>
+    <string name="nav_sim_speed_dialog_title">設定速度 (km/h)</string>
+    <string name="nav_sim_speed">速度</string>
+    <string name="nav_sim_ok">確定</string>
+    <string name="nav_sim_cancel">取消</string>
+
+    <string name="route_sim_title">路線模擬</string>
+    <string name="route_sim_target">目標路線</string>
+    <string name="route_sim_history">歷史路線</string>
+    <string name="route_sim_no_name">無名稱</string>
+    <string name="route_sim_start">開始模擬</string>
+    <string name="route_sim_stop">結束模擬</string>
+    <string name="route_sim_pause">暫停</string>
+    <string name="route_sim_resume">繼續</string>
+    <string name="route_sim_speed_btn">速度/頻率</string>
+    <string name="route_sim_loop">迴圈</string>
+    <string name="route_sim_rename_title">重新命名路線</string>
+    <string name="route_sim_rename_ok">確定</string>
+    <string name="route_sim_rename_cancel">取消</string>
+    <string name="route_sim_need_route">請先新增並儲存路線</string>
+    <string name="route_sim_start_failed">啟動模擬失敗</string>
+
+    <string name="route_plan_search_hint">搜尋地點</string>
+    <string name="route_plan_map_type">選擇地圖類型</string>
+    <string name="route_plan_normal">一般地圖</string>
+    <string name="route_plan_satellite">衛星地圖</string>
+    <string name="route_plan_coord_title">輸入座標</string>
+    <string name="route_plan_latitude">緯度</string>
+    <string name="route_plan_longitude">經度</string>
+    <string name="route_plan_coord_type">BD09 座標（預設 WGS84）</string>
+    <string name="route_plan_coord_combined">緯度,經度</string>
+    <string name="route_plan_coord_error">請輸入有效的緯度,經度</string>
+    <string name="route_plan_ok">確定</string>
+    <string name="route_plan_cancel">取消</string>
+
+    <string name="setting_sim_scheme">感測器模擬方案</string>
+    <string name="setting_sim_fourier">傅立葉級數</string>
+    <string name="setting_sim_sine_noise">正弦 + 隨機雜訊</string>
+    <string name="setting_step_sim">步數計數器模擬</string>
+    <string name="setting_step_sim_summary">控制步數偵測器 (18) 與計步器 (19) 事件模擬</string>
+    <string name="setting_group_intercept">攔截與降級</string>
+    <string name="setting_allow_get_current">允許 GetCurrentLocation</string>
+    <string name="setting_allow_get_current_summary">關閉後將攔截 getCurrentLocation 請求</string>
+    <string name="setting_allow_register_listener">允許註冊位置監聽器</string>
+    <string name="setting_allow_register_listener_summary">關閉後將攔截 registerLocationListener</string>
+    <string name="setting_allow_geofence">允許地理圍欄請求</string>
+    <string name="setting_allow_geofence_summary">關閉後將攔截 addGeofence</string>
+    <string name="setting_allow_get_location">允許位置查詢</string>
+    <string name="setting_allow_get_location_summary">關閉後將攔截 getFromLocation 等反查</string>
+    <string name="setting_disable_fused">停用融合定位</string>
+    <string name="setting_disable_fused_summary">阻止應用程式使用 fused provider</string>
+    <string name="setting_downgrade_cdma">將網路定位降級為 CDMA</string>
+    <string name="setting_downgrade_cdma_summary">將網路定位結果偽裝為基地台定位</string>
+    <string name="setting_disable_wifi_scan">停用 Wi‑Fi 掃描</string>
+    <string name="setting_disable_wifi_scan_summary">阻止應用程式取得真實 Wi‑Fi 掃描結果</string>
+    <string name="setting_group_anti_detect">反偵測與防回拉</string>
+    <string name="setting_hide_mock">隱藏模擬位置</string>
+    <string name="setting_hide_mock_summary">移除 Location.isFromMockProvider 標記</string>
+    <string name="setting_anti_pullback">防止定位回拉</string>
+    <string name="setting_anti_pullback_summary">持續廣播位置，降低被系統拉回的機率</string>
+    <string name="setting_natural_jitter">自然 GPS 抖動</string>
+    <string name="setting_natural_jitter_summary">在注入位置上加入漂移，關閉後固定點和路線會更穩定</string>
+    <string name="setting_group_other">其他</string>
+    <string name="setting_xposed_module_group">Xposed 模組</string>
+    <string name="setting_xposed_module_hide">隱藏 Xposed 模組</string>
+    <string name="setting_xposed_module_summary">隱藏後桌面圖示與 LSPosed 模組頁的「開啟」按鈕都不會顯示，恢復僅能透過本開關</string>
+    <string name="setting_global_mode">全域模式 (system_server)</string>
+    <string name="setting_global_mode_summary">開啟則注入 system_server，對所有應用程式生效；關閉則僅注入下方指定應用程式</string>
+    <string name="setting_target_packages">目標應用程式套件名稱</string>
+    <string name="setting_target_packages_summary">逗號分隔，僅在全域模式關閉時生效。例：com.autonavi.minimap</string>
+    <string name="setting_baidu_key">百度地圖 Key（需重新啟動才會生效）</string>
+    <string name="setting_enable_log">啟用日誌</string>
+    <string name="setting_enable_log_summary">將低頻日誌與關鍵狀態日誌寫入本機檔案</string>
+    <string name="setting_enable_debug_log">啟用詳細除錯日誌</string>
+    <string name="setting_enable_debug_log_summary">限流寫入高頻定位除錯日誌，可能增加耗電與檔案大小，僅建議用於排查問題</string>
+    <string name="setting_export_log">匯出日誌</string>
+    <string name="setting_export_log_summary">選擇儲存位置並匯出目前日誌檔</string>
+    <string name="setting_export_log_success">日誌已匯出</string>
+    <string name="setting_export_log_failed">日誌匯出失敗</string>
+    <string name="setting_clear_log_cache">清除日誌快取</string>
+    <string name="setting_clear_log_cache_summary">目前快取大小：%s</string>
+    <string name="setting_clear_log_cache_confirm">確認清除日誌快取？目前大小：%s</string>
+    <string name="setting_clear_log_cache_success">日誌快取已清除</string>
+    <string name="setting_clear_log_cache_failed">日誌快取清除失敗</string>
+    <string name="setting_map_zoom">懸浮窗地圖縮放比例</string>
+    <string name="setting_map_zoom_summary">範圍 10-21，數值越大地圖越詳細</string>
+
+    <!-- 資料匯出 / 匯入 -->
+    <string name="setting_group_data_transfer">資料備份</string>
+    <string name="data_transfer_group_general">通用（所有模式）</string>
+    <string name="setting_export_data">匯出資料</string>
+    <string name="setting_export_data_summary">將所選選單的設定匯出為 .bak 備份檔</string>
+    <string name="setting_import_data">匯入資料</string>
+    <string name="setting_import_data_summary">從 .bak 備份檔中選擇性還原選單設定</string>
+    <string name="data_transfer_export_title">匯出資料</string>
+    <string name="data_transfer_import_title">匯入資料</string>
+    <string name="data_transfer_select_categories">選擇要匯出的資料</string>
+    <string name="data_transfer_select_import_categories">選擇要匯入的資料</string>
+    <string name="data_transfer_category_count">%1$s（%2$d 項）</string>
+    <string name="data_transfer_category_empty">%1$s（無資料）</string>
+    <string name="data_transfer_filename_label">備份檔名稱</string>
+    <string name="data_transfer_export_button">匯出</string>
+    <string name="data_transfer_import_button">匯入</string>
+    <string name="data_transfer_export_success">資料匯出成功</string>
+    <string name="data_transfer_export_failed">資料匯出失敗</string>
+    <string name="data_transfer_import_success">已匯入 %1$d 項選單資料，重新啟動應用程式後生效</string>
+    <string name="data_transfer_import_failed">資料匯入失敗</string>
+    <string name="data_transfer_invalid_file">無效的備份檔</string>
+    <string name="data_transfer_none_selected">請至少選擇一項</string>
+    <string name="data_transfer_default_filename">kail_location_backup</string>
+
+    <string name="setting_current_version">目前版本</string>
+    <string name="setting_not_set">未設定</string>
+    <string name="setting_ok">確定</string>
+    <string name="setting_cancel">取消</string>
+
+    <string name="nfc_sim_title">NFC 模擬</string>
+    <string name="nfc_sim_status">NFC 狀態</string>
+    <string name="nfc_sim_enabled">已啟用</string>
+    <string name="nfc_sim_disabled">已停用</string>
+    <string name="nfc_sim_read_success">讀取成功</string>
+    <string name="nfc_sim_clear">清除</string>
+    <string name="nfc_sim_tag_id">標籤 ID: %s</string>
+    <string name="nfc_sim_tag_type">標籤類型: %s</string>
+    <string name="nfc_sim_content">內容: %s</string>
+    <string name="nfc_sim_send_title">模擬 NFC 傳送</string>
+    <string name="nfc_sim_url">URL</string>
+    <string name="nfc_sim_package">應用程式套件名稱</string>
+    <string name="nfc_sim_send">傳送</string>
+    <string name="nfc_sim_history">歷史紀錄</string>
+    <string name="nfc_sim_clear_history">清除</string>
+    <string name="nfc_sim_no_history">暫無歷史紀錄</string>
+    <string name="nfc_sim_rename_dialog_title">重新命名</string>
+    <string name="nfc_sim_rename_name">名稱</string>
+    <string name="nfc_sim_rename_ok">確定</string>
+    <string name="nfc_sim_rename_cancel">取消</string>
+    <string name="nfc_sim_rename_content_desc">重新命名</string>
+    <string name="nfc_sim_delete_content_desc">刪除</string>
+    <string name="nfc_sim_help_title">使用說明</string>
+    <string name="nfc_sim_help_content">1. 掃描：靠近 NFC 標籤即可自動讀取\n2. 傳送：輸入 URL/套件名後點擊傳送\n3. 歷史：點擊自動帶入，長按可重新命名</string>
+    <string name="nfc_sim_read_failed">讀取失敗：%s</string>
+    <string name="nfc_sim_input_hint">請輸入 URL 或套件名稱</string>
+    <string name="nfc_sim_send_failed">傳送失敗：%s</string>
+    <string name="nfc_sim_sent">已傳送：%s</string>
+    <string name="nfc_sim_opened">已開啟：%s</string>
+    <string name="nfc_sim_need_nfc">請先開啟 NFC</string>
+
+    <string name="common_warning">警告</string>
+    <string name="common_delete_all_confirm">確定要刪除全部歷史紀錄嗎？</string>
+    <string name="common_delete_item_confirm">確定要刪除這筆歷史紀錄嗎？</string>
+    <string name="common_confirm">確認</string>
+    <string name="common_edit">編輯</string>
+    <string name="common_delete">刪除</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_ok">確定</string>
+    <string name="delete_dont_remind_10min">10分鐘內不再提醒</string>
+
+    <string name="drawer_env_check">環境檢查</string>
+    <string name="drawer_ok">確定</string>
+    <string name="drawer_nav_sim">導航模擬</string>
+    <string name="drawer_nfc_sim">NFC 模擬</string>
+    <string name="drawer_run_mode">運行模式</string>
+    <string name="drawer_sandbox">沙盒引擎</string>
+    <string name="drawer_xposed_settings">Xposed 設定</string>
+    <string name="drawer_action_login">登入 / 註冊</string>
+    <string name="drawer_action_logout">退出登入</string>
+    <string name="drawer_logged_in_as">已登入</string>
+    <string name="drawer_not_logged_in">未登入</string>
+
+    <string name="sponsor_copied">已複製</string>
+    <string name="sponsor_copy_address">複製地址</string>
+    <string name="sponsor_wechat_hint">將下方連結在電腦瀏覽器打開，國家選擇中國</string>
+    <string name="sponsor_copy">複製</string>
+
+    <string name="welcome_read">已閱讀</string>
+    <string name="welcome_and">和</string>
+    <string name="welcome_agreement_text">使用者協議</string>
+    <string name="welcome_privacy_text">隱私政策</string>
+
+    <string name="joystick_speed">搖桿速度：%s km/h</string>
+    <string name="joystick_progress">進度：%s</string>
+    <string name="joystick_speed_label">速度：</string>
+    <string name="joystick_modify">修改</string>
+    <string name="joystick_route_progress">目前進度：%s</string>
+
+    <string name="goutils_enable_mock_title">啟用模擬位置</string>
+    <string name="goutils_enable_mock_msg">請在「開發者選項 → 選擇模擬位置應用程式」中將本應用設為模擬位置應用程式</string>
+    <string name="goutils_settings">設定</string>
+    <string name="goutils_cancel">取消</string>
+    <string name="goutils_enable_overlay_title">啟用懸浮視窗</string>
+    <string name="goutils_enable_overlay_msg">為了模擬定位的穩定性，建議開啟「顯示懸浮視窗」選項</string>
+    <string name="goutils_enable_gps_title">啟用定位服務</string>
+    <string name="goutils_enable_gps_msg">是否開啟 GPS 定位服務？</string>
+    <string name="goutils_ok">確定</string>
+    <string name="goutils_warning">警告</string>
+    <string name="goutils_wifi_warning">開啟 Wi‑Fi 後（即使未連上熱點）可能導致定位跳回真實位置。建議關閉 Wi‑Fi，改用行動網路遊玩！</string>
+    <string name="goutils_turn_off">關閉</string>
+    <string name="goutils_ignore">忽略</string>
+
+    <string name="vm_update_failed">檢查更新失敗：%s</string>
+    <string name="vm_up_to_date">目前已是最新版本</string>
+    <string name="vm_search_city">全國</string>
+    <string name="vm_need_location_permission">需要位置權限才能啟動模擬</string>
+    <string name="vm_unknown_location">未知地點</string>
+    <string name="vm_step_root_required">步數模擬需要 ROOT 模式</string>
+
+    <string name="history_vm_coord_wgs84">[經度:%1$s 緯度:%2$s]</string>
+    <string name="history_vm_coord_bd09">[經度:%1$s 緯度:%2$s]</string>
+    <string name="history_vm_offset">經度偏移: %.2f 公尺\n緯度偏移: %.2f 公尺</string>
+
+    <string name="service_grant_overlay">請授予懸浮視窗權限</string>
+    <string name="service_overlay_failed">懸浮視窗初始化失敗：%s</string>
+    <string name="service_set_mock_app">請在開發者選項中將此應用設為模擬位置應用程式</string>
+    <string name="route_sim_speed_text">移動速度</string>
+    <string name="route_sim_speed_fluctuation">速度波動</string>
+    <string name="route_sim_step_text">步數模擬</string>
+    <string name="route_sim_cadence_text">步頻</string>
+    <string name="route_sim_cadence_format">%d 步/分鐘 · ~%.1f km/h</string>
+    <string name="route_sim_step_root_required">步數模擬需要 ROOT 模式</string>
+
+    <string name="error_cannot_open_email">無法開啟電子郵件應用程式</string>
+    <string name="error_cannot_open_browser">無法開啟瀏覽器</string>
+    <string name="error_under_development">功能開發中...</string>
+    <string name="download_progress">下載中... %d%%</string>
+
+    <string name="setting_group_satellite_and_signal">衛星與訊號模擬</string>
+    <string name="setting_mock_speed">模擬移動速度 (m/s)</string>
+    <string name="setting_accuracy_title">定位精度/位置抖動範圍 (m)</string>
+    <string name="setting_accuracy_summary">預設 2.5。自然 GPS 抖動關閉時作為定位精度；開啟後作為自然 GPS 抖動範圍。</string>
+    <string name="setting_min_satellites">最少模擬衛星數量</string>
+    <string name="setting_min_satellites_summary">僅支援北斗衛星</string>
+    <string name="setting_report_interval">回報間隔 (ms)</string>
+    <string name="setting_report_interval_summary">以毫秒為單位，預設 200ms；數值越低，上報越頻繁，耗電和負載越高</string>
+    <string name="setting_gps_satellite_title">模擬 GPS 衛星訊號</string>
+    <string name="setting_gps_satellite_summary">偽造北斗衛星數量與訊號強度</string>
+    <string name="setting_agps_title">啟用 AGPS 模組</string>
+    <string name="setting_agps_summary">輔助定位相關（實驗性）</string>
+    <string name="setting_nmea_title">啟用 NMEA 模組</string>
+    <string name="setting_nmea_summary">偽造 NMEA 資料輸出</string>
+    <string name="setting_wlan_title">模擬 WLAN 資料</string>
+    <string name="setting_wlan_summary">偽造 Wi‑Fi 定位資料</string>
+
+    <!-- Usage Manager -->
+    <string name="usage_not_logged_in">請先登入後再使用模擬功能</string>
+    <string name="usage_free_exhausted">今日免費模擬次數已用完，訂閱後可無限使用</string>
+    <string name="usage_count_exhausted">模擬次數已用完</string>
+
+    <!-- API Errors -->
+    <string name="api_error_remaining">獲取剩餘次數失敗</string>
+    <string name="api_error_send_code">發送驗證碼失敗</string>
+    <string name="api_error_login">登入失敗</string>
+    <string name="api_error_plans">獲取套餐列表失敗</string>
+    <string name="api_error_notices">獲取公告失敗</string>
+    <string name="api_error_subscription">獲取訂閱狀態失敗</string>
+
+    <!-- Sponsor Errors -->
+    <string name="sponsor_error_not_logged_in">未登入</string>
+    <string name="sponsor_error_select_plan">請選擇套餐</string>
+    <string name="sponsor_error_create_checkout">建立結算頁面失敗</string>
+
+    <!-- Sponsor Screen -->
+    <string name="sponsor_top_title">訂閱與贊助</string>
+    <string name="sponsor_member_title">會員訂閱</string>
+    <string name="sponsor_select_hint">選擇套餐以解鎖全部功能</string>
+    <string name="sponsor_subscribed_text">已訂閱</string>
+    <string name="sponsor_thanks">感謝您的支援！</string>
+    <string name="sponsor_billing_once">一次性</string>
+    <string name="sponsor_billing_month">/月</string>
+    <string name="sponsor_billing_year">/年</string>
+    <string name="sponsor_login_first">請先登入後再訂閱</string>
+    <string name="sponsor_credit_card">信用卡/簽帳卡</string>
+    <string name="sponsor_wechat_pay">微信支付</string>
+    <string name="sponsor_support_title">贊助支援</string>
+    <string name="sponsor_aptos_hint">您也可以直接透過 Aptos 鏈贊助：</string>
+    <string name="sponsor_copy_aptos_address">複製 Aptos 地址</string>
+
+    <!-- Login Screen -->
+    <string name="login_hint_text">僅支援 QQ 郵箱與 Google 郵箱，輸入驗證碼即可登入或自動註冊</string>
+    <string name="login_register_btn">登入 / 註冊</string>
+
+    <!-- Profile -->
+    <string name="profile_member_status">會員狀態</string>
+    <string name="profile_not_subscribed">未訂閱</string>
+    <string name="profile_subscribe_now">訂閱會員</string>
+
+    <!-- Cell Simulation Screen -->
+    <string name="cell_sim_empty_text">暫無模擬基站</string>
+    <string name="cell_sim_scan_hint">點擊下方按鈕掃描或新增基站</string>
+    <string name="cell_sim_deselect_all">取消全選</string>
+    <string name="cell_sim_select_all">全選</string>
+    <string name="cell_sim_running_title">基站模擬執行中</string>
+    <string name="cell_sim_title_short">基站模擬</string>
+    <string name="cell_sim_more_fmt">+ %d 更多...</string>
+    <string name="cell_sim_start">開始模擬</string>
+    <string name="cell_sim_stop">停止模擬</string>
+    <string name="cell_sim_status_running">執行中</string>
+    <string name="cell_sim_scan_count_fmt">掃描到 %d 個基站</string>
+    <string name="cell_sim_location_fmt">位置: %s</string>
+
+    <!-- WiFi Simulation Screen -->
+    <string name="wifi_sim_empty_text">暫無模擬WiFi</string>
+    <string name="wifi_sim_scan_hint">點擊下方按鈕掃描附近WiFi</string>
+    <string name="wifi_sim_deselect_all">取消全選</string>
+    <string name="wifi_sim_select_all">全選</string>
+    <string name="wifi_sim_running_title">WiFi模擬執行中</string>
+    <string name="wifi_sim_title_short">WiFi模擬</string>
+    <string name="wifi_sim_start">開始模擬</string>
+    <string name="wifi_sim_stop">停止模擬</string>
+    <string name="wifi_sim_status_running">執行中</string>
+    <string name="wifi_sim_scan_count_fmt">掃描到 %d 個WiFi</string>
+    <string name="wifi_sim_add_label">新增</string>
+
+    <!-- Announcement Dialog -->
+    <string name="announcement_default_title">公告</string>
+    <string name="announcement_previous">上一條</string>
+    <string name="announcement_next">下一條</string>
+    <string name="announcement_got_it">我知道了</string>
+
+    <!-- Independent Simulation -->
+    <string name="ind_sim_running">獨立模擬執行中</string>
+    <string name="ind_sim_stopped">獨立模擬已停止</string>
+    <string name="ind_sim_description">選擇目標應用後開啟。開啟後，在位置/路線/WiFi/基站/步頻頁面點「開始模擬」，都只對這裏選擇的應用生效，其它應用讀到真實資料。</string>
+    <string name="ind_sim_stop_btn">停止獨立模擬</string>
+    <string name="ind_sim_start_btn">開始獨立模擬</string>
+
+    <!-- Checkout WebView -->
+    <string name="checkout_title">結帳</string>
+    <string name="checkout_back_desc">返回</string>
+
+    <!-- Location Picker -->
+    <string name="picker_map_init_failed">地圖初始化失敗: %s</string>
+    <string name="picker_search_no_results">抱歉，未能找到結果</string>
+
+    <!-- Update -->
+    <string name="update_found_title">發現新版本: %s</string>
+
+    <!-- Location Simulation -->
+    <string name="location_rename_title">重新命名位置</string>
+
+    <!-- Sandbox Manager/Activity/Screen -->
+    <string name="sandbox_install_success">安裝成功</string>
+    <string name="sandbox_install_failed">安裝失敗: %s</string>
+    <string name="sandbox_uninstall_success">解除安裝成功</string>
+    <string name="sandbox_uninstall_failed">解除安裝失敗: %s</string>
+    <string name="sandbox_launch_failed">啟動失敗</string>
+    <string name="sandbox_launch_failed_msg">啟動失敗: %s</string>
+    <string name="sandbox_clear_success">清除成功</string>
+    <string name="sandbox_clear_failed">清除失敗: %s</string>
+    <string name="sandbox_stopped">已停止執行</string>
+    <string name="sandbox_stop_failed">停止失敗: %s</string>
+    <string name="sandbox_loading_failed">載入沙盒應用失敗: %s</string>
+    <string name="sandbox_system_apps_failed">載入系統應用失敗: %s</string>
+    <string name="sandbox_title_fmt">沙盒 - %s</string>
+    <string name="sandbox_creating_shortcut">正在建立捷徑...</string>
+    <string name="sandbox_shortcut_failed">建立捷徑失敗: %s</string>
+    <string name="sandbox_invalid_shortcut">無效的捷徑</string>
+    <string name="sandbox_empty">沙盒中暫無應用</string>
+    <string name="sandbox_empty_hint">點擊右下角 + 按鈕克隆應用</string>
+    <string name="sandbox_launch_app">啟動應用</string>
+    <string name="sandbox_clear_data">清除資料</string>
+    <string name="sandbox_stop_running">停止執行</string>
+    <string name="sandbox_uninstall_app">解除安裝應用</string>
+    <string name="sandbox_create_shortcut">建立捷徑</string>
+    <string name="sandbox_clear_data_btn">清除資料</string>
+    <string name="sandbox_uninstall_btn">解除安裝</string>
+    <string name="sandbox_clone_title">克隆應用</string>
+    <string name="sandbox_search_placeholder">搜尋應用...</string>
+    <string name="sandbox_load_system_apps">載入系統應用列表</string>
+    <string name="sandbox_settings_title">沙盒設定</string>
+    <string name="sandbox_hide_root">隱藏 Root</string>
+    <string name="sandbox_hide_root_desc">對沙盒應用隱藏 Root 權限</string>
+    <string name="sandbox_restart_to_apply">重新啟動應用生效</string>
+    <string name="sandbox_daemon">守護程序</string>
+    <string name="sandbox_daemon_desc">保持沙盒服務在背景執行</string>
+    <string name="sandbox_vpn">使用 VPN 網路</string>
+    <string name="sandbox_vpn_desc">透過 VPN 路由沙盒應用流量，可能改善網路存取</string>
+    <string name="sandbox_disable_secure">停用 FLAG_SECURE</string>
+    <string name="sandbox_disable_secure_desc">允許在沙盒應用中截圖和錄影</string>
+    <string name="sandbox_step_sim">步頻模擬</string>
+    <string name="sandbox_step_sim_desc">為沙盒應用模擬步頻感測器資料</string>
+    <string name="sandbox_step_fmt">步頻: %d 步/分鐘</string>
+    <string name="sandbox_step_adjust">點擊調整步頻</string>
+    <string name="sandbox_gms">GMS 管理</string>
+    <string name="sandbox_gms_desc">管理 Google 服務框架</string>
+    <string name="sandbox_gms_coming">功能開發中</string>
+    <string name="sandbox_gms_unsupported">目前裝置不支援 GMS</string>
+    <string name="sandbox_send_log">傳送記錄</string>
+    <string name="sandbox_send_log_desc">上傳偵錯記錄到開發者</string>
+    <string name="sandbox_log_sent">記錄傳送成功</string>
+    <string name="sandbox_log_failed">記錄傳送失敗: %s</string>
+    <string name="sandbox_log_sending">正在傳送記錄...</string>
+    <string name="sandbox_adjust_cadence">調整步頻</string>
+    <string name="sandbox_cadence_fmt">%d 步/分鐘</string>
+    <string name="sandbox_cadence_range">步頻範圍: 30 - 240 步/分鐘</string>
+
+    <!-- Settings -->
+    <string name="settings_step_sim">步頻模擬</string>
+    <string name="settings_step_sim_enable">啟用步頻模擬</string>
+    <string name="settings_step_sim_summary">模擬步頻資料用於計步類應用</string>
+    <string name="settings_step_type">步頻資料類型</string>
+
+    <!-- Cell ViewModel -->
+    <string name="cell_fetch_no_location">無法取得目前位置，請先設定模擬位置或開啟GPS</string>
+    <string name="cell_fetch_no_key">請先在設定中設定 OpenCellID API Key</string>
+    <string name="cell_fetch_no_data">未查詢到基站資料，該區域可能無覆蓋或API限制</string>
+    <string name="cell_fetch_failed">網路請求失敗: %s</string>
+
+    <!-- NFC -->
+    <string name="nfc_read_failed">讀取失敗: %s</string>
+
+    <!-- Xposed Settings -->
+    <string name="xposed_not_set">未設定</string>
+
+    <!-- Welcome -->
+    <string name="welcome_cannot_open_settings">無法開啟設定頁面，請手動開啟</string>
+
+    <!-- Login / Register -->
+    <string name="login_screen_title">帳戶</string>
+    <string name="login_tab_login">登入</string>
+    <string name="login_tab_register">註冊</string>
+    <string name="login_dialog_title">登入</string>
+    <string name="register_dialog_title">註冊</string>
+    <string name="login_username_hint">使用者名稱</string>
+    <string name="login_email_hint">郵箱地址</string>
+    <string name="login_password_hint">密碼</string>
+    <string name="register_nickname_hint">暱稱</string>
+    <string name="register_password_confirm_hint">確認密碼</string>
+    <string name="register_verification_code_hint">信箱驗證碼</string>
+    <string name="register_send_code">發送驗證碼</string>
+    <string name="login_action_login">登入</string>
+    <string name="login_action_register">註冊</string>
+    <string name="login_forgot_password">忘記密碼？</string>
+    <string name="login_error_empty_fields">必填項不能為空</string>
+    <string name="login_error_empty_email">郵箱不能為空</string>
+    <string name="login_error_invalid_email_domain">僅支援 QQ 郵箱（@qq.com）與 Google 郵箱（@gmail.com）登入</string>
+    <string name="register_error_password_mismatch">兩次輸入的密碼不一致</string>
+    <string name="register_error_send_code_failed">發送驗證碼失敗</string>
+    <string name="login_error_unknown">操作失敗，請稍後重試</string>
+    <string name="forgot_password_title">忘記密碼</string>
+    <string name="forgot_password_description">請輸入郵箱和驗證碼重設密碼。</string>
+    <string name="forgot_password_new_password_hint">新密碼</string>
+    <string name="forgot_password_send">重設密碼</string>
+    <string name="forgot_password_success">密碼重設成功</string>
+    <string name="forgot_password_failed">重設失敗，請稍後重試</string>
+    <string name="profile_title">個人主頁</string>
+
+    <string name="loc_sim_title">位置模擬</string>
+    <string name="loc_sim_target">目標位置</string>
+    <string name="loc_sim_none">NONE</string>
+    <string name="loc_sim_lat_lng">經緯度: %1$s,%2$s</string>
+    <string name="loc_sim_start">啟動模擬</string>
+    <string name="sim_starting">啟動中...</string>
+    <string name="loc_sim_stop">停止模擬</string>
+    <string name="loc_sim_base_station">基站</string>
+    <string name="loc_sim_joystick">搖桿</string>
+    <string name="loc_sim_history_title">歷史位置</string>
+    <string name="loc_sim_add_tips">點擊右上角「+」按鈕進行新增</string>
+    <string name="loc_sim_help">說明</string>
+    <string name="help_close_hint">點擊畫面任何位置關閉</string>
+    <string name="help_legend_title">按鈕說明</string>
+    <string name="help_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_add_location">新增 / 更換模擬位置</string>
+    <string name="help_header">點擊此區域摺疊 / 展開卡片</string>
+    <string name="help_start">啟動 / 停止位置模擬</string>
+    <string name="help_collapse">摺疊 / 展開卡片</string>
+    <string name="help_joystick">搖桿開關，開啟後顯示搖桿浮窗</string>
+    <string name="help_settings">速度/步頻設定（步頻模擬）</string>
+    <string name="help_tabs">切換「常用 / 歷史」位置清單</string>
+    <string name="help_search">搜尋歷史記錄</string>
+    <string name="help_card_fav">收藏 / 取消收藏此位置</string>
+    <string name="help_card_rename">重新命名此位置</string>
+    <string name="help_card_delete">刪除此位置</string>
+    <string name="help_picker_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_picker_back">返回上一頁</string>
+    <string name="help_picker_search">搜尋地點</string>
+    <string name="help_picker_fab">啟動 / 停止位置模擬</string>
+    <string name="help_picker_fab_confirm">確認選擇該位置</string>
+    <string name="help_picker_map_type">切換地圖類型（普通 / 衛星）</string>
+    <string name="help_picker_input">輸入座標定位</string>
+    <string name="help_picker_locate">定位到目前位置</string>
+    <string name="help_picker_zoom_in">放大地圖</string>
+    <string name="help_picker_zoom_out">縮小地圖</string>
+
+    <string name="root_hide_title">Root 與應用隱藏</string>
+    <string name="root_hide_status_running">隱藏執行中</string>
+    <string name="root_hide_status_stopped">隱藏已停止</string>
+    <string name="root_hide_desc">選擇目標應用後開啟。開啟後，對選中的應用隱藏 Root/框架痕跡與已安裝應用列表。</string>
+    <string name="root_hide_settings_title">隱藏設定</string>
+    <string name="root_hide_hide_root">隱藏 Root</string>
+    <string name="root_hide_hide_root_summary">對目標應用隱藏 Root、Magisk、Xposed 等痕跡</string>
+    <string name="root_hide_hide_applist">隱藏應用列表</string>
+    <string name="root_hide_hide_applist_summary">對目標應用隱藏本機已安裝的其它應用（需開啟隱藏 Root）</string>
+    <string name="root_hide_target_apps">目標應用</string>
+    <string name="root_hide_target_apps_hint">點擊選擇要隱藏的應用</string>
+    <string name="root_hide_start">開始隱藏</string>
+    <string name="root_hide_stop">停止隱藏</string>
+    <string name="root_hide_no_apps">請先選擇目標應用並至少開啟一項隱藏</string>
+    <string name="root_hide_added_apps">已新增的應用（%d）</string>
+    <string name="root_hide_remove_app">移除該應用</string>
+    <string name="root_hide_select_apps">選擇目標應用</string>
+
+
+    <string name="app_name">KailLocation</string>
+    <string name="app_author">kail</string>
+    <string name="app_email">kailkali23143@gmail.com</string>
+    <string name="app_statement">僅供學習使用，否則後果自負！</string>
+    <string name="app_agreement_content">"1. 本軟件專為學習 Android 開發使用，不會收集任何用戶數據。
+"    "嚴禁利用本軟件侵犯他人私隱權或者用於遊戲牟利，如軟件使用者不能遵守此規定，請立即刪除。
+"    "對於因用戶使用本軟件而造成自身或他人私隱洩露等任何不良後果，均由用戶自行承擔，軟件作者不負任何責任。
+"    "2. 用戶不得對本軟件產品進行反向工程（reverse engineer）、反向編譯（decompile）或反彙編（disassemble），違者屬於侵權行為，並自行承擔由此產生的不利後果。
+"    "3. 軟件保證不含任何病毒，木馬，等破壞用戶數據的惡意代碼，但是由於本軟件產品可以通過網絡等途徑下載、傳播，對於從非軟件作者指定站點下載的本軟件產品軟件作者無法保證該軟件是否感染計算機病毒、是否隱藏有偽裝的特洛伊木馬程序或者黑客軟件，不承擔由此引起的直接和間接損害責任。
+"    "4. 軟件會不斷更新，以便及時為用戶提供新功能和修正軟件中的 BUG。同時軟件作者保證本軟件在升級過程中也不含有任何旨在破壞用戶計算機數據的惡意代碼。
+"    "5. 由於用戶計算機軟硬件環境的差異性和複雜性，本軟件所提供的各項功能並不能保證在任何情況下都能正常執行或達到用戶所期望的結果。用戶使用本軟件所產生的一切後果，軟件作者不承擔任何責任。
+"    "6. 如果用戶自行安裝本軟件，即表明用戶信任軟件作者，自願選擇安裝本軟件，並接受本協議所有條款。如果用戶不接受本協議，請立即刪除。
+"    </string>
+    <string name="app_privacy_content">"1. 本軟件專為學習 Android 開發使用，不會收集任何用戶數據。
+"    "2. 用戶不得對本軟件產品進行反向工程（reverse engineer）、反向編譯（decompile）或反彙編（disassemble），違者屬於侵權行為，並自行承擔由此產生的不利後果。
+"    "3. 軟件保證不含任何病毒，木馬，等破壞用戶數據的惡意代碼，但是由於本軟件產品可以通過網絡等途徑下載、傳播，對於從非軟件作者指定站點下載的本軟件產品軟件作者無法保證該軟件是否感染計算機病毒、是否隱藏有偽裝的特洛伊木馬程序或者黑客軟件，不承擔由此引起的直接和間接損害責任。
+"    "4. 軟件會不斷更新，以便及時為用戶提供新功能和修正軟件中的 BUG。同時軟件作者保證本軟件在升級過程中也不含有任何旨在破壞用戶計算機數據的惡意代碼。
+"    "5. 由於用戶計算機軟硬件環境的差異性和複雜性，本軟件所提供的各項功能並不能保證在任何情況下都能正常執行或達到用戶所期望的結果。用戶使用本軟件所產生的一切後果，軟件作者不承擔任何責任。
+"    "6. 如果用戶自行安裝本軟件，即表明用戶信任軟件作者，自願選擇安裝本軟件，並接受本協議所有條款。如果用戶不接受本協議，請立即刪除。
+"    </string>
+    <string name="setting_opencellid_key">OpenCellID API Key</string>
+    <string name="setting_opencellid_key_summary">用於透過經緯度查詢周邊基站，需先在 opencellid.org 註冊獲取</string>
+    <string name="vm_system_not_ready">系統未就緒，請開機 %1$d 秒後再試（剩餘約 %2$d 秒）</string>
+    <string name="service_root_fallback_noroot">ROOT 注入失敗，請確認已在 ROOT 管理器裡授權 KailLocation 後再試</string>
+    <string name="service_root_fallback_binder">注入未生效，請稍候重試，或重新啟動裝置後再開始模擬</string>
+    <string name="cell_type_gsm">GSM</string>
+    <string name="cell_type_cdma">CDMA</string>
+    <string name="cell_type_lte">LTE</string>
+    <string name="cell_type_wcdma">WCDMA</string>
+    <string name="ind_sim_title">獨立模擬</string>
+    <string name="ind_sim_target_apps">目標應用</string>
+    <string name="ind_sim_target_apps_hint">點擊選擇要模擬的應用</string>
+    <string name="ind_sim_sim_type">模擬類型</string>
+    <string name="ind_sim_location">位置模擬</string>
+    <string name="ind_sim_route">路線模擬</string>
+    <string name="ind_sim_wifi_mock">WiFi 模擬</string>
+    <string name="ind_sim_cell_mock">基站模擬</string>
+    <string name="ind_sim_gnss_mock">GPS 衛星狀態模擬</string>
+    <string name="ind_sim_gnss_mock_summary">偽造 GnssStatus 衛星數據（防檢測）</string>
+    <string name="ind_sim_jitter_mock">位置抖動</string>
+    <string name="ind_sim_jitter_mock_summary">給模擬位置添加隨機偏移</string>
+    <string name="ind_sim_start">啟動獨立模擬</string>
+    <string name="ind_sim_stop">停止獨立模擬</string>
+    <string name="ind_sim_no_apps">請先選擇目標應用</string>
+    <string name="ind_sim_select_apps">選擇目標應用</string>
+    <string name="ind_sim_search_apps">搜索應用</string>
+    <string name="ind_sim_selected_count">已選擇 %d 個應用</string>
+    <string name="ind_sim_selected_apps">已選擇的應用（%d）</string>
+    <string name="wifi_sim_title">WiFi 模擬</string>
+    <string name="wifi_sim_enable">啟用 WiFi 模擬</string>
+    <string name="wifi_sim_enable_summary">偽造 WiFi 掃描結果和連接資訊</string>
+    <string name="wifi_sim_add">添加 WiFi</string>
+    <string name="wifi_sim_list">WiFi 列表</string>
+    <string name="wifi_sim_empty">暫無 WiFi 數據，請點擊添加</string>
+    <string name="wifi_sim_ssid">SSID</string>
+    <string name="wifi_sim_bssid">BSSID (MAC)</string>
+    <string name="wifi_sim_rssi">信號強度 (dBm)</string>
+    <string name="wifi_sim_frequency">頻率 (MHz)</string>
+    <string name="wifi_sim_capabilities">加密方式</string>
+    <string name="wifi_sim_delete">刪除</string>
+    <string name="wifi_sim_edit">編輯</string>
+    <string name="wifi_sim_name">名稱</string>
+    <string name="wifi_sim_history">歷史記錄</string>
+    <string name="wifi_sim_current_target">當前目標 WiFi</string>
+    <string name="wifi_sim_select_prompt">請點擊下方 WiFi 進行選擇</string>
+    <string name="wifi_sim_rename">重新命名</string>
+    <string name="wifi_sim_rename_title">重新命名 WiFi</string>
+    <string name="wifi_sim_picker_title">選擇 WiFi</string>
+    <string name="wifi_sim_scan_nearby">掃描附近 WiFi</string>
+    <string name="wifi_sim_scanning">正在掃描...</string>
+    <string name="wifi_sim_scan_prompt">點擊上方按鈕掃描附近 WiFi</string>
+    <string name="wifi_sim_scan_prompt2">或點擊右下角手動添加</string>
+    <string name="wifi_sim_manual_add">手動添加 WiFi</string>
+    <string name="wifi_sim_use">使用</string>
+    <string name="wifi_sim_scan_result_title">掃描到的 WiFi</string>
+    <string name="wifi_sim_scan_empty">未掃描到 WiFi，請確保 WiFi 已開啟並處於信號覆蓋區域</string>
+    <string name="cell_sim_title">基站模擬</string>
+    <string name="cell_sim_enable">啟用基站模擬</string>
+    <string name="cell_sim_enable_summary">偽造基站位置和信號資訊</string>
+    <string name="cell_sim_add">添加基站</string>
+    <string name="cell_sim_list">基站列表</string>
+    <string name="cell_sim_empty">暫無基站數據，請點擊添加</string>
+    <string name="cell_sim_type">網絡類型</string>
+    <string name="cell_sim_mcc">MCC</string>
+    <string name="cell_sim_mnc">MNC</string>
+    <string name="cell_sim_lac">LAC/TAC</string>
+    <string name="cell_sim_cid">CID/CellId</string>
+    <string name="cell_sim_psc">PSC/PCI</string>
+    <string name="cell_sim_lat">緯度</string>
+    <string name="cell_sim_lon">經度</string>
+    <string name="cell_sim_radius">覆蓋半徑 (米)</string>
+    <string name="cell_sim_delete">刪除</string>
+    <string name="cell_sim_edit">編輯</string>
+    <string name="cell_sim_scan_current">獲取當前位置基站</string>
+    <string name="cell_sim_scanning">正在掃描基站...</string>
+    <string name="cell_sim_scan_result_title">掃描到的基站</string>
+    <string name="cell_sim_scan_empty">未掃描到基站資訊，請確保已授予定位權限並處於信號覆蓋區域</string>
+    <string name="cell_sim_scan_add_all">全部添加</string>
+    <string name="cell_sim_fetch_network">從網絡獲取基站</string>
+    <string name="cell_sim_fetching_network">正在獲取...</string>
+    <string name="cell_sim_history">歷史記錄</string>
+    <string name="cell_sim_selected_count">已新增的基站（%d）</string>
+    <string name="wifi_sim_selected_count">已新增的 Wi-Fi（%d）</string>
+    <string-array name="array_sim_scheme">
+        <item>@string/setting_sim_fourier</item>
+        <item>@string/setting_sim_sine_noise</item>
+    </string-array>
+    <string-array name="array_sim_scheme_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="setting_group_personalization">個性化</string>
+    <string name="setting_floating_window_size">浮窗大小</string>
+    <string name="setting_floating_window_width">寬度</string>
+    <string name="setting_floating_window_height">高度</string>
+
+    <!-- Route simulation: extend / waypoint wait -->
+    <string name="route_sim_extended">已延長路線，模擬繼續</string>
+    <string name="route_sim_extend_empty">未添加新的路線點</string>
+    <string name="route_waiting">等待中</string>
+    <string name="route_plan_wait_btn">等待</string>
+    <string name="route_plan_wait_title">途經點等待時間</string>
+    <string name="route_plan_wait_point">途經點</string>
+    <string name="route_plan_wait_seconds">秒</string>
+    <string name="route_plan_wait_hint">模擬到達該點後停留該秒數，0 表示不停留</string>
+
+    <!-- Navigation simulation -->
+    <string name="nav_sim_plan">開始規劃</string>
+    <string name="nav_sim_planned">已規劃</string>
+    <string name="nav_sim_plan_title">選擇起點和終點</string>
+</resources>

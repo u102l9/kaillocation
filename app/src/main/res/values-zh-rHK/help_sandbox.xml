@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sandbox_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_sandbox_settings">開啟沙盒設定</string>
+    <string name="help_sandbox_install">安裝 / 複製新應用</string>
+    <string name="help_sandbox_fab">安裝 / 複製新應用</string>
+    <string name="help_sandbox_app_launch">點擊啟動應用，長按彈出更多操作</string>
+    <string name="help_sandbox_create_shortcut">建立桌面捷徑</string>
+    <string name="help_sandbox_clear_data">清除應用程式資料</string>
+    <string name="help_sandbox_uninstall">解除安裝 / 刪除應用</string>
+</resources>

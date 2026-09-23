@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_wifi_sim_menu">Open the menu</string>
+    <string name="help_wifi_sim_add">Add Wi-Fi manually</string>
+    <string name="help_wifi_sim_start">Start simulation</string>
+    <string name="help_wifi_sim_stop">Stop simulation</string>
+    <string name="help_wifi_sim_scan_empty">Scan for nearby Wi-Fi</string>
+    <string name="help_wifi_sim_scan_list">Scan / refresh nearby Wi-Fi</string>
+    <string name="help_wifi_sim_select_all">Select / deselect all</string>
+    <string name="help_wifi_sim_item_check">Check / uncheck this Wi-Fi</string>
+    <string name="help_wifi_sim_item_row">Tap to select this Wi-Fi</string>
+    <string name="help_wifi_sim_item_rename">Rename this Wi-Fi</string>
+    <string name="help_wifi_sim_item_delete">Delete this Wi-Fi</string>
+</resources>

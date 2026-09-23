@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <tech-list>
+        <tech name="android.nfc.tech.NfcA"/>
+        <tech name="android.nfc.tech.NfcB"/>
+        <tech name="android.nfc.tech.NfcF"/>
+        <tech name="android.nfc.tech.NfcV"/>
+        <tech name="android.nfc.tech.IsoDep"/>
+        <tech name="android.nfc.tech.MifareClassic"/>
+        <tech name="android.nfc.tech.MifareUltralight"/>
+        <tech name="android.nfc.tech.Ndef"/>
+        <tech name="android.nfc.tech.NdefFormatable"/>
+    </tech-list>
+</resources>

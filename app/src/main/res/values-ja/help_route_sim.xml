@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_sim_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_route_sim_add_extend">新ルートを追加 / 現在のルートを延長</string>
+    <string name="help_route_sim_start">ルートシミュレーションを開始 / 一時停止 / 再開 / 停止</string>
+    <string name="help_route_sim_speed">速度 / 頻度設定を開く</string>
+    <string name="help_route_sim_loop">ループスイッチ。有効にするとルートをループ</string>
+    <string name="help_route_sim_tabs">「お気に入り / 履歴」ルート一覧を切り替え</string>
+    <string name="help_route_sim_search">履歴ルートを検索</string>
+    <string name="help_route_sim_card_fav">このルートをお気に入り登録 / 解除</string>
+    <string name="help_route_sim_card_edit">このルートの経由点を編集</string>
+    <string name="help_route_sim_card_rename">このルートを名前変更</string>
+    <string name="help_route_sim_card_delete">このルートを削除</string>
+</resources>

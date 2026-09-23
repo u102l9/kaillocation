@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_wifi_sim_menu">機能メニューを開く</string>
+    <string name="help_wifi_sim_add">Wi-Fiを手動で追加</string>
+    <string name="help_wifi_sim_start">シミュレーション開始</string>
+    <string name="help_wifi_sim_stop">シミュレーションを停止</string>
+    <string name="help_wifi_sim_scan_empty">周辺のWi-Fiをスキャン</string>
+    <string name="help_wifi_sim_scan_list">周辺のWi-Fiをスキャン / 更新</string>
+    <string name="help_wifi_sim_select_all">すべて選択 / 選択解除</string>
+    <string name="help_wifi_sim_item_check">このWi-Fiをチェック / 解除</string>
+    <string name="help_wifi_sim_item_row">タップでこのWi-Fiを選択</string>
+    <string name="help_wifi_sim_item_rename">このWi-Fiを名前変更</string>
+    <string name="help_wifi_sim_item_delete">このWi-Fiを削除</string>
+</resources>

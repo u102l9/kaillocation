@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nfc_sim_menu">Open the side menu</string>
+    <string name="help_nfc_sim_clear">Clear the current read result</string>
+    <string name="help_nfc_sim_send">Send simulated NFC data</string>
+    <string name="help_nfc_sim_clear_history">Clear history records</string>
+    <string name="help_nfc_sim_history_select">Tap to select a history record</string>
+    <string name="help_nfc_sim_history_favorite">Favorite / unfavorite</string>
+    <string name="help_nfc_sim_history_rename">Rename history record</string>
+    <string name="help_nfc_sim_history_delete">Delete history record</string>
+</resources>

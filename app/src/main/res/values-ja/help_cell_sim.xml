@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_cell_sim_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_cell_sim_add">新しい基地局情報を追加</string>
+    <string name="help_cell_sim_scan_current">現在接続中の基地局をスキャン</string>
+    <string name="help_cell_sim_fetch_network">ネットワークから基地局一覧を取得</string>
+    <string name="help_cell_sim_select_all">全基地局を選択 / 選択解除</string>
+    <string name="help_cell_sim_start_stop">基地局シミュレーションを開始 / 停止</string>
+    <string name="help_cell_sim_toggle_select">この基地局をチェックして模擬に含める</string>
+    <string name="help_cell_sim_toggle_select_row">行全体をタップしてこの基地局を選択</string>
+    <string name="help_cell_sim_edit">この基地局情報を編集</string>
+    <string name="help_cell_sim_delete">この基地局を削除</string>
+</resources>

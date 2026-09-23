@@ -1,0 +1,49 @@
+name: Build Xposed Module
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-xposed
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build KailLocationXposed APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install Android SDK, NDK and CMake
+        env:
+          LOCAL_PROPERTIES_PATH: KailLocationXposed/local.properties
+        run: bash .github/scripts/setup-android-sdk.sh
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./KailLocationXposed/gradlew
+
+      - name: Assemble Release
+        working-directory: KailLocationXposed
+        run: ./gradlew :app:assembleRelease --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: kail-location-xposed
+          path: KailLocationXposed/app/build/outputs/apk/**/*.apk
+          if-no-files-found: warn

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_history_back">前のページに戻る</string>
+    <string name="help_history_delete_all">すべての履歴を消去</string>
+    <string name="help_history_clear_search">検索キーワードをクリア</string>
+    <string name="help_history_item">タップで選択、長押しで編集 / 削除メニュー</string>
+</resources>

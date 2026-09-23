@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_faq_back">返回上一页</string>
+    <string name="help_faq_retry">重新加载 FAQ 列表</string>
+    <string name="help_faq_card">点击展开 / 收起问答内容</string>
+</resources>

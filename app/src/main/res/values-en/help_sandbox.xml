@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_sandbox_menu">Open the menu to jump to other modules</string>
+    <string name="help_sandbox_settings">Open sandbox settings</string>
+    <string name="help_sandbox_install">Install / clone a new app</string>
+    <string name="help_sandbox_fab">Install / clone a new app</string>
+    <string name="help_sandbox_app_launch">Tap to launch the app; long-press for more actions</string>
+    <string name="help_sandbox_create_shortcut">Create a home-screen shortcut</string>
+    <string name="help_sandbox_clear_data">Clear app data</string>
+    <string name="help_sandbox_uninstall">Uninstall / delete app</string>
+</resources>

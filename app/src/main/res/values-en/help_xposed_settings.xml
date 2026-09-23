@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_xposed_menu">Open the menu to jump to other modules</string>
+    <string name="help_xposed_gps_satellite">Simulated GPS satellite signal toggle</string>
+    <string name="help_xposed_disable_fused">Disable Fused location</string>
+    <string name="help_xposed_hide_mock">Hide the mocked location marker</string>
+    <string name="help_xposed_disable_wifi_scan">Disable Wi-Fi scanning</string>
+    <string name="help_xposed_downgrade_cdma">Downgrade CDMA signal</string>
+    <string name="help_xposed_anti_pullback">Anti-pullback toggle</string>
+    <string name="help_xposed_min_satellites">Set minimum satellite count</string>
+    <string name="help_xposed_report_interval">Set location report interval</string>
+</resources>
