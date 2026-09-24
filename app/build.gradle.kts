@@ -11,18 +11,18 @@ android {
     namespace = "com.kail.location"
     compileSdk = 36
 
- 
     defaultConfig {
+        applicationId = "com.kail.location"
+        minSdk = 27
+        targetSdk = 36
+        versionCode = 46
+        versionName = "1.7.2"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
         ndk {
-            abiFilters += "arm64-v8a"
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
         }
-    }
-    packagingOptions {
-        // 防止别的 module 塞进 x86 / x86_64
-        exclude("lib/x86/**")
-        exclude("lib/x86_64/**")
-        exclude("lib/armeabi-v7a/**")
-    }
 
         buildConfigField("String", "ADMIN_API_URL", "\"https://adminkaillocation.kaillocation.xyz/admin-api\"")
         buildConfigField("String", "APP_API_URL", "\"https://adminkaillocation.kaillocation.xyz/app-api\"")
