@@ -101,6 +101,12 @@ fun RouteSimulationScreen(
     val isPaused by viewModel.isPaused.collectAsState()
     val runMode by viewModel.runMode.collectAsState()
 
+    // 实时随机状态（服务广播回来的当前模拟值）
+    val liveSpeedKmh by viewModel.liveSpeedKmh.collectAsState()
+    val liveCadenceSpm by viewModel.liveCadenceSpm.collectAsState()
+    val liveSpeedRandom by viewModel.liveSpeedRandom.collectAsState()
+    val liveCadenceRandom by viewModel.liveCadenceRandom.collectAsState()
+
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -231,6 +237,22 @@ fun RouteSimulationScreen(
                                 Icon(Icons.Default.Add, contentDescription = "Add", tint = Color.White)
                             }
                         }
+                    }
+
+                    // 实时随机状态条：模拟中显示当前正在上报的速度 / 步频
+                    if (isSimulating && (liveSpeedKmh != null || liveCadenceSpm != null)) {
+                        LiveStateCard(
+                            speedKmh = liveSpeedKmh,
+                            cadenceSpm = liveCadenceSpm,
+                            speedRandom = liveSpeedRandom,
+                            cadenceRandom = liveCadenceRandom,
+                            speedRange = settings.speedMin to settings.speedMax,
+                            cadenceRange = settings.stepCadenceMinSpm to settings.stepCadenceMaxSpm,
+                            intervalSec = settings.randomIntervalSec,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp, vertical = 8.dp)
+                        )
                     }
 
                     var selectedTab by remember { mutableStateOf(0) }
@@ -910,6 +932,108 @@ fun SettingsDialog(
                     )
                 }
             }
+        }
+    }
+}
+
+/**
+ * 实时模拟状态卡片：显示当前正在上报给目标 App 的速度 / 步频。
+ *
+ * 仅在模拟中且有有效数值时显示。数值来自服务的广播，
+ * 在开启随机区间后每「变化间隔」秒刷新一次。
+ */
+@Composable
+private fun LiveStateCard(
+    speedKmh: Float?,
+    cadenceSpm: Float?,
+    speedRandom: Boolean,
+    cadenceRandom: Boolean,
+    speedRange: Pair<Float, Float>,
+    cadenceRange: Pair<Float, Float>,
+    intervalSec: Float,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f)
+        ),
+        modifier = modifier
+    ) {
+        Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    stringResource(R.string.route_sim_live_title),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                if (speedRandom || cadenceRandom) {
+                    Text(
+                        stringResource(R.string.route_sim_live_interval, intervalSec.toInt()),
+                        fontSize = 11.sp,
+                        color = Color.Gray
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Row(modifier = Modifier.fillMaxWidth()) {
+                if (speedKmh != null) {
+                    LiveStateItem(
+                        label = stringResource(R.string.route_sim_speed_text),
+                        value = "%.1f".format(speedKmh),
+                        unit = "km/h",
+                        range = if (speedRandom) "%.1f~%.1f".format(speedRange.first, speedRange.second) else null,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                if (cadenceSpm != null) {
+                    LiveStateItem(
+                        label = stringResource(R.string.route_sim_cadence_text),
+                        value = "%d".format(cadenceSpm.toInt()),
+                        unit = stringResource(R.string.route_sim_unit_spm),
+                        range = if (cadenceRandom) "%d~%d".format(cadenceRange.first.toInt(), cadenceRange.second.toInt()) else null,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun LiveStateItem(
+    label: String,
+    value: String,
+    unit: String,
+    range: String?,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        Text(label, fontSize = 11.sp, color = Color.Gray)
+        Spacer(modifier = Modifier.height(2.dp))
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(
+                value,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Spacer(modifier = Modifier.width(3.dp))
+            Text(unit, fontSize = 11.sp, color = Color.Gray)
+        }
+        if (range != null) {
+            Text(
+                stringResource(R.string.route_sim_live_range, range),
+                fontSize = 10.sp,
+                color = Color.Gray
+            )
         }
     }
 }

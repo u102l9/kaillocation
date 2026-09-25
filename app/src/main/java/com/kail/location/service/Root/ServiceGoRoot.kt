@@ -669,11 +669,13 @@ class ServiceGoRoot : Service() {
                 mSpeed = kmh.toDouble() / 3.6
                 if (!speedFluctuation) currentSpeedMps = mSpeed
                 normalizeRandomRange()
+                broadcastLiveState()
             }
 
             CONTROL_SET_SPEED_FLUCTUATION -> {
                 speedFluctuation = intent.getBooleanExtra(EXTRA_SPEED_FLUCTUATION, speedFluctuation)
                 if (!speedFluctuation) currentSpeedMps = mSpeed
+                broadcastLiveState()
             }
 
             CONTROL_SET_RANDOM_RANGE -> {
@@ -684,6 +686,7 @@ class ServiceGoRoot : Service() {
                         "cadence=${stepCadenceMinSpm}..${stepCadenceMaxSpm}spm " +
                         "fluct(speed=$speedFluctuation,cadence=$stepCadenceFluctuation) interval=${randomIntervalSec}s"
                 )
+                broadcastLiveState()
             }
 
             CONTROL_APPEND_ROUTE -> runCatching {
@@ -1995,6 +1998,22 @@ class ServiceGoRoot : Service() {
             setPackage(packageName)
         }
         sendBroadcast(intent)
+        broadcastLiveStateCleared()
+    }
+
+    /** 通知 UI 清掉实时数值（模拟已停止）。 */
+    private fun broadcastLiveStateCleared() {
+        runCatching {
+            sendBroadcast(
+                Intent(ServiceConstants.ACTION_LIVE_STATE_CHANGED).apply {
+                    putExtra(ServiceConstants.EXTRA_LIVE_SPEED_KMH, -1f)
+                    putExtra(ServiceConstants.EXTRA_LIVE_CADENCE_SPM, -1f)
+                    putExtra(ServiceConstants.EXTRA_LIVE_SPEED_RANDOM, false)
+                    putExtra(ServiceConstants.EXTRA_LIVE_CADENCE_RANDOM, false)
+                    setPackage(packageName)
+                }
+            )
+        }.onFailure { KailLog.w(this, TAG, "broadcast live state cleared: ${it.message}") }
     }
 
     private fun initGoLocation() {
@@ -2105,6 +2124,8 @@ class ServiceGoRoot : Service() {
         if (lastRandomizeElapsedMs == 0L) {
             lastRandomizeElapsedMs = nowElapsedMs
             applyRandomizedValues()
+            // 首帧无条件广播一次，让 UI 立刻拿到初始值（值未变化时上面不会发）
+            broadcastLiveState()
             return
         }
         val intervalMs = (randomIntervalSec * 1000f).toLong()
@@ -2150,7 +2171,26 @@ class ServiceGoRoot : Service() {
                 this, TAG,
                 "randomize: speed=${"%.2f".format(currentSpeedMps * 3.6)}km/h spm=$stepCadence"
             )
+            broadcastLiveState()
         }
+    }
+
+    /**
+     * 把当前正在模拟的速度 / 步频广播给 UI，方便用户在页面上实时确认。
+     * 仅在数值变化时发送（约每 [randomIntervalSec] 秒一次），开销可忽略。
+     */
+    private fun broadcastLiveState() {
+        runCatching {
+            sendBroadcast(
+                Intent(ServiceConstants.ACTION_LIVE_STATE_CHANGED).apply {
+                    putExtra(ServiceConstants.EXTRA_LIVE_SPEED_KMH, (currentSpeedMps * 3.6).toFloat())
+                    putExtra(ServiceConstants.EXTRA_LIVE_CADENCE_SPM, stepCadence)
+                    putExtra(ServiceConstants.EXTRA_LIVE_SPEED_RANDOM, speedFluctuation)
+                    putExtra(ServiceConstants.EXTRA_LIVE_CADENCE_RANDOM, stepEnabled && stepCadenceFluctuation)
+                    setPackage(packageName)
+                }
+            )
+        }.onFailure { KailLog.w(this, TAG, "broadcast live state: ${it.message}") }
     }
 
     /** 把当前步频配置写入 Provider，供 system_server 的 RootLocationControl 读取。 */

@@ -37,4 +37,11 @@ object ServiceConstants {
     const val ACTION_STATUS_CHANGED = "com.kail.location.service.STATUS_CHANGED"
     const val EXTRA_IS_SIMULATING = "is_simulating"
     const val EXTRA_IS_PAUSED = "is_paused"
+
+    // --- 实时随机状态广播：把当前正在模拟的速度 / 步频回传给 UI ---
+    const val ACTION_LIVE_STATE_CHANGED = "com.kail.location.service.LIVE_STATE_CHANGED"
+    const val EXTRA_LIVE_SPEED_KMH = "live_speed_kmh"
+    const val EXTRA_LIVE_CADENCE_SPM = "live_cadence_spm"
+    const val EXTRA_LIVE_SPEED_RANDOM = "live_speed_random"
+    const val EXTRA_LIVE_CADENCE_RANDOM = "live_cadence_random"
 }

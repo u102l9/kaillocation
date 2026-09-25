@@ -128,6 +128,20 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
     val toastMessage: StateFlow<String?> = _toastMessage.asStateFlow()
     private var startTimeoutJob: kotlinx.coroutines.Job? = null
 
+    // --- 实时随机状态：服务广播回来的「当前正在模拟」的速度 / 步频 ---
+    // null 表示当前没有有效数据（未模拟 / 已停止），UI 不显示。
+    private val _liveSpeedKmh = MutableStateFlow<Float?>(null)
+    val liveSpeedKmh: StateFlow<Float?> = _liveSpeedKmh.asStateFlow()
+
+    private val _liveCadenceSpm = MutableStateFlow<Float?>(null)
+    val liveCadenceSpm: StateFlow<Float?> = _liveCadenceSpm.asStateFlow()
+
+    private val _liveSpeedRandom = MutableStateFlow(false)
+    val liveSpeedRandom: StateFlow<Boolean> = _liveSpeedRandom.asStateFlow()
+
+    private val _liveCadenceRandom = MutableStateFlow(false)
+    val liveCadenceRandom: StateFlow<Boolean> = _liveCadenceRandom.asStateFlow()
+
     private val statusReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action != ServiceConstants.ACTION_STATUS_CHANGED) return
@@ -147,6 +161,20 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
                 .putBoolean("route_sim_is_simulating", isSim || isPau)
                 .putBoolean("route_sim_is_paused", isPau)
                 .apply()
+        }
+    }
+
+    /** 接收服务广播回来的实时速度 / 步频（随机区间模式下会周期性变化）。 */
+    private val liveStateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action != ServiceConstants.ACTION_LIVE_STATE_CHANGED) return
+            val kmh = intent.getFloatExtra(ServiceConstants.EXTRA_LIVE_SPEED_KMH, -1f)
+            val spm = intent.getFloatExtra(ServiceConstants.EXTRA_LIVE_CADENCE_SPM, -1f)
+            _liveSpeedRandom.value = intent.getBooleanExtra(ServiceConstants.EXTRA_LIVE_SPEED_RANDOM, false)
+            _liveCadenceRandom.value = intent.getBooleanExtra(ServiceConstants.EXTRA_LIVE_CADENCE_RANDOM, false)
+            // 负值代表「已停止」，置空让 UI 隐藏
+            _liveSpeedKmh.value = if (kmh < 0f) null else kmh
+            _liveCadenceSpm.value = if (spm < 0f) null else spm
         }
     }
 
@@ -198,6 +226,12 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
             IntentFilter(ServiceConstants.ACTION_STATUS_CHANGED),
             ContextCompat.RECEIVER_NOT_EXPORTED
         )
+        ContextCompat.registerReceiver(
+            application,
+            liveStateReceiver,
+            IntentFilter(ServiceConstants.ACTION_LIVE_STATE_CHANGED),
+            ContextCompat.RECEIVER_NOT_EXPORTED
+        )
 
         suggestionSearch.setOnGetSuggestionResultListener(object : OnGetSuggestionResultListener {
             override fun onGetSuggestionResult(res: SuggestionResult?) {
@@ -224,6 +258,9 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
         startTimeoutJob?.cancel()
         try {
             getApplication<Application>().unregisterReceiver(statusReceiver)
+        } catch (_: Exception) {}
+        try {
+            getApplication<Application>().unregisterReceiver(liveStateReceiver)
         } catch (_: Exception) {}
         suggestionSearch.destroy()
     }
@@ -475,6 +512,11 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
         _isStarting.value = false
         _isSimulating.value = false
         _isPaused.value = false
+        // 清掉实时数值，避免停止后还残留上一次的读数
+        _liveSpeedKmh.value = null
+        _liveCadenceSpm.value = null
+        _liveSpeedRandom.value = false
+        _liveCadenceRandom.value = false
         _runningRoutePoints.value = null
         _runningRouteWaitTimes.value = null
         sharedPreferences.edit()

@@ -887,4 +887,7 @@
     <string name="route_sim_unit_spm">步/分钟</string>
     <string name="route_sim_random_interval">变化间隔</string>
     <string name="route_sim_random_interval_format">%d 秒</string>
+    <string name="route_sim_live_title">当前模拟数据</string>
+    <string name="route_sim_live_interval">每 %d 秒变化</string>
+    <string name="route_sim_live_range">区间 %1$s</string>
 </resources>
