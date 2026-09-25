@@ -444,6 +444,13 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
                 intent.putExtra("EXTRA_STEP_SCHEME", sharedPreferences.getString("setting_sim_scheme", "0")?.toIntOrNull() ?: 0)
                 intent.putExtra("EXTRA_STEP_MODE", sharedPreferences.getInt("setting_step_mode", 0))
                 intent.putExtra("EXTRA_IS_ROUTE_SIMULATION", true)
+                // 随机区间：速度 / 步频 在用户设定区间内周期性取值
+                intent.putExtra(ServiceGoRoot.EXTRA_SPEED_MIN, settings.value.speedMin)
+                intent.putExtra(ServiceGoRoot.EXTRA_SPEED_MAX, settings.value.speedMax)
+                intent.putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_FLUCTUATION, settings.value.stepCadenceFluctuation)
+                intent.putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_MIN, settings.value.stepCadenceMinSpm)
+                intent.putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_MAX, settings.value.stepCadenceMaxSpm)
+                intent.putExtra(ServiceGoRoot.EXTRA_RANDOM_INTERVAL_SEC, settings.value.randomIntervalSec)
             }
             if (ContextCompat.checkSelfPermission(app, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 _isStarting.value = true
@@ -705,12 +712,24 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
         val stepEnabled = prefs.getBoolean("route_sim_step_enabled", _settings.value.stepFreqSimulation)
         val raw = prefs.getFloat("route_sim_step_freq", _settings.value.stepCadenceSpm)
         val stepCadenceSpm = if (raw <= 10f) raw * 60f else raw
+        val speedMin = prefs.getFloat("route_sim_speed_min", (speed * 0.8f))
+        val speedMax = prefs.getFloat("route_sim_speed_max", (speed * 1.2f))
+        val cadFluct = prefs.getBoolean("route_sim_cadence_fluctuation", false)
+        val cadMin = prefs.getFloat("route_sim_cadence_min", (stepCadenceSpm * 0.85f))
+        val cadMax = prefs.getFloat("route_sim_cadence_max", (stepCadenceSpm * 1.15f))
+        val randSec = prefs.getFloat("route_sim_random_interval", 15f)
         _settings.value = _settings.value.copy(
             speed = speed, 
             isLoop = loop, 
             speedFluctuation = speedFluctuation, 
             stepFreqSimulation = stepEnabled, 
-            stepCadenceSpm = stepCadenceSpm
+            stepCadenceSpm = stepCadenceSpm,
+            speedMin = speedMin.coerceAtMost(speedMax),
+            speedMax = speedMax.coerceAtLeast(speedMin),
+            stepCadenceFluctuation = cadFluct,
+            stepCadenceMinSpm = cadMin.coerceAtMost(cadMax),
+            stepCadenceMaxSpm = cadMax.coerceAtLeast(cadMin),
+            randomIntervalSec = randSec.coerceIn(1f, 600f)
         )
     }
 
@@ -750,6 +769,69 @@ class RouteSimulationViewModel(application: Application) : AndroidViewModel(appl
             intent.putExtra(speedFluctuation, enabled)
             app.startService(intent)
         }
+        pushRandomRangeToService()
+    }
+
+    // ------------------------------------------------------------------
+    // 随机区间模拟：速度 / 步频 在用户设定的区间内取值
+    // ------------------------------------------------------------------
+
+    /** 速度随机区间（km/h）。min 会自动 clamp 到不超过 max。 */
+    fun updateSpeedRange(min: Float, max: Float) {
+        val lo = min.coerceAtLeast(0f)
+        val hi = max.coerceAtLeast(lo)
+        _settings.value = _settings.value.copy(speedMin = lo, speedMax = hi)
+        PreferenceManager.getDefaultSharedPreferences(getApplication())
+            .edit().putFloat("route_sim_speed_min", lo).putFloat("route_sim_speed_max", hi).apply()
+        pushRandomRangeToService()
+    }
+
+    /** 是否启用步频随机区间。 */
+    fun updateStepCadenceFluctuation(enabled: Boolean) {
+        _settings.value = _settings.value.copy(stepCadenceFluctuation = enabled)
+        PreferenceManager.getDefaultSharedPreferences(getApplication())
+            .edit().putBoolean("route_sim_cadence_fluctuation", enabled).apply()
+        pushRandomRangeToService()
+    }
+
+    /** 步频随机区间（步/分钟）。 */
+    fun updateStepCadenceRange(min: Float, max: Float) {
+        val lo = min.coerceAtLeast(0f)
+        val hi = max.coerceAtLeast(lo)
+        _settings.value = _settings.value.copy(stepCadenceMinSpm = lo, stepCadenceMaxSpm = hi)
+        PreferenceManager.getDefaultSharedPreferences(getApplication())
+            .edit().putFloat("route_sim_cadence_min", lo).putFloat("route_sim_cadence_max", hi).apply()
+        pushRandomRangeToService()
+    }
+
+    /** 随机取值的变化周期（秒）：每隔这么久重新抽一次值。 */
+    fun updateRandomIntervalSec(sec: Float) {
+        val v = sec.coerceIn(1f, 600f)
+        _settings.value = _settings.value.copy(randomIntervalSec = v)
+        PreferenceManager.getDefaultSharedPreferences(getApplication())
+            .edit().putFloat("route_sim_random_interval", v).apply()
+        pushRandomRangeToService()
+    }
+
+    /** 模拟进行中把最新区间下发给服务（目前只在 root 模式实现）。 */
+    private fun pushRandomRangeToService() {
+        if (!_isSimulating.value) return
+        if (_runMode.value != "root") return
+        val app = getApplication<Application>()
+        val s = _settings.value
+        runCatching {
+            val intent = Intent(app, getServiceClass(_runMode.value)).apply {
+                putExtra("EXTRA_CONTROL_ACTION", ServiceGoRoot.CONTROL_SET_RANDOM_RANGE)
+                putExtra(ServiceGoRoot.EXTRA_SPEED_FLUCTUATION, s.speedFluctuation)
+                putExtra(ServiceGoRoot.EXTRA_SPEED_MIN, s.speedMin)
+                putExtra(ServiceGoRoot.EXTRA_SPEED_MAX, s.speedMax)
+                putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_FLUCTUATION, s.stepCadenceFluctuation)
+                putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_MIN, s.stepCadenceMinSpm)
+                putExtra(ServiceGoRoot.EXTRA_STEP_CADENCE_MAX, s.stepCadenceMaxSpm)
+                putExtra(ServiceGoRoot.EXTRA_RANDOM_INTERVAL_SEC, s.randomIntervalSec)
+            }
+            app.startService(intent)
+        }.onFailure { KailLog.w(app, TAG, "push random range: ${it.message}") }
     }
 
     fun updateStepFreqSimulation(enabled: Boolean) {

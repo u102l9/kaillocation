@@ -21,19 +21,31 @@ data class RouteInfo(
 /**
  * 路线模拟设置的数据类。
  *
- * @property speed 模拟速度（km/h）。
+ * @property speed 模拟速度基准值（km/h）；未开启随机区间时直接作为上报速度。
  * @property mode 交通方式（如步行、骑行）。
- * @property speedFluctuation 是否模拟速度波动。
+ * @property speedFluctuation 是否启用速度随机区间。
+ * @property speedMin 速度随机区间下限（km/h）。
+ * @property speedMax 速度随机区间上限（km/h）。
  * @property stepFreqSimulation 是否模拟步频。
- * @property stepCadenceSpm 步频（步/分钟）。
+ * @property stepCadenceSpm 步频基准值（步/分钟）。
+ * @property stepCadenceFluctuation 是否启用步频随机区间。
+ * @property stepCadenceMinSpm 步频随机区间下限（步/分钟）。
+ * @property stepCadenceMaxSpm 步频随机区间上限（步/分钟）。
+ * @property randomIntervalSec 随机取值的变化周期（秒）：每隔这么久重新抽一次值。
  * @property isLoop 是否循环模拟。
  */
 data class SimulationSettings(
     var speed: Float = 6.5f,
     var mode: TransportMode = TransportMode.Bike,
     var speedFluctuation: Boolean = true,
+    var speedMin: Float = 5.0f,
+    var speedMax: Float = 8.0f,
     var stepFreqSimulation: Boolean = false,
     var stepCadenceSpm: Float = 120f,
+    var stepCadenceFluctuation: Boolean = false,
+    var stepCadenceMinSpm: Float = 110f,
+    var stepCadenceMaxSpm: Float = 140f,
+    var randomIntervalSec: Float = 15f,
     var isLoop: Boolean = true
 )
 

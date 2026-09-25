@@ -879,4 +879,12 @@
 
     <!-- Welcome -->
     <string name="welcome_cannot_open_settings">无法打开设置页面，请手动开启</string>
+    <string name="route_sim_speed_range">速度随机区间</string>
+    <string name="route_sim_cadence_random">步频随机</string>
+    <string name="route_sim_cadence_range">步频随机区间</string>
+    <string name="route_sim_range_min">最小</string>
+    <string name="route_sim_range_max">最大</string>
+    <string name="route_sim_unit_spm">步/分钟</string>
+    <string name="route_sim_random_interval">变化间隔</string>
+    <string name="route_sim_random_interval_format">%d 秒</string>
 </resources>

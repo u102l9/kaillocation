@@ -870,4 +870,12 @@
     <string name="nav_sim_plan">Plan route</string>
     <string name="nav_sim_planned">Planned</string>
     <string name="nav_sim_plan_title">Set start and end point</string>
+    <string name="route_sim_speed_range">Speed random range</string>
+    <string name="route_sim_cadence_random">Cadence randomization</string>
+    <string name="route_sim_cadence_range">Cadence random range</string>
+    <string name="route_sim_range_min">Min</string>
+    <string name="route_sim_range_max">Max</string>
+    <string name="route_sim_unit_spm">spm</string>
+    <string name="route_sim_random_interval">Change interval</string>
+    <string name="route_sim_random_interval_format">%d s</string>
 </resources>

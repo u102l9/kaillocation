@@ -457,8 +457,18 @@ fun RouteSimulationScreen(
                 if (settings.speed != it.speed) viewModel.updateSpeed(it.speed)
                 if (settings.isLoop != it.isLoop) viewModel.updateLoop(it.isLoop)
                 if (settings.speedFluctuation != it.speedFluctuation) viewModel.updateSpeedFluctuation(it.speedFluctuation)
+                if (settings.speedMin != it.speedMin || settings.speedMax != it.speedMax) {
+                    viewModel.updateSpeedRange(it.speedMin, it.speedMax)
+                }
                 if (settings.stepFreqSimulation != it.stepFreqSimulation) viewModel.updateStepFreqSimulation(it.stepFreqSimulation)
                 if (settings.stepCadenceSpm != it.stepCadenceSpm) viewModel.updateStepCadenceSpm(it.stepCadenceSpm)
+                if (settings.stepCadenceFluctuation != it.stepCadenceFluctuation) {
+                    viewModel.updateStepCadenceFluctuation(it.stepCadenceFluctuation)
+                }
+                if (settings.stepCadenceMinSpm != it.stepCadenceMinSpm || settings.stepCadenceMaxSpm != it.stepCadenceMaxSpm) {
+                    viewModel.updateStepCadenceRange(it.stepCadenceMinSpm, it.stepCadenceMaxSpm)
+                }
+                if (settings.randomIntervalSec != it.randomIntervalSec) viewModel.updateRandomIntervalSec(it.randomIntervalSec)
                 if (settings.mode != it.mode) viewModel.updateMode(it.mode)
             }
         )
@@ -769,6 +779,22 @@ fun SettingsDialog(
                     )
                 }
 
+                // 速度随机区间
+                if (settings.speedFluctuation) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    RangeRow(
+                        label = stringResource(R.string.route_sim_speed_range),
+                        minText = "%.1f".format(settings.speedMin),
+                        maxText = "%.1f".format(settings.speedMax),
+                        unit = "km/h",
+                        valueRange = 0f..200f,
+                        min = settings.speedMin,
+                        max = settings.speedMax,
+                        onMinChange = { onSettingsChange(settings.copy(speedMin = (it * 10).toInt() / 10f)) },
+                        onMaxChange = { onSettingsChange(settings.copy(speedMax = (it * 10).toInt() / 10f)) }
+                    )
+                }
+
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -824,8 +850,132 @@ fun SettingsDialog(
                             activeTrackColor = MaterialTheme.colorScheme.primary
                         )
                     )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    // 步频随机区间
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(stringResource(R.string.route_sim_cadence_random), fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurface)
+                        Switch(
+                            checked = settings.stepCadenceFluctuation,
+                            onCheckedChange = { onSettingsChange(settings.copy(stepCadenceFluctuation = it)) },
+                            colors = SwitchDefaults.colors(
+                                checkedThumbColor = Color.White,
+                                checkedTrackColor = MaterialTheme.colorScheme.primary
+                            ),
+                            modifier = Modifier.scale(0.8f)
+                        )
+                    }
+
+                    if (settings.stepCadenceFluctuation) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                        RangeRow(
+                            label = stringResource(R.string.route_sim_cadence_range),
+                            minText = "%d".format(settings.stepCadenceMinSpm.toInt()),
+                            maxText = "%d".format(settings.stepCadenceMaxSpm.toInt()),
+                            unit = stringResource(R.string.route_sim_unit_spm),
+                            valueRange = 60f..240f,
+                            min = settings.stepCadenceMinSpm,
+                            max = settings.stepCadenceMaxSpm,
+                            onMinChange = { onSettingsChange(settings.copy(stepCadenceMinSpm = (it + 0.5f).toInt().toFloat())) },
+                            onMaxChange = { onSettingsChange(settings.copy(stepCadenceMaxSpm = (it + 0.5f).toInt().toFloat())) }
+                        )
+                    }
+                }
+
+                // 变化周期（速度或步频任一开启随机时显示）
+                if (settings.speedFluctuation || (settings.stepFreqSimulation && settings.stepCadenceFluctuation)) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    val sec = settings.randomIntervalSec
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(stringResource(R.string.route_sim_random_interval), fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurface)
+                        Text(stringResource(R.string.route_sim_random_interval_format, sec.toInt()), fontSize = 14.sp, color = MaterialTheme.colorScheme.primary)
+                    }
+                    Slider(
+                        value = sec,
+                        onValueChange = { onSettingsChange(settings.copy(randomIntervalSec = (it + 0.5f).toInt().toFloat())) },
+                        valueRange = 1f..120f,
+                        colors = SliderDefaults.colors(
+                            thumbColor = MaterialTheme.colorScheme.primary,
+                            activeTrackColor = MaterialTheme.colorScheme.primary
+                        )
+                    )
                 }
             }
+        }
+    }
+}
+
+/**
+ * 随机区间的「最小值 / 最大值」双滑杆。
+ * 拖动时自动保证 min <= max，避免出现非法区间。
+ */
+@Composable
+private fun RangeRow(
+    label: String,
+    minText: String,
+    maxText: String,
+    unit: String,
+    valueRange: ClosedFloatingPointRange<Float>,
+    min: Float,
+    max: Float,
+    onMinChange: (Float) -> Unit,
+    onMaxChange: (Float) -> Unit
+) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(label, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                "$minText ~ $maxText $unit",
+                fontSize = 13.sp,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(stringResource(R.string.route_sim_range_min), fontSize = 12.sp, color = Color.Gray)
+            Slider(
+                value = min.coerceIn(valueRange),
+                onValueChange = { onMinChange(it.coerceAtMost(max)) },
+                valueRange = valueRange,
+                modifier = Modifier.weight(1f),
+                colors = SliderDefaults.colors(
+                    thumbColor = MaterialTheme.colorScheme.primary,
+                    activeTrackColor = MaterialTheme.colorScheme.primary
+                )
+            )
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(stringResource(R.string.route_sim_range_max), fontSize = 12.sp, color = Color.Gray)
+            Slider(
+                value = max.coerceIn(valueRange),
+                onValueChange = { onMaxChange(it.coerceAtLeast(min)) },
+                valueRange = valueRange,
+                modifier = Modifier.weight(1f),
+                colors = SliderDefaults.colors(
+                    thumbColor = MaterialTheme.colorScheme.primary,
+                    activeTrackColor = MaterialTheme.colorScheme.primary
+                )
+            )
         }
     }
 }

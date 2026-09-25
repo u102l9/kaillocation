@@ -26,10 +26,7 @@ object AuthManager {
 
     val isLoggedIn: Boolean get() = _isLoggedIn.value
     val email: String get() = _email.value
-
-    // PATCH: 硬编码 true，任何读取订阅状态的调用点都拿到已订阅
-    val isSubscribed: Boolean get() = true
-
+    val isSubscribed: Boolean get() = _isSubscribed.value
     val isLoggedInState get() = _isLoggedIn
     val emailState get() = _email
     val isSubscribedState get() = _isSubscribed
@@ -46,14 +43,7 @@ object AuthManager {
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         _isLoggedIn.value = prefs.getBoolean(KEY_IS_LOGGED_IN, false)
         _email.value = prefs.getString(KEY_EMAIL, "") ?: ""
-
-        // PATCH: 不再从 prefs 读订阅标志，直接置 true 并落盘 + 清空过期时间
-        _isSubscribed.value = true
-        prefs.edit()
-            .putBoolean(KEY_SUBSCRIBED, true)
-            .putString(KEY_SUB_EXPIRES, "")
-            .apply()
-
+        _isSubscribed.value = prefs.getBoolean(KEY_SUBSCRIBED, false)
         isSubscriptionActive()
     }
 
@@ -68,17 +58,31 @@ object AuthManager {
         _email.value = email
     }
 
-    // PATCH: 忽略传入的 subscribed 与 expiresAt，一律写 true + 空过期时间
     fun updateSubscription(subscribed: Boolean, expiresAt: String = "") {
         prefs.edit()
-            .putBoolean(KEY_SUBSCRIBED, true)
-            .putString(KEY_SUB_EXPIRES, "")
+            .putBoolean(KEY_SUBSCRIBED, subscribed)
+            .putString(KEY_SUB_EXPIRES, expiresAt)
             .apply()
-        _isSubscribed.value = true
+        _isSubscribed.value = subscribed
     }
 
-    // PATCH: 直接返回 true，不再校验过期时间
-    fun isSubscriptionActive(): Boolean = true
+    /**
+     * 校验订阅是否真正有效：既检查 isSubscribed 标志，也检查过期时间。
+     * 如果本地记录已过期，自动将 _isSubscribed 置为 false。
+     */
+    fun isSubscriptionActive(): Boolean {
+        if (!_isSubscribed.value) return false
+        val expiresAt = prefs.getString(KEY_SUB_EXPIRES, null) ?: return true
+        if (expiresAt.isBlank()) return true
+
+        val expireDate = parseDate(expiresAt) ?: return true
+        if (Date().after(expireDate)) {
+            _isSubscribed.value = false
+            prefs.edit().putBoolean(KEY_SUBSCRIBED, false).apply()
+            return false
+        }
+        return true
+    }
 
     private val dateFormats = arrayOf(
         "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",

@@ -127,4 +127,30 @@ cd KailLocationXposed && ./gradlew :app:assembleRelease   # Xposed 模块
    会打 warning 并跳过，此时沿用仓库里已有的 `app/src/main/assets/inject.dex`，构建不会失败。
 8. **耗时**：首次要拉 Gradle + AGP + 全部依赖 + NDK + CMake，约 10–25 分钟；
    已用 `gradle/actions/setup-gradle` 缓存，第二次快很多。私有仓库每月 2000 分钟额度，别反复全量重编。
-9. **无害警告**：日志里 `setup-java v4 is deprecated`、`Node.js 20 is deprecated` 只是提示，不影响构建。
+9. **`setup-java@v5` 若报参数错误**：改回 `actions/setup-java@v4` 即可（v4 只是弃用、仍能跑）。
+
+## 七、Runner 环境的三条提示（都不影响打包）
+
+CI 日志里常见的三条提示，逐条说明：
+
+| 提示 | 是否影响构建 | 处理 |
+| --- | --- | --- |
+| `Node.js 20 is deprecated ... forced to run on Node.js 24` | **不影响** | Runner 已自动改用 Node 24 执行这些 action，功能正常，只是提醒 |
+| `setup-java v4 is deprecated ... migrate to v5` | **目前不影响** | 已升级到 `setup-java@v5` |
+| `ubuntu-latest will migrate to Ubuntu 26.04` | **现在不影响，11 月后有风险** | 已固定为 `ubuntu-24.04` |
+
+细节：
+
+- **Node 20 → Node 24**：GitHub 已把 Node 20 的移除日期定在 2026-09-23，Runner 从 2026-06-16 起默认用 Node 24。
+  旧版 action 会被"强制在 Node 24 上运行"，属于向前兼容处理，不会中断构建。
+  真正需要担心的是某个 action 在 Node 24 上存在真实不兼容——目前这四个（checkout / setup-java /
+  upload-artifact / setup-gradle）都是常见 action，未见异常。
+- **setup-java v4 弃用**：v4 已不再接收更新，所以升级到 v5 是官方建议方向，已改。
+- **ubuntu-latest → Ubuntu 26.04**：官方计划 2026-10-19 起分批迁移、11-19 完成。
+  Android 构建牵涉 NDK / CMake / 系统库，跨大版本 Ubuntu 有可能踩到兼容问题，
+  所以这里直接写死 `ubuntu-24.04`，环境可预期，也顺带消掉这条提示。
+
+> 说明：`actions/checkout`、`actions/upload-artifact`、`gradle/actions` 仍保持 `@v4`。
+> 它们只是 Node 运行时提示，功能正常；我没有改成更高主版本号，是因为未能可靠确认其最新主版本，
+> 写错会让 workflow 直接解析失败。想升级的话，在仓库 Actions 页面或各 action 的 releases 页
+> 确认最新 tag 后自行替换即可（改法就是 `uses:` 后面那一行）。

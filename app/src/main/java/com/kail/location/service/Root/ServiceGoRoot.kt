@@ -115,6 +115,18 @@ class ServiceGoRoot : Service() {
     private var stepMode: Int = 0
     private var stepScheme: Int = 0
 
+    // --- 随机区间模拟（路线模拟：速度 / 步频 在用户设定区间内周期性取值）---
+    // 目的：让上报给目标 App 的配速与步频不再是恒定值，而是在区间内自然变化。
+    private var speedMinKmh: Float = -1f
+    private var speedMaxKmh: Float = -1f
+    private var stepCadenceFluctuation: Boolean = false
+    private var stepCadenceMinSpm: Float = -1f
+    private var stepCadenceMaxSpm: Float = -1f
+    private var randomIntervalSec: Float = 15f
+    private var lastRandomizeElapsedMs: Long = 0L
+    /** 当前生效速度（m/s）：随机开启时为区间内抽到的值，否则等于 [mSpeed]。 */
+    @Volatile private var currentSpeedMps: Double = mSpeed
+
     @Volatile private var nativeHookReady: Boolean = false
     @Volatile private var nativeHookAttempted: Boolean = false
     @Volatile private var rootControlActive: Boolean = false
@@ -239,6 +251,14 @@ class ServiceGoRoot : Service() {
         const val EXTRA_HIDE_APPLIST = "EXTRA_HIDE_APPLIST"
         const val EXTRA_HIDE_PACKAGES = "EXTRA_HIDE_PACKAGES"
 
+        // 随机区间模拟（速度 / 步频）
+        const val EXTRA_SPEED_MIN = "EXTRA_SPEED_MIN"
+        const val EXTRA_SPEED_MAX = "EXTRA_SPEED_MAX"
+        const val EXTRA_STEP_CADENCE_FLUCTUATION = "EXTRA_STEP_CADENCE_FLUCTUATION"
+        const val EXTRA_STEP_CADENCE_MIN = "EXTRA_STEP_CADENCE_MIN"
+        const val EXTRA_STEP_CADENCE_MAX = "EXTRA_STEP_CADENCE_MAX"
+        const val EXTRA_RANDOM_INTERVAL_SEC = "EXTRA_RANDOM_INTERVAL_SEC"
+
         const val CONTROL_PAUSE = ServiceConstants.CONTROL_PAUSE
         const val CONTROL_RESUME = ServiceConstants.CONTROL_RESUME
         const val CONTROL_STOP = ServiceConstants.CONTROL_STOP
@@ -247,6 +267,7 @@ class ServiceGoRoot : Service() {
         const val CONTROL_SET_SPEED_FLUCTUATION = ServiceConstants.CONTROL_SET_SPEED_FLUCTUATION
         const val CONTROL_APPEND_ROUTE = ServiceConstants.CONTROL_APPEND_ROUTE
         const val CONTROL_SET_STEP = "set_step"
+        const val CONTROL_SET_RANDOM_RANGE = "set_random_range"
         const val CONTROL_STOP_WIFI = "stop_wifi"
         const val CONTROL_SET_WIFI = "set_wifi"
         const val CONTROL_STOP_CELL = "stop_cell"
@@ -383,6 +404,7 @@ class ServiceGoRoot : Service() {
             mCurAlt = intent.getDoubleExtra(LocationPickerActivity.ALT_MSG_ID, DEFAULT_ALT)
             val joystickEnabled = intent.getBooleanExtra(EXTRA_JOYSTICK_ENABLED, false)
             mSpeed = intent.getFloatExtra(EXTRA_ROUTE_SPEED, mSpeed.toFloat()).toDouble() / 3.6
+            if (!speedFluctuation) currentSpeedMps = mSpeed
 
             val routeArray = intent.getDoubleArrayExtra(EXTRA_ROUTE_POINTS)
             if (routeArray != null && routeArray.size >= 2) {
@@ -403,6 +425,7 @@ class ServiceGoRoot : Service() {
             stepCadence = intent.getFloatExtra(EXTRA_STEP_FREQ, stepCadence)
             stepMode = intent.getIntExtra(EXTRA_STEP_MODE, stepMode)
             stepScheme = intent.getIntExtra(EXTRA_STEP_SCHEME, stepScheme)
+            readRandomRangeExtras(intent)
 
             KailLog.i(this, TAG, "onStartCommand lat=$mCurLat lng=$mCurLng wifiOnly=$modeWifiOnly cellOnly=$modeCellOnly step=$stepEnabled spm=$stepCadence")
 
@@ -644,10 +667,23 @@ class ServiceGoRoot : Service() {
             CONTROL_SET_SPEED -> {
                 val kmh = intent.getFloatExtra(EXTRA_ROUTE_SPEED, (mSpeed * 3.6).toFloat())
                 mSpeed = kmh.toDouble() / 3.6
+                if (!speedFluctuation) currentSpeedMps = mSpeed
+                normalizeRandomRange()
             }
 
             CONTROL_SET_SPEED_FLUCTUATION -> {
                 speedFluctuation = intent.getBooleanExtra(EXTRA_SPEED_FLUCTUATION, speedFluctuation)
+                if (!speedFluctuation) currentSpeedMps = mSpeed
+            }
+
+            CONTROL_SET_RANDOM_RANGE -> {
+                readRandomRangeExtras(intent)
+                KailLog.i(
+                    this, TAG,
+                    "random range: speed=${speedMinKmh}..${speedMaxKmh}km/h " +
+                        "cadence=${stepCadenceMinSpm}..${stepCadenceMaxSpm}spm " +
+                        "fluct(speed=$speedFluctuation,cadence=$stepCadenceFluctuation) interval=${randomIntervalSec}s"
+                )
             }
 
             CONTROL_APPEND_ROUTE -> runCatching {
@@ -1498,7 +1534,7 @@ class ServiceGoRoot : Service() {
                 "lng=$mCurLng\n" +
                 "alt=$mCurAlt\n" +
                 "bearing=$mCurBea\n" +
-                "speed=$mSpeed\n" +
+                "speed=$currentSpeedMps\n" +
                 "interval=${currentLocationUpdateIntervalMs()}\n" +
                 stepContent
         } else {
@@ -1912,7 +1948,7 @@ class ServiceGoRoot : Service() {
                     lng,
                     mCurAlt,
                     mCurBea.toDouble(),
-                    mSpeed,
+                    currentSpeedMps,
                     1.0,
                     0,
                     0
@@ -1978,11 +2014,10 @@ class ServiceGoRoot : Service() {
                     lastRouteTickElapsedMs = now
                     if (!isStop) {
                         if (mRouteEngine.isActive) {
-                            val speedForStep = if (speedFluctuation) {
-                                GeoPredict.randomInRangeWithMean(mSpeed * 0.5, mSpeed * 1.5, mSpeed)
-                            } else {
-                                mSpeed
-                            }
+                            // 每 randomIntervalSec 秒重抽一次速度 / 步频；
+                            // currentSpeedMps 同时用于推进路线与上报给目标 App 的 speed 字段。
+                            maybeRandomize(now)
+                            val speedForStep = currentSpeedMps
                             mRouteEngine.advance(speedForStep * (elapsedMs / 1000.0))
                             mCurLng = mRouteEngine.currentLng
                             mCurLat = mRouteEngine.currentLat
@@ -2011,6 +2046,127 @@ class ServiceGoRoot : Service() {
         }
     }
 
+    // ------------------------------------------------------------------
+    // 随机区间模拟：速度 / 步频 在用户设定的区间内周期性取值
+    //
+    // 背景：原实现里 speedFluctuation 只随机了「推进路线用的位移速度」，
+    // 而上报给目标 App 的 speed 字段（控制文件 / ashmem）始终是基准值 mSpeed，
+    // 步频更是全程固定。所以目标 App 读到的配速与步频是一条直线，很假。
+    // 这里把两者都纳入随机：每 randomIntervalSec 秒重新抽一次值，
+    // 抽到的值同时用于「推进路线」和「上报字段」。
+    // ------------------------------------------------------------------
+
+    /** 从 Intent 读取用户设定的随机区间；未提供的字段保持原值。 */
+    private fun readRandomRangeExtras(intent: Intent) {
+        speedMinKmh = intent.getFloatExtra(EXTRA_SPEED_MIN, speedMinKmh)
+        speedMaxKmh = intent.getFloatExtra(EXTRA_SPEED_MAX, speedMaxKmh)
+        stepCadenceFluctuation = intent.getBooleanExtra(EXTRA_STEP_CADENCE_FLUCTUATION, stepCadenceFluctuation)
+        stepCadenceMinSpm = intent.getFloatExtra(EXTRA_STEP_CADENCE_MIN, stepCadenceMinSpm)
+        stepCadenceMaxSpm = intent.getFloatExtra(EXTRA_STEP_CADENCE_MAX, stepCadenceMaxSpm)
+        randomIntervalSec = intent.getFloatExtra(EXTRA_RANDOM_INTERVAL_SEC, randomIntervalSec)
+        if (randomIntervalSec < 1f) randomIntervalSec = 1f
+        normalizeRandomRange()
+    }
+
+    /**
+     * 保证区间合法（min <= max、非负）。
+     * 用户未设置（初始 -1）时回退到以基准值为中心的 ±20% 区间。
+     */
+    private fun normalizeRandomRange() {
+        val baseKmh = (mSpeed * 3.6).toFloat()
+        if (speedMinKmh < 0f || speedMaxKmh < 0f) {
+            speedMinKmh = baseKmh * 0.8f
+            speedMaxKmh = baseKmh * 1.2f
+        }
+        if (speedMaxKmh < speedMinKmh) {
+            val t = speedMinKmh; speedMinKmh = speedMaxKmh; speedMaxKmh = t
+        }
+        if (speedMaxKmh <= 0f) {
+            speedMinKmh = baseKmh; speedMaxKmh = baseKmh
+        }
+
+        if (stepCadenceMinSpm < 0f || stepCadenceMaxSpm < 0f) {
+            stepCadenceMinSpm = stepCadence * 0.85f
+            stepCadenceMaxSpm = stepCadence * 1.15f
+        }
+        if (stepCadenceMaxSpm < stepCadenceMinSpm) {
+            val t = stepCadenceMinSpm; stepCadenceMinSpm = stepCadenceMaxSpm; stepCadenceMaxSpm = t
+        }
+        if (stepCadenceMaxSpm <= 0f) {
+            stepCadenceMinSpm = stepCadence; stepCadenceMaxSpm = stepCadence
+        }
+    }
+
+    /**
+     * 每 [randomIntervalSec] 秒从区间内重新抽一次速度与步频。
+     * 由位置循环每次 tick 调用；未到周期则直接返回，开销可忽略。
+     */
+    private fun maybeRandomize(nowElapsedMs: Long) {
+        if (lastRandomizeElapsedMs == 0L) {
+            lastRandomizeElapsedMs = nowElapsedMs
+            applyRandomizedValues()
+            return
+        }
+        val intervalMs = (randomIntervalSec * 1000f).toLong()
+        if (intervalMs <= 0L) return
+        if (nowElapsedMs - lastRandomizeElapsedMs < intervalMs) return
+        lastRandomizeElapsedMs = nowElapsedMs
+        applyRandomizedValues()
+    }
+
+    private fun applyRandomizedValues() {
+        // ---- 速度 ----
+        val newSpeedMps = if (speedFluctuation && speedMaxKmh > speedMinKmh) {
+            val kmh = speedMinKmh + kotlin.random.Random.nextFloat() * (speedMaxKmh - speedMinKmh)
+            kmh.toDouble() / 3.6
+        } else {
+            mSpeed
+        }
+        val speedChanged = kotlin.math.abs(newSpeedMps - currentSpeedMps) > 1e-6
+        currentSpeedMps = newSpeedMps
+
+        // ---- 步频 ----
+        var cadenceChanged = false
+        if (stepEnabled && stepCadenceFluctuation && stepCadenceMaxSpm > stepCadenceMinSpm) {
+            val spm = stepCadenceMinSpm + kotlin.random.Random.nextFloat() * (stepCadenceMaxSpm - stepCadenceMinSpm)
+            val newCadence = (spm + 0.5f).toInt().toFloat()
+            if (newCadence != stepCadence) {
+                stepCadence = newCadence
+                cadenceChanged = true
+                // Provider 通道（system_server 直接 call 取配置）必须同步更新，
+                // 否则走 ashmem 快速路径时步频永远不会变。
+                pushStepConfigToProvider()
+                runCatching {
+                    if (nativeHookReady) {
+                        NativeSensorHook.nativeSetRouteSimulation(true, stepCadence, stepMode)
+                        NativeSensorHook.nativeSetGaitParams(stepCadence, stepMode, stepScheme, true)
+                    }
+                }.onFailure { KailLog.w(this, TAG, "randomize cadence (native): ${it.message}") }
+            }
+        }
+
+        if (speedChanged || cadenceChanged) {
+            KailLog.i(
+                this, TAG,
+                "randomize: speed=${"%.2f".format(currentSpeedMps * 3.6)}km/h spm=$stepCadence"
+            )
+        }
+    }
+
+    /** 把当前步频配置写入 Provider，供 system_server 的 RootLocationControl 读取。 */
+    private fun pushStepConfigToProvider() {
+        val stepContent = if (stepEnabled) {
+            "step_enabled=1\n" +
+                "step_spm=$stepCadence\n" +
+                "step_mode=$stepMode\n" +
+                "step_scheme=$stepScheme\n"
+        } else {
+            "step_enabled=0\n"
+        }
+        runCatching { LocationShmProvider.setConfig(LocationShm.PROVIDER_KEY_STEP_CONFIG, stepContent) }
+            .onFailure { KailLog.w(this, TAG, "push step config: ${it.message}") }
+    }
+
     private fun currentLocationUpdateIntervalMs(): Long {
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         return (prefs.getString("setting_report_interval", DEFAULT_LOCATION_UPDATE_INTERVAL_MS.toString())
@@ -2023,6 +2179,8 @@ class ServiceGoRoot : Service() {
         if (locationLoopStarted) return
         locationLoopStarted = true
         lastRouteTickElapsedMs = SystemClock.elapsedRealtime()
+        // 每轮开始重新抽一次，避免沿用上一轮的末尾值
+        lastRandomizeElapsedMs = 0L
         mLocHandler.sendEmptyMessage(HANDLER_MSG_ID)
         broadcastStatus()
     }
@@ -2076,6 +2234,7 @@ class ServiceGoRoot : Service() {
         mJoystickManager = JoystickWindowManager(this, mJoystickViewModel, object : JoystickViewModel.ActionListener {
             override fun onMoveInfo(speed: Double, disLng: Double, disLat: Double, angle: Double) {
                 mSpeed = speed
+                if (!speedFluctuation) currentSpeedMps = speed
                 val next = GeoPredict.nextByDisplacementKm(mCurLng, mCurLat, disLng, disLat)
                 mCurLng = next.first
                 mCurLat = next.second
@@ -2103,6 +2262,7 @@ class ServiceGoRoot : Service() {
 
             override fun onRouteSpeedChange(speed: Double) {
                 mSpeed = speed / 3.6
+                if (!speedFluctuation) currentSpeedMps = mSpeed
             }
         })
     }
