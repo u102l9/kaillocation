@@ -17,6 +17,14 @@ class RouteEngine {
 
     private companion object {
         const val TAG = "RouteEngine"
+
+        // 防检测绕行的阶段（必须是 companion object 内的 const：
+        // Kotlin 规定 const val 只能出现在顶层 / object / companion object，
+        // 普通 class 类体内声明会报 "Const 'val' is only allowed on..."）
+        const val PHASE_NONE = 0
+        const val PHASE_OUT = 1
+        const val PHASE_HOLD = 2
+        const val PHASE_BACK = 3
     }
 
     private val routePoints: MutableList<Pair<Double, Double>> = mutableListOf()
@@ -64,11 +72,6 @@ class RouteEngine {
     private var detourHoldMaxSec: Float = 45f
     private var detourGapMinSec: Float = 60f
     private var detourGapMaxSec: Float = 180f
-
-    private const val PHASE_NONE = 0
-    private const val PHASE_OUT = 1
-    private const val PHASE_HOLD = 2
-    private const val PHASE_BACK = 3
 
     /** 已完成圈数；0 表示还在第一圈（第一圈不绕行）。 */
     private var lapCount: Int = 0
