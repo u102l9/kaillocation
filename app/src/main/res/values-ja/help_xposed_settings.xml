@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_xposed_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_xposed_gps_satellite">GPS衛星信号の模擬スイッチ</string>
+    <string name="help_xposed_disable_fused">Fused位置情報を無効化</string>
+    <string name="help_xposed_hide_mock">模擬位置マーカーを隠す</string>
+    <string name="help_xposed_disable_wifi_scan">Wi-Fiスキャンを無効化</string>
+    <string name="help_xposed_downgrade_cdma">CDMA信号をダウングレード</string>
+    <string name="help_xposed_anti_pullback">引き戻し防止スイッチ</string>
+    <string name="help_xposed_min_satellites">最小衛星数を設定</string>
+    <string name="help_xposed_report_interval">位置報告間隔を設定</string>
+</resources>

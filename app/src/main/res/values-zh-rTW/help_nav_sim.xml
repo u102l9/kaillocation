@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_sim_menu">開啟側邊選單</string>
+    <string name="help_nav_sim_clear_points">清空起終點</string>
+    <string name="help_nav_sim_plan_start">規劃路線或開始模擬</string>
+    <string name="help_nav_sim_pause_resume">暫停或繼續模擬</string>
+    <string name="help_nav_sim_stop">停止模擬</string>
+    <string name="help_nav_sim_multi_route">開啟或關閉多路線模式</string>
+    <string name="help_nav_sim_speed">設定模擬速度</string>
+    <string name="help_nav_sim_plan_fab">一鍵規劃路線</string>
+    <string name="help_nav_sim_tab_favorites">收藏路線標籤頁</string>
+    <string name="help_nav_sim_tab_history">歷史路線標籤頁</string>
+    <string name="help_nav_sim_search">搜尋歷史路線</string>
+    <string name="help_nav_sim_clear_search">清除搜尋內容</string>
+    <string name="help_nav_sim_history_select">點擊選擇歷史路線</string>
+    <string name="help_nav_sim_history_rename">重新命名歷史路線</string>
+    <string name="help_nav_sim_history_delete">刪除歷史路線</string>
+    <string name="help_nav_sim_history_favorite">收藏 / 取消收藏</string>
+    <string name="help_nav_sim_lock_point">鎖定該點，下次規劃時保留</string>
+    <string name="help_nav_sim_use_my_location">固定使用目前定位，每次自動更新</string>
+</resources>

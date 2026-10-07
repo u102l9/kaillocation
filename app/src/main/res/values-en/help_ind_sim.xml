@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_ind_sim_menu">Open the menu</string>
+    <string name="help_ind_sim_target_apps">Select apps to simulate</string>
+    <string name="help_ind_sim_toggle">Start / stop simulation</string>
+    <string name="help_ind_sim_add_app">Add an app to simulate</string>
+    <string name="help_ind_sim_remove_app">Remove this app</string>
+</resources>

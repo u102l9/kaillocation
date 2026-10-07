@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_plan_back">前のページに戻る</string>
+    <string name="help_nav_plan_search">場所を検索して出発点 / 終点に設定</string>
+    <string name="help_nav_plan_locate">現在地に移動</string>
+    <string name="help_nav_plan_zoom_in">地図を拡大</string>
+    <string name="help_nav_plan_zoom_out">地図を縮小</string>
+    <string name="help_nav_plan_undo">最後の操作を取り消し（待機ポイント→出発点 / 終点の順）</string>
+    <string name="help_nav_plan_wait">最新の待機ポイントに待ち時間を設定</string>
+    <string name="help_nav_plan_drop">中央の十字をタップして出発点 / 終点を配置し、計画後に待機ポイントを追加</string>
+    <string name="help_nav_plan_confirm">ルートを確定してシミュレーション開始</string>
+    <string name="help_nav_plan_clear">検索内容をクリア</string>
+    <string name="help_nav_plan_result">検索結果をタップして出発点 / 終点に設定</string>
+</resources>

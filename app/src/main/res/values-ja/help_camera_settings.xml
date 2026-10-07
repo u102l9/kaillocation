@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_settings_back">前のページに戻る</string>
+    <string name="help_camera_settings_source_local">ローカルの動画 / 画像をソースに使用</string>
+    <string name="help_camera_settings_source_stream">ネットワークストリームをソースに使用</string>
+    <string name="help_camera_settings_stream_url">ストリームURLを入力</string>
+    <string name="help_camera_settings_mode_video">動画置換モード</string>
+    <string name="help_camera_settings_mode_image">画像置換モード</string>
+    <string name="help_camera_settings_pick_image">置き換える画像を選択</string>
+    <string name="help_camera_settings_rotation_0">0°回転</string>
+    <string name="help_camera_settings_rotation_90">90°回転</string>
+    <string name="help_camera_settings_rotation_180">180°回転</string>
+    <string name="help_camera_settings_rotation_270">270°回転</string>
+    <string name="help_camera_settings_photo_fake">写真偽造機能のスイッチ</string>
+    <string name="help_camera_settings_video_sound">動画の音声スイッチ</string>
+    <string name="help_camera_settings_random_play">動画リストをランダム再生</string>
+    <string name="help_camera_settings_mic_off">マイクをオフ</string>
+    <string name="help_camera_settings_mic_mute">マイクをミュート</string>
+    <string name="help_camera_settings_mic_replace">マイクを音声ファイルで置き換え</string>
+    <string name="help_camera_settings_mic_sync">マイクと動画を同期</string>
+    <string name="help_camera_settings_pick_audio">置き換える音声ファイルを選択</string>
+    <string name="help_camera_settings_notification">通知バーにコントロールを表示</string>
+    <string name="help_camera_settings_overlay">フローティングウィンドウの操作を表示</string>
+    <string name="help_camera_settings_search_apps">シミュレーションするアプリを検索</string>
+    <string name="help_camera_settings_target_apps">カメラ効果を模擬するアプリを選択</string>
+</resources>

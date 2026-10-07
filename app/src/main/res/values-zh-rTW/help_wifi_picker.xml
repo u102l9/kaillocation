@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_wifi_picker_back">返回上一頁</string>
+    <string name="help_wifi_picker_manual_add">手動新增 Wi-Fi</string>
+    <string name="help_wifi_picker_scan">掃描附近 Wi-Fi</string>
+    <string name="help_wifi_picker_item_add">新增此 Wi-Fi</string>
+</resources>

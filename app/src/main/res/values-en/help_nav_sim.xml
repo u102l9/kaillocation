@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_sim_menu">Open the side menu</string>
+    <string name="help_nav_sim_clear_points">Clear the start / end point</string>
+    <string name="help_nav_sim_plan_start">Plan route or start simulation</string>
+    <string name="help_nav_sim_pause_resume">Pause or resume simulation</string>
+    <string name="help_nav_sim_stop">Stop simulation</string>
+    <string name="help_nav_sim_multi_route">Enable or disable multi-route mode</string>
+    <string name="help_nav_sim_speed">Set simulation speed</string>
+    <string name="help_nav_sim_plan_fab">Plan route in one tap</string>
+    <string name="help_nav_sim_tab_favorites">Favorites tab</string>
+    <string name="help_nav_sim_tab_history">History routes tab</string>
+    <string name="help_nav_sim_search">Search history routes</string>
+    <string name="help_nav_sim_clear_search">Clear search content</string>
+    <string name="help_nav_sim_history_select">Tap to select a history route</string>
+    <string name="help_nav_sim_history_rename">Rename history route</string>
+    <string name="help_nav_sim_history_delete">Delete history route</string>
+    <string name="help_nav_sim_history_favorite">Favorite / unfavorite</string>
+    <string name="help_nav_sim_lock_point">Lock this point to keep it for the next route</string>
+    <string name="help_nav_sim_use_my_location">Pin to my current location, auto-updates each time</string>
+</resources>

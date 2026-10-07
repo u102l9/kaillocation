@@ -1,0 +1,93 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Kail Location APK
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install Android SDK, NDK and CMake
+        run: bash .github/scripts/setup-android-sdk.sh
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Show environment
+        run: |
+          java -version
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          cat local.properties
+
+      - name: Assemble arm64 release
+        run: ./gradlew :app:assembleArm64Release --stacktrace
+
+      - name: Assemble x86 release
+        run: ./gradlew :app:assembleX86Release --stacktrace
+
+      - name: Assemble arm64 debug
+        run: ./gradlew :app:assembleArm64Debug --stacktrace
+
+      - name: Assemble x86 debug
+        run: ./gradlew :app:assembleX86Debug --stacktrace
+
+      - name: List outputs
+        run: find app/build/outputs -name "*.apk" | sort
+
+      - name: Show ABI contents
+        run: |
+          for apk in $(find app/build/outputs -name "*.apk" | sort); do
+            echo "=== $apk ==="
+            unzip -Z1 "$apk" | grep -E '^lib/' | sed 's|/[^/]*$||' | sort -u || true
+          done
+
+      - name: Upload arm64 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: kail-location-arm64
+          path: app/build/outputs/apk/arm64/**/*.apk
+          if-no-files-found: warn
+
+      - name: Upload x86 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: kail-location-x86
+          path: app/build/outputs/apk/x86/**/*.apk
+          if-no-files-found: warn
+
+      - name: Publish Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/build/outputs/apk/**/*.apk
+          generate_release_notes: true

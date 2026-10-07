@@ -1,0 +1,843 @@
+<resources>
+    <string name="app_settings">設定</string>
+    <string name="app_history">履歴</string>
+    <string name="history_title">履歴</string>
+    <string name="history_search_hint">履歴を検索</string>
+    <string name="history_no_record">履歴はありません</string>
+    <string name="app_service_tips">KailLocation サービスを実行中</string>
+    <string name="app_agreement">利用規約</string>
+    <string name="app_privacy">プライバシーポリシー</string>
+    <string name="app_agreement_privacy">利用規約とプライバシーポリシーを読み、同意しました</string>
+    <string name="app_error_agreement">まず利用規約とプライバシーポリシーに同意してください</string>
+    <string name="app_error_read">利用規約とプライバシーポリシーを読んで同意してください</string>
+    <string name="app_error_gps">位置情報を利用できません。GPS が有効か確認してください</string>
+    <string name="app_error_network">ネットワークを利用できません。接続を確認してください</string>
+    <string name="app_error_permission">権限が不足しています。必要な権限を付与してください</string>
+    <string name="app_error_input">入力に誤りがあります。内容を確認してください</string>
+    <string name="app_error_input_null">入力は空にできません。値を入力してください</string>
+    <string name="app_error_search">検索に失敗しました。ネットワークまたは位置情報を確認してください</string>
+    <string name="app_error_location">先に位置を選択してください</string>
+    <string name="app_error_dev">開発者向けオプションが有効ではありません。移動できません！有効化方法を自分で検索してください</string>
+    <string name="app_error_param">不正なパラメータ</string>
+    <string name="app_error_protocol">まず利用規約を読んで同意してください</string>
+    <string name="app_error_username">ユーザー名が不正です</string>
+    <string name="app_error_code">登録コードは空にできません</string>
+    <string name="app_error_longitude">経度が範囲外です！\n値: -180.0 ～ 180.0</string>
+    <string name="app_error_latitude">緯度が範囲外です！\n値: -90.0 ～ 90.0</string>
+    <string name="app_search_null">該当する結果がありません。もう一度検索してください</string>
+    <string name="app_search_tips">検索内容を入力してください</string>
+    <string name="app_location_ok">位置を送信しました</string>
+    <string name="app_location_copy">位置をクリップボードにコピーしました</string>
+    <string name="app_location_save">位置を保存しました</string>
+
+    <string name="welcome_btn_txt">アプリを開く</string>
+    <string name="app_btn_agree">同意して続行</string>
+    <string name="app_btn_disagree">同意しない</string>
+
+    <string name="setting_group_move">移動</string>
+    <string name="setting_joystick_type">ジョイスティックの種類</string>
+    <string name="setting_joystick_speed">ジョイスティック速度 (m/s)</string>
+    <string name="setting_joystick_speed_default">1.2</string>
+    <string name="setting_walk">歩行速度 (m/s)</string>
+    <string name="setting_walk_default">1.2</string>
+    <string name="setting_run">走行速度 (m/s)</string>
+    <string name="setting_run_default">3.6</string>
+    <string name="setting_bike">自転車速度 (m/s)</string>
+    <string name="setting_bike_default">10.0</string>
+    <string name="setting_altitude">標高 (m)</string>
+    <string name="setting_altitude_default">55.0</string>
+
+    <string name="setting_group_location_offset">位置オフセット</string>
+    <string name="setting_random_offset">ランダムオフセット</string>
+    <string name="setting_random_offset_summary">履歴位置を使う場合のみ有効です</string>
+    <string name="setting_random_offset_default">10.0</string>
+    <string name="setting_lat_max_offset">経度の最大オフセット距離 (m)</string>
+    <string name="setting_lon_max_offset">緯度の最大オフセット距離 (m)</string>
+    <string name="setting_group_log">ログ</string>
+    <string name="setting_log_off">ログを無効化</string>
+    <string name="setting_history_expiration">履歴の有効期限 (日)</string>
+    <string name="setting_group_about">概要</string>
+    <string name="setting_version">バージョン</string>
+    <string name="setting_author">開発者</string>
+
+    <string name="history_expiration">7</string>
+    <string name="history_location_default_name">地図の位置</string>
+    <string name="history_idle">履歴はありません</string>
+    <string name="history_delete_ok">削除しました！</string>
+    <string name="history_delete_error">履歴の削除に失敗しました</string>
+    <string name="history_error_location">位置取得に失敗しました。手動で選択してください</string>
+    <string name="history_error_search">該当する内容が見つかりませんでした</string>
+
+    <string name="note_show">ジョイスティックを表示</string>
+    <string name="note_hide">ジョイスティックを非表示</string>
+    <string name="joystick_map_tips">地図上の位置を検索またはタップしてください</string>
+    <string name="joystick_history_tips">履歴の位置を検索またはタップしてください</string>
+    <string name="joystick_history">履歴</string>
+    <string name="joystick_map">地図</string>
+    <string name="joystick_move">移動</string>
+    <string name="joystick_walk">歩行</string>
+    <string name="joystick_run">走行</string>
+    <string name="joystick_bike">自転車</string>
+    <string name="nav_drawer_open">ナビゲーションメニューを開く</string>
+    <string name="nav_drawer_close">ナビゲーションメニューを閉じる</string>
+    <string name="nav_menu_history">履歴</string>
+    <string name="nav_menu_location_simulation">位置シミュレーション</string>
+    <string name="nav_menu_route_simulation">ルートシミュレーション</string>
+    <string name="nav_menu_sim_group">シミュレーション</string>
+    <string name="nav_menu_independent_sim">独立シミュレーション</string>
+    <string name="nav_menu_root_app_hide">Root &amp; アプリ非表示</string>
+    <string name="nav_menu_wifi_sim">WiFi シミュレーション</string>
+    <string name="nav_menu_cell_sim">基地局シミュレーション</string>
+    <string name="nav_menu_camera_sim">仮想カメラ</string>
+    <string name="camera_sim_title">仮想カメラ</string>
+    <string name="camera_sim_enable">仮想カメラを有効化</string>
+    <string name="camera_sim_status_on">仮想カメラ実行中</string>
+    <string name="camera_sim_status_off">仮想カメラ停止中</string>
+    <string name="camera_sim_summary">対象アプリ %1$d 件 · 動画: %2$s</string>
+    <string name="camera_sim_no_video">未選択</string>
+    <string name="camera_sim_pick_video">動画を選択</string>
+    <string name="camera_sim_restart_apps">対象アプリを再起動</string>
+    <string name="camera_sim_hint">有効にすると、対象アプリのカメラプレビューが選択した動画に置き換わります。対象アプリを完全に終了してから再度開いてください。</string>
+    <string name="camera_sim_settings">カメラ設定</string>
+    <string name="camera_sim_rotation">回転オフセット</string>
+    <string name="camera_sim_photo_fake">撮影置換（撮影結果を動画フレームで置き換える）</string>
+    <string name="camera_sim_targets">対象アプリ（%1$d 件選択中）</string>
+    <string name="camera_sim_search_apps">アプリを検索</string>
+    <string name="camera_sim_video_label">現在の動画</string>
+    <string name="camera_sim_apps_count">対象アプリ %1$d 件選択中</string>
+    <string name="camera_sim_start">開始</string>
+    <string name="camera_sim_stop">停止</string>
+    <string name="camera_sim_apps_section">対象アプリ</string>
+    <string name="camera_sim_empty_apps">対象アプリがありません。設定から追加してください</string>
+    <string name="camera_sim_photo_short">撮影置換</string>
+    <string name="camera_sim_videos_section">動画リスト</string>
+    <string name="camera_sim_empty_videos">動画がありません。カード右上の + でインポート</string>
+    <string name="camera_sim_video_in_use">使用中</string>
+    <string name="camera_sim_media_source">メディアソース</string>
+    <string name="camera_sim_source_local">ローカル動画</string>
+    <string name="camera_sim_source_stream">ストリーム</string>
+    <string name="camera_sim_stream_url_hint">RTSP/HLS/HTTP アドレス</string>
+    <string name="camera_sim_replace_mode">置換モード</string>
+    <string name="camera_sim_mode_video">動画</string>
+    <string name="camera_sim_mode_image">画像</string>
+    <string name="camera_sim_image_pick">画像を選択</string>
+    <string name="camera_sim_image_repick">画像を再選択（インポート済み）</string>
+    <string name="camera_sim_video_sound">動画の音声を再生</string>
+    <string name="camera_sim_random_play">ランダム再生（カメラ起動ごとにランダム選択）</string>
+    <string name="camera_sim_mic_mode">マイク置換</string>
+    <string name="camera_sim_mic_off">オフ</string>
+    <string name="camera_sim_mic_mute">ミュート</string>
+    <string name="camera_sim_mic_replace">置換</string>
+    <string name="camera_sim_mic_sync">動画同期</string>
+    <string name="camera_sim_audio_pick">音声を選択</string>
+    <string name="camera_sim_audio_repick">音声を再選択（インポート済み）</string>
+    <string name="camera_sim_notification_toggle">通知バーコントロール</string>
+    <string name="camera_sim_overlay_toggle">オーバーレイコントロール</string>
+    <string name="camera_sim_notification_channel">仮想カメラコントロール</string>
+    <string name="camera_sim_notification_title">仮想カメラ実行中</string>
+    <string name="camera_sim_notification_text">動画切替・回転調整</string>
+    <string name="camera_sim_action_prev">前へ</string>
+    <string name="camera_sim_action_next">次へ</string>
+    <string name="camera_sim_action_rotate">回転+90°</string>
+    <string name="camera_sim_action_close">閉じる</string>
+    <string name="nav_menu_settings">設定</string>
+    <string name="nav_menu_dev">開発者向けオプション</string>
+    <string name="nav_menu_more">その他</string>
+    <string name="nav_menu_upgrade">更新を確認</string>
+    <string name="nav_menu_feedback">フィードバック</string>
+    <string name="nav_menu_contact">作者に連絡</string>
+    <string name="nav_app_tips">学習用途のみ。自己責任でご利用ください！</string>
+    <string name="nav_menu_sponsor">作者を支援</string>
+    <string name="nav_menu_github">オープンソース</string>
+    <string name="nav_menu_faq">よくある質問</string>
+    <string name="faq_title">よくある質問</string>
+    <string name="faq_retry">再試行</string>
+    <string name="faq_empty">よくある質問はありません</string>
+    <string name="faq_updated_at">更新日</string>
+    <string name="nav_menu_run_mode">実行モード</string>
+    <string name="run_mode_dialog_title">実行モードを選択</string>
+    <string name="run_mode_root">Root モード</string>
+    <string name="run_mode_developer">開発者モード</string>
+    <string name="run_mode_xposed">Xposed モード</string>
+    <string name="run_mode_sandbox">サンドボックス モード</string>
+    <string name="xposed_module_not_found">Xposed モジュールが見つかりません</string>
+    <string name="xposed_module_download_hint">Xposed モードを使用するには、KailLocation Xposed モジュールをインストールしてください。</string>
+    <string name="xposed_module_download">ダウンロード</string>
+    <string name="run_mode_changed">実行モードを %s に切り替えました</string>
+    <string name="sponsor_title">作者を支援</string>
+    <string name="sponsor_tron_note">TRON 資産のみ対応</string>
+
+    <string name="label_longitude">経度</string>
+    <string name="label_latitude">緯度</string>
+    <string name="input_position_ok">送信</string>
+    <string name="input_position_cancel">キャンセル</string>
+    <string name="input_position_baidu">BD09 座標系</string>
+    <string name="input_position_gps">GPS 座標系</string>
+    <string name="input_button">位置を入力</string>
+    <string name="cur_position">現在位置に戻る</string>
+    <string name="zoom_in">拡大</string>
+    <string name="zoom_out">縮小</string>
+
+    <string name="map_pic_sate">衛星</string>
+    <string name="map_pic_normal">通常</string>
+
+    <string name="update_title">新しいバージョンがあります</string>
+    <string name="update_downloading">更新ファイルをダウンロード中...</string>
+    <string name="update_last">KailLocation は最新です</string>
+    <string name="update_download">今すぐダウンロード</string>
+    <string name="update_ignore">今回は無視</string>
+    <string name="update_time">更新日時：</string>
+    <string name="update_commit">更新内容：</string>
+    <string name="update_file_size">インストールサイズ：%1$s</string>
+
+    <string name="nav_sim_title">ナビゲーションシミュレーション</string>
+    <string name="nav_sim_start">ナビゲーション開始</string>
+    <string name="nav_sim_stop">シミュレーション終了</string>
+    <string name="nav_sim_pause">一時停止</string>
+    <string name="nav_sim_resume">再開</string>
+    <string name="nav_sim_planning">計画中...</string>
+    <string name="nav_sim_start_point">開始：</string>
+    <string name="nav_sim_end_point">終了：</string>
+    <string name="nav_sim_select_start">開始地点を選択してください</string>
+    <string name="nav_sim_select_end">終了地点を選択してください</string>
+    <string name="nav_sim_lock_point">この地点をロック（次回も保持）</string>
+    <string name="nav_sim_unlock_point">この地点のロックを解除</string>
+    <string name="nav_sim_use_my_location">現在地に固定（自動更新）</string>
+    <string name="nav_sim_both_locked">開始地点と終了地点は両方固定されています</string>
+    <string name="nav_sim_multi_route">複数ルート</string>
+    <string name="nav_sim_history_title">履歴データ（最大 10 件）</string>
+    <string name="nav_sim_clear">クリア</string>
+    <string name="nav_sim_switch_route">ルート切り替え</string>
+    <string name="nav_sim_choose_route">ルートを選択</string>
+    <string name="nav_sim_speed_dialog_title">速度を設定 (km/h)</string>
+    <string name="nav_sim_speed">速度</string>
+    <string name="nav_sim_ok">OK</string>
+    <string name="nav_sim_cancel">キャンセル</string>
+
+    <string name="route_sim_title">ルートシミュレーション</string>
+    <string name="route_sim_target">対象ルート</string>
+    <string name="route_sim_history">履歴ルート</string>
+    <string name="route_sim_no_name">名称なし</string>
+    <string name="route_sim_start">シミュレーション開始</string>
+    <string name="route_sim_stop">シミュレーション終了</string>
+    <string name="route_sim_pause">一時停止</string>
+    <string name="route_sim_resume">再開</string>
+    <string name="route_sim_speed_btn">速度/頻度</string>
+    <string name="route_sim_loop">ループ</string>
+    <string name="route_sim_rename_title">ルート名を変更</string>
+    <string name="route_sim_rename_ok">OK</string>
+    <string name="route_sim_rename_cancel">キャンセル</string>
+    <string name="route_sim_need_route">まずルートを追加して保存してください</string>
+    <string name="route_sim_start_failed">シミュレーションの開始に失敗しました</string>
+
+    <string name="route_plan_search_hint">場所を検索</string>
+    <string name="route_plan_map_type">地図の種類を選択</string>
+    <string name="route_plan_normal">通常地図</string>
+    <string name="route_plan_satellite">衛星地図</string>
+    <string name="route_plan_coord_title">座標を入力</string>
+    <string name="route_plan_latitude">緯度</string>
+    <string name="route_plan_longitude">経度</string>
+    <string name="route_plan_coord_type">BD09 座標（既定は WGS84）</string>
+    <string name="route_plan_coord_combined">緯度,経度</string>
+    <string name="route_plan_coord_error">有効な緯度,経度を入力してください</string>
+    <string name="route_plan_ok">OK</string>
+    <string name="route_plan_cancel">キャンセル</string>
+
+    <string name="setting_sim_scheme">センサーシミュレーション方式</string>
+    <string name="setting_sim_fourier">フーリエ級数</string>
+    <string name="setting_sim_sine_noise">正弦 + ランダムノイズ</string>
+    <string name="setting_step_sim">歩数カウンターシミュレーション</string>
+    <string name="setting_step_sim_summary">歩数検出器 (18) と歩数カウンター (19) のイベントを制御します</string>
+    <string name="setting_group_satellite_and_signal">衛星と信号のシミュレーション</string>
+    <string name="setting_group_intercept">遮断と降格</string>
+    <string name="setting_allow_get_current">GetCurrentLocation を許可</string>
+    <string name="setting_allow_get_current_summary">オフにすると getCurrentLocation 要求を遮断します</string>
+    <string name="setting_allow_register_listener">位置リスナー登録を許可</string>
+    <string name="setting_allow_register_listener_summary">オフにすると registerLocationListener を遮断します</string>
+    <string name="setting_allow_geofence">ジオフェンス要求を許可</string>
+    <string name="setting_allow_geofence_summary">オフにすると addGeofence を遮断します</string>
+    <string name="setting_allow_get_location">位置検索を許可</string>
+    <string name="setting_allow_get_location_summary">オフにすると getFromLocation などの逆引きを遮断します</string>
+    <string name="setting_disable_fused">Fused Location を無効化</string>
+    <string name="setting_disable_fused_summary">アプリの fused provider 利用を防ぎます</string>
+    <string name="setting_downgrade_cdma">ネットワーク位置を CDMA に降格</string>
+    <string name="setting_downgrade_cdma_summary">ネットワーク位置結果を基地局位置として偽装します</string>
+    <string name="setting_disable_wifi_scan">Wi‑Fi スキャンを無効化</string>
+    <string name="setting_disable_wifi_scan_summary">アプリが実際の Wi‑Fi スキャン結果を取得するのを防ぎます</string>
+    <string name="setting_group_anti_detect">検知回避と引き戻し防止</string>
+    <string name="setting_hide_mock">モック位置を隠す</string>
+    <string name="setting_hide_mock_summary">Location.isFromMockProvider フラグを除去します</string>
+    <string name="setting_anti_pullback">位置の引き戻し防止</string>
+    <string name="setting_anti_pullback_summary">位置を継続的に送信して、システムに戻されにくくします</string>
+    <string name="setting_natural_jitter">自然な GPS 揺らぎ</string>
+    <string name="setting_natural_jitter_summary">注入位置に揺らぎを追加します。固定位置やルートを安定させる場合はオフにしてください。</string>
+    <string name="setting_group_other">その他</string>
+    <string name="setting_xposed_module_group">Xposed モジュール</string>
+    <string name="setting_xposed_module_hide">Xposed モジュールを隠す</string>
+    <string name="setting_xposed_module_summary">隠すとデスクトップのアイコンと LSPosed の「開く」ボタンが消えます。復元はこのスイッチのみ。</string>
+    <string name="setting_global_mode">グローバルモード (system_server)</string>
+    <string name="setting_global_mode_summary">有効にすると system_server を注入し、すべてのアプリに適用されます。無効にすると以下の対象アプリのみ注入します</string>
+    <string name="setting_target_packages">対象アプリのパッケージ名</string>
+    <string name="setting_target_packages_summary">カンマ区切り、グローバルモードがオフの場合のみ有効。例: com.autonavi.minimap</string>
+    <string name="setting_baidu_key">Baidu Map Key（再起動が必要）</string>
+    <string name="setting_enable_log">ログを有効化</string>
+    <string name="setting_enable_log_summary">低頻度ログと重要な状態ログをローカルファイルに保存します</string>
+    <string name="setting_enable_debug_log">詳細デバッグログを有効化</string>
+    <string name="setting_enable_debug_log_summary">高頻度の位置デバッグログを制限付きで保存します。消費電力とファイルサイズが増える可能性があるため、問題調査時のみ使用してください。</string>
+    <string name="setting_export_log">ログをエクスポート</string>
+    <string name="setting_export_log_summary">保存先を選択して現在のログファイルを書き出します</string>
+    <string name="setting_export_log_success">ログをエクスポートしました</string>
+    <string name="setting_export_log_failed">ログのエクスポートに失敗しました</string>
+    <string name="setting_clear_log_cache">ログキャッシュを削除</string>
+    <string name="setting_clear_log_cache_summary">現在のキャッシュサイズ: %s</string>
+    <string name="setting_clear_log_cache_confirm">ログキャッシュを削除しますか？現在のサイズ: %s</string>
+    <string name="setting_clear_log_cache_success">ログキャッシュを削除しました</string>
+    <string name="setting_clear_log_cache_failed">ログキャッシュの削除に失敗しました</string>
+    <string name="setting_map_zoom">フローティングウィンドウの地図ズーム</string>
+    <string name="setting_map_zoom_summary">範囲は 10-21、数値が大きいほど詳細になります</string>
+
+    <!-- データのエクスポート / インポート -->
+    <string name="setting_group_data_transfer">データバックアップ</string>
+    <string name="data_transfer_group_general">共通（全モード）</string>
+    <string name="setting_export_data">データをエクスポート</string>
+    <string name="setting_export_data_summary">選択したメニューの設定を .bak バックアップファイルにエクスポートします</string>
+    <string name="setting_import_data">データをインポート</string>
+    <string name="setting_import_data_summary">.bak バックアップファイルからメニュー設定を選択して復元します</string>
+    <string name="data_transfer_export_title">データをエクスポート</string>
+    <string name="data_transfer_import_title">データをインポート</string>
+    <string name="data_transfer_select_categories">エクスポートするデータを選択</string>
+    <string name="data_transfer_select_import_categories">インポートするデータを選択</string>
+    <string name="data_transfer_category_count">%1$s（%2$d 件）</string>
+    <string name="data_transfer_category_empty">%1$s（データなし）</string>
+    <string name="data_transfer_filename_label">バックアップファイル名</string>
+    <string name="data_transfer_export_button">エクスポート</string>
+    <string name="data_transfer_import_button">インポート</string>
+    <string name="data_transfer_export_success">データをエクスポートしました</string>
+    <string name="data_transfer_export_failed">データのエクスポートに失敗しました</string>
+    <string name="data_transfer_import_success">%1$d 件のメニューデータをインポートしました。アプリを再起動すると反映されます</string>
+    <string name="data_transfer_import_failed">データのインポートに失敗しました</string>
+    <string name="data_transfer_invalid_file">無効なバックアップファイルです</string>
+    <string name="data_transfer_none_selected">少なくとも 1 つ選択してください</string>
+    <string name="data_transfer_default_filename">kail_location_backup</string>
+
+    <string name="setting_current_version">現在のバージョン</string>
+    <string name="setting_not_set">未設定</string>
+    <string name="setting_ok">OK</string>
+    <string name="setting_cancel">キャンセル</string>
+
+    <string name="nfc_sim_title">NFC シミュレーション</string>
+    <string name="nfc_sim_status">NFC 状態</string>
+    <string name="nfc_sim_enabled">有効</string>
+    <string name="nfc_sim_disabled">無効</string>
+    <string name="nfc_sim_read_success">読み取り成功</string>
+    <string name="nfc_sim_clear">クリア</string>
+    <string name="nfc_sim_tag_id">タグ ID: %s</string>
+    <string name="nfc_sim_tag_type">タグ種類: %s</string>
+    <string name="nfc_sim_content">内容: %s</string>
+    <string name="nfc_sim_send_title">NFC 送信をシミュレート</string>
+    <string name="nfc_sim_url">URL</string>
+    <string name="nfc_sim_package">アプリのパッケージ名</string>
+    <string name="nfc_sim_send">送信</string>
+    <string name="nfc_sim_history">履歴</string>
+    <string name="nfc_sim_clear_history">クリア</string>
+    <string name="nfc_sim_no_history">履歴はありません</string>
+    <string name="nfc_sim_rename_dialog_title">名前を変更</string>
+    <string name="nfc_sim_rename_name">名前</string>
+    <string name="nfc_sim_rename_ok">OK</string>
+    <string name="nfc_sim_rename_cancel">キャンセル</string>
+    <string name="nfc_sim_rename_content_desc">名前を変更</string>
+    <string name="nfc_sim_delete_content_desc">削除</string>
+    <string name="nfc_sim_help_title">使い方</string>
+    <string name="nfc_sim_help_content">1. スキャン: NFC タグに近づけると自動で読み取ります\n2. 送信: URL/パッケージ名を入力して送信を押します\n3. 履歴: タップで自動入力、長押しで名前変更</string>
+    <string name="nfc_sim_read_failed">読み取りに失敗しました: %s</string>
+    <string name="nfc_sim_input_hint">URL またはパッケージ名を入力してください</string>
+    <string name="nfc_sim_send_failed">送信に失敗しました: %s</string>
+    <string name="nfc_sim_sent">送信済み: %s</string>
+    <string name="nfc_sim_opened">開きました: %s</string>
+    <string name="nfc_sim_need_nfc">先に NFC を有効にしてください</string>
+
+    <string name="common_warning">警告</string>
+    <string name="common_delete_all_confirm">履歴をすべて削除しますか？</string>
+    <string name="common_delete_item_confirm">この履歴を削除しますか？</string>
+    <string name="common_confirm">確認</string>
+    <string name="common_edit">編集</string>
+    <string name="common_delete">削除</string>
+    <string name="common_cancel">キャンセル</string>
+    <string name="common_ok">OK</string>
+    <string name="delete_dont_remind_10min">10分間は再通知しない</string>
+
+    <string name="drawer_env_check">環境チェック</string>
+    <string name="drawer_ok">OK</string>
+    <string name="drawer_nav_sim">ナビゲーションシミュレーション</string>
+    <string name="drawer_nfc_sim">NFC シミュレーション</string>
+    <string name="drawer_run_mode">実行モード</string>
+    <string name="drawer_sandbox">サンドボックス エンジン</string>
+    <string name="drawer_xposed_settings">Xposed 設定</string>
+    <string name="drawer_action_login">ログイン / 登録</string>
+    <string name="drawer_action_logout">ログアウト</string>
+    <string name="drawer_logged_in_as">ログイン中</string>
+    <string name="drawer_not_logged_in">未ログイン</string>
+
+    <string name="sponsor_copied">コピーしました</string>
+    <string name="sponsor_copy_address">アドレスをコピー</string>
+    <string name="sponsor_wechat_hint">以下のリンクをPCブラウザで開き、国を中国に選択してください</string>
+    <string name="sponsor_copy">コピー</string>
+
+    <string name="welcome_read">読みました</string>
+    <string name="welcome_and">と</string>
+    <string name="welcome_agreement_text">利用規約</string>
+    <string name="welcome_privacy_text">プライバシーポリシー</string>
+
+    <string name="joystick_speed">ジョイスティック速度: %s km/h</string>
+    <string name="joystick_progress">進行状況: %s</string>
+    <string name="joystick_speed_label">速度:</string>
+    <string name="joystick_modify">変更</string>
+    <string name="joystick_route_progress">現在の進行状況: %s</string>
+
+    <string name="goutils_enable_mock_title">モック位置を有効にする</string>
+    <string name="goutils_enable_mock_msg">開発者向けオプションの「モック位置アプリを選択」でこのアプリを設定してください</string>
+    <string name="goutils_settings">設定</string>
+    <string name="goutils_cancel">キャンセル</string>
+    <string name="goutils_enable_overlay_title">フローティングウィンドウを有効にする</string>
+    <string name="goutils_enable_overlay_msg">シミュレーションを安定させるため、フローティングウィンドウを有効にすることを推奨します</string>
+    <string name="goutils_enable_gps_title">GPS を有効にする</string>
+    <string name="goutils_enable_gps_msg">GPS 位置情報サービスを有効にしますか？</string>
+    <string name="goutils_ok">OK</string>
+    <string name="goutils_warning">警告</string>
+    <string name="goutils_wifi_warning">Wi‑Fi を有効にすると、接続していなくても位置が実位置に戻ることがあります。Wi‑Fi を切ってモバイル通信を使うことをおすすめします！</string>
+    <string name="goutils_turn_off">オフにする</string>
+    <string name="goutils_ignore">無視</string>
+
+    <string name="vm_update_failed">更新確認に失敗しました: %s</string>
+    <string name="vm_up_to_date">すでに最新バージョンです</string>
+    <string name="vm_search_city">全国</string>
+    <string name="vm_need_location_permission">シミュレーションを開始するには位置情報権限が必要です</string>
+    <string name="vm_unknown_location">不明な場所</string>
+    <string name="vm_step_root_required">歩数シミュレーションには ROOT モードが必要です</string>
+
+    <string name="history_vm_coord_wgs84">[経度:%1$s 緯度:%2$s]</string>
+    <string name="history_vm_coord_bd09">[経度:%1$s 緯度:%2$s]</string>
+    <string name="history_vm_offset">経度オフセット: %.2f m\n緯度オフセット: %.2f m</string>
+
+    <string name="service_grant_overlay">フローティングウィンドウ権限を許可してください</string>
+    <string name="service_overlay_failed">フローティングウィンドウの初期化に失敗しました: %s</string>
+    <string name="service_set_mock_app">開発者向けオプションでこのアプリをモック位置アプリとして設定してください</string>
+    <string name="route_sim_speed_text">移動速度</string>
+    <string name="route_sim_speed_fluctuation">速度の変動</string>
+    <string name="route_sim_step_text">歩数シミュレーション</string>
+    <string name="route_sim_cadence_text">歩調</string>
+    <string name="route_sim_cadence_format">%d 歩/分 ・ 約 %.1f km/h</string>
+    <string name="route_sim_step_root_required">歩数シミュレーションには ROOT モードが必要です</string>
+
+    <string name="error_cannot_open_email">メールアプリを開けません</string>
+    <string name="error_cannot_open_browser">ブラウザを開けません</string>
+    <string name="error_under_development">機能は開発中です...</string>
+    <string name="download_progress">ダウンロード中... %d%%</string>
+
+    <string name="setting_mock_speed">シミュレート移動速度 (m/s)</string>
+    <string name="setting_accuracy_title">位置精度/揺らぎ範囲 (m)</string>
+    <string name="setting_accuracy_summary">既定値は 2.5。自然な GPS 揺らぎがオフの場合は位置精度、オンの場合は揺らぎ範囲として使用します。</string>
+    <string name="setting_min_satellites">最小シミュレート衛星数</string>
+    <string name="setting_min_satellites_summary">BeiDou 衛星のみ対応</string>
+    <string name="setting_report_interval">報告間隔 (ms)</string>
+    <string name="setting_report_interval_summary">ミリ秒単位、既定は 200ms。値を小さくすると報告頻度が上がり、消費電力と負荷が増えます</string>
+    <string name="setting_gps_satellite_title">GPS 衛星信号をシミュレート</string>
+    <string name="setting_gps_satellite_summary">BeiDou 衛星数と信号強度を偽装します</string>
+    <string name="setting_agps_title">AGPS モジュールを有効にする</string>
+    <string name="setting_agps_summary">補助測位関連（実験的）</string>
+    <string name="setting_nmea_title">NMEA モジュールを有効にする</string>
+    <string name="setting_nmea_summary">NMEA データ出力を偽装します</string>
+    <string name="setting_wlan_title">WLAN データをシミュレート</string>
+    <string name="setting_wlan_summary">Wi‑Fi 測位データを偽装します</string>
+
+    <!-- Usage Manager -->
+    <string name="usage_not_logged_in">シミュレーションを使用するにはログインしてください</string>
+    <string name="usage_free_exhausted">本日の無料シミュレーション回数を使い切りました。購読すると無制限に利用できます。</string>
+    <string name="usage_count_exhausted">シミュレーション回数を使い切りました</string>
+
+    <!-- API Errors -->
+    <string name="api_error_remaining">残り回数の取得に失敗しました</string>
+    <string name="api_error_send_code">認証コードの送信に失敗しました</string>
+    <string name="api_error_login">ログインに失敗しました</string>
+    <string name="api_error_plans">プラン一覧の取得に失敗しました</string>
+    <string name="api_error_notices">お知らせの取得に失敗しました</string>
+    <string name="api_error_subscription">購読状態の取得に失敗しました</string>
+
+    <!-- Sponsor Errors -->
+    <string name="sponsor_error_not_logged_in">ログインしていません</string>
+    <string name="sponsor_error_select_plan">プランを選択してください</string>
+    <string name="sponsor_error_create_checkout">チェックアウトの作成に失敗しました</string>
+
+    <!-- Sponsor Screen -->
+    <string name="sponsor_top_title">購読 &amp; スポンサー</string>
+    <string name="sponsor_member_title">メンバー購読</string>
+    <string name="sponsor_select_hint">プランを選択して全機能をアンロック</string>
+    <string name="sponsor_subscribed_text">購読中</string>
+    <string name="sponsor_thanks">ご支援ありがとうございます！</string>
+    <string name="sponsor_billing_once">一回限り</string>
+    <string name="sponsor_billing_month">/月</string>
+    <string name="sponsor_billing_year">/年</string>
+    <string name="sponsor_login_first">購読するにはログインしてください</string>
+    <string name="sponsor_credit_card">クレジット/デビットカード</string>
+    <string name="sponsor_wechat_pay">WeChat Pay</string>
+    <string name="sponsor_support_title">スポンサー</string>
+    <string name="sponsor_aptos_hint">Aptos チェーンでのスポンサーも受け付けています：</string>
+    <string name="sponsor_copy_aptos_address">Aptos アドレスをコピー</string>
+
+    <!-- Login Screen -->
+    <string name="login_hint_text">QQ メールと Gmail のみ対応。認証コードを入力してログインまたは自動登録。</string>
+    <string name="login_register_btn">ログイン / 登録</string>
+
+    <!-- Profile -->
+    <string name="profile_member_status">メンバーシップ状態</string>
+    <string name="profile_not_subscribed">未購読</string>
+    <string name="profile_subscribe_now">今すぐ購読</string>
+
+    <!-- Cell Simulation Screen -->
+    <string name="cell_sim_empty_text">模擬基地局がありません</string>
+    <string name="cell_sim_scan_hint">以下のボタンで基地局をスキャンまたは追加</string>
+    <string name="cell_sim_deselect_all">全選択解除</string>
+    <string name="cell_sim_select_all">全選択</string>
+    <string name="cell_sim_running_title">基地局模擬実行中</string>
+    <string name="cell_sim_title_short">基地局模擬</string>
+    <string name="cell_sim_more_fmt">+ %d 件...</string>
+    <string name="cell_sim_start">模擬開始</string>
+    <string name="cell_sim_stop">模擬停止</string>
+    <string name="cell_sim_status_running">実行中</string>
+    <string name="cell_sim_scan_count_fmt">%d 個の基地局をスキャンしました</string>
+    <string name="cell_sim_location_fmt">位置: %s</string>
+
+    <!-- WiFi Simulation Screen -->
+    <string name="wifi_sim_empty_text">模擬 WiFi がありません</string>
+    <string name="wifi_sim_scan_hint">以下のボタンで WiFi をスキャン</string>
+    <string name="wifi_sim_deselect_all">全選択解除</string>
+    <string name="wifi_sim_select_all">全選択</string>
+    <string name="wifi_sim_running_title">WiFi 模擬実行中</string>
+    <string name="wifi_sim_title_short">WiFi 模擬</string>
+    <string name="wifi_sim_start">模擬開始</string>
+    <string name="wifi_sim_stop">模擬停止</string>
+    <string name="wifi_sim_status_running">実行中</string>
+    <string name="wifi_sim_scan_count_fmt">%d 個の WiFi をスキャンしました</string>
+    <string name="wifi_sim_add_label">追加</string>
+
+    <!-- Announcement Dialog -->
+    <string name="announcement_default_title">お知らせ</string>
+    <string name="announcement_previous">前へ</string>
+    <string name="announcement_next">次へ</string>
+    <string name="announcement_got_it">確認しました</string>
+
+    <!-- Independent Simulation -->
+    <string name="ind_sim_running">独立模擬実行中</string>
+    <string name="ind_sim_stopped">独立模擬停止中</string>
+    <string name="ind_sim_description">対象アプリを選択して有効化すると、位置/ルート/WiFi/基地局/歩数ページの「模擬開始」が選択したアプリにのみ適用されます。</string>
+    <string name="ind_sim_stop_btn">独立模擬を停止</string>
+    <string name="ind_sim_start_btn">独立模擬を開始</string>
+
+    <!-- Checkout WebView -->
+    <string name="checkout_title">チェックアウト</string>
+    <string name="checkout_back_desc">戻る</string>
+
+    <!-- Location Picker -->
+    <string name="picker_map_init_failed">地図の初期化に失敗しました: %s</string>
+    <string name="picker_search_no_results">結果が見つかりませんでした</string>
+
+    <!-- Update -->
+    <string name="update_found_title">新しいバージョンを発見: %s</string>
+
+    <!-- Location Simulation -->
+    <string name="location_rename_title">位置名を変更</string>
+
+    <!-- Sandbox Manager/Activity/Screen -->
+    <string name="sandbox_install_success">インストール成功</string>
+    <string name="sandbox_install_failed">インストール失敗: %s</string>
+    <string name="sandbox_uninstall_success">アンインストール成功</string>
+    <string name="sandbox_uninstall_failed">アンインストール失敗: %s</string>
+    <string name="sandbox_launch_failed">起動失敗</string>
+    <string name="sandbox_launch_failed_msg">起動失敗: %s</string>
+    <string name="sandbox_clear_success">クリア成功</string>
+    <string name="sandbox_clear_failed">クリア失敗: %s</string>
+    <string name="sandbox_stopped">停止しました</string>
+    <string name="sandbox_stop_failed">停止失敗: %s</string>
+    <string name="sandbox_loading_failed">サンドボックスアプリの読み込みに失敗: %s</string>
+    <string name="sandbox_system_apps_failed">システムアプリの読み込みに失敗: %s</string>
+    <string name="sandbox_title_fmt">サンドボックス - %s</string>
+    <string name="sandbox_creating_shortcut">ショートカットを作成中...</string>
+    <string name="sandbox_shortcut_failed">ショートカット作成失敗: %s</string>
+    <string name="sandbox_invalid_shortcut">無効なショートカット</string>
+    <string name="sandbox_empty">サンドボックスにアプリがありません</string>
+    <string name="sandbox_empty_hint">右下の + ボタンでアプリをクローン</string>
+    <string name="sandbox_launch_app">アプリを起動</string>
+    <string name="sandbox_clear_data">データをクリア</string>
+    <string name="sandbox_stop_running">停止</string>
+    <string name="sandbox_uninstall_app">アプリをアンインストール</string>
+    <string name="sandbox_create_shortcut">ショートカットを作成</string>
+    <string name="sandbox_clear_data_btn">データをクリア</string>
+    <string name="sandbox_uninstall_btn">アンインストール</string>
+    <string name="sandbox_clone_title">アプリをクローン</string>
+    <string name="sandbox_search_placeholder">アプリを検索...</string>
+    <string name="sandbox_load_system_apps">システムアプリ一覧を読み込み中</string>
+    <string name="sandbox_settings_title">サンドボックス設定</string>
+    <string name="sandbox_hide_root">Root を隠す</string>
+    <string name="sandbox_hide_root_desc">サンドボックスアプリから Root 権限を隠す</string>
+    <string name="sandbox_restart_to_apply">アプリを再起動して適用</string>
+    <string name="sandbox_daemon">デーモン</string>
+    <string name="sandbox_daemon_desc">サンドボックスサービスをバックグラウンドで維持</string>
+    <string name="sandbox_vpn">VPN を使用</string>
+    <string name="sandbox_vpn_desc">サンドボックストラフィックを VPN 経由に</string>
+    <string name="sandbox_disable_secure">FLAG_SECURE を無効化</string>
+    <string name="sandbox_disable_secure_desc">サンドボックスアプリでのスクリーンショットを許可</string>
+    <string name="sandbox_step_sim">歩数模擬</string>
+    <string name="sandbox_step_sim_desc">サンドボックスアプリに歩数センサーデータを模擬</string>
+    <string name="sandbox_step_fmt">歩数: %d 歩/分</string>
+    <string name="sandbox_step_adjust">タップして調整</string>
+    <string name="sandbox_gms">GMS 管理</string>
+    <string name="sandbox_gms_desc">Google サービスフレームワークを管理</string>
+    <string name="sandbox_gms_coming">開発中</string>
+    <string name="sandbox_gms_unsupported">このデバイスは GMS をサポートしていません</string>
+    <string name="sandbox_send_log">ログを送信</string>
+    <string name="sandbox_send_log_desc">デバッグログを開発者に送信</string>
+    <string name="sandbox_log_sent">ログを送信しました</string>
+    <string name="sandbox_log_failed">ログ送信失敗: %s</string>
+    <string name="sandbox_log_sending">ログを送信中...</string>
+    <string name="sandbox_adjust_cadence">歩数調整</string>
+    <string name="sandbox_cadence_fmt">%d 歩/分</string>
+    <string name="sandbox_cadence_range">範囲: 30 - 240 歩/分</string>
+
+    <!-- Settings -->
+    <string name="settings_step_sim">歩数模擬</string>
+    <string name="settings_step_sim_enable">歩数模擬を有効にする</string>
+    <string name="settings_step_sim_summary">歩数計アプリ向けに歩数データを模擬</string>
+    <string name="settings_step_type">歩数データタイプ</string>
+
+    <!-- Cell ViewModel -->
+    <string name="cell_fetch_no_location">現在地を取得できません。模擬位置を設定するか GPS を有効にしてください。</string>
+    <string name="cell_fetch_no_key">設定で OpenCellID API Key を設定してください</string>
+    <string name="cell_fetch_no_data">基地局データが見つかりませんでした</string>
+    <string name="cell_fetch_failed">ネットワークリクエスト失敗: %s</string>
+
+    <!-- NFC -->
+    <string name="nfc_read_failed">読み取り失敗: %s</string>
+
+    <!-- Xposed Settings -->
+    <string name="xposed_not_set">未設定</string>
+
+    <!-- Welcome -->
+    <string name="welcome_cannot_open_settings">設定画面を開けません。手動で有効にしてください。</string>
+
+    <!-- Login / Register -->
+    <string name="login_screen_title">アカウント</string>
+    <string name="login_tab_login">ログイン</string>
+    <string name="login_tab_register">登録</string>
+    <string name="login_dialog_title">ログイン</string>
+    <string name="register_dialog_title">登録</string>
+    <string name="login_username_hint">ユーザー名</string>
+    <string name="login_email_hint">メールアドレス</string>
+    <string name="login_password_hint">パスワード</string>
+    <string name="register_nickname_hint">ニックネーム</string>
+    <string name="register_password_confirm_hint">パスワード確認</string>
+    <string name="register_verification_code_hint">認証コード</string>
+    <string name="register_send_code">送信</string>
+    <string name="login_action_login">ログイン</string>
+    <string name="login_action_register">登録</string>
+    <string name="login_forgot_password">パスワードをお忘れですか？</string>
+    <string name="login_error_empty_fields">必須項目を入力してください</string>
+    <string name="login_error_empty_email">メールアドレスを入力してください</string>
+    <string name="login_error_invalid_email_domain">QQメール（@qq.com）とGmail（@gmail.com）のみ対応しています。</string>
+    <string name="register_error_password_mismatch">パスワードが一致しません</string>
+    <string name="register_error_send_code_failed">認証コードの送信に失敗しました</string>
+    <string name="login_error_unknown">操作に失敗しました。後でもう一度お試しください</string>
+    <string name="forgot_password_title">パスワードをお忘れの場合</string>
+    <string name="forgot_password_description">メールアドレスと認証コードを入力してパスワードをリセットしてください。</string>
+    <string name="forgot_password_new_password_hint">新しいパスワード</string>
+    <string name="forgot_password_send">リセット</string>
+    <string name="forgot_password_success">パスワードをリセットしました</string>
+    <string name="forgot_password_failed">リセットに失敗しました。後でもう一度お試しください</string>
+    <string name="profile_title">プロフィール</string>
+
+    <string name="loc_sim_title">位置シミュレーション</string>
+    <string name="loc_sim_target">ターゲット位置</string>
+    <string name="loc_sim_none">NONE</string>
+    <string name="loc_sim_lat_lng">経度/緯度: %1$s,%2$s</string>
+    <string name="loc_sim_start">模擬開始</string>
+    <string name="sim_starting">起動中...</string>
+    <string name="loc_sim_stop">模擬停止</string>
+    <string name="loc_sim_base_station">基地局</string>
+    <string name="loc_sim_joystick">ジョイスティック</string>
+    <string name="loc_sim_history_title">履歴</string>
+    <string name="loc_sim_add_tips">右上の「+」をタップして追加</string>
+    <string name="loc_sim_help">ヘルプ</string>
+    <string name="help_close_hint">画面のどこかをタップして閉じる</string>
+    <string name="help_legend_title">ボタン説明</string>
+    <string name="help_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_add_location">シミュレーション位置を追加 / 変更</string>
+    <string name="help_header">このエリアをタップしてカードを折りたたむ / 展開</string>
+    <string name="help_start">位置シミュレーションを開始 / 停止</string>
+    <string name="help_collapse">カードを折りたたむ / 展開</string>
+    <string name="help_joystick">ジョイスティックの切り替え。有効にするとフローティングジョイスティックを表示</string>
+    <string name="help_settings">速度/歩数頻度設定（歩数シミュレーション）</string>
+    <string name="help_tabs">「お気に入り / 履歴」リストを切り替え</string>
+    <string name="help_search">履歴を検索</string>
+    <string name="help_card_fav">この位置をお気に入り登録 / 解除</string>
+    <string name="help_card_rename">この位置の名前を変更</string>
+    <string name="help_card_delete">この位置を削除</string>
+    <string name="help_picker_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_picker_back">前のページに戻る</string>
+    <string name="help_picker_search">場所を検索</string>
+    <string name="help_picker_fab">位置シミュレーションを開始 / 停止</string>
+    <string name="help_picker_fab_confirm">この場所を確定</string>
+    <string name="help_picker_map_type">地図タイプを切り替え（通常 / 衛星）</string>
+    <string name="help_picker_input">座標を入力して移動</string>
+    <string name="help_picker_locate">現在地に移動</string>
+    <string name="help_picker_zoom_in">地図を拡大</string>
+    <string name="help_picker_zoom_out">地図を縮小</string>
+
+    <string name="root_hide_title">Root &amp; アプリ非表示</string>
+    <string name="root_hide_status_running">非表示実行中</string>
+    <string name="root_hide_status_stopped">非表示停止中</string>
+    <string name="root_hide_desc">対象アプリを選択して有効化すると、Root/フレームワークの痕跡とインストール済みアプリ一覧が対象アプリから隠されます。</string>
+    <string name="root_hide_settings_title">非表示設定</string>
+    <string name="root_hide_hide_root">Root を隠す</string>
+    <string name="root_hide_hide_root_summary">対象アプリから Root、Magisk、Xposed の痕跡を隠す</string>
+    <string name="root_hide_hide_applist">アプリ一覧を隠す</string>
+    <string name="root_hide_hide_applist_summary">対象アプリからインストール済みアプリ一覧を隠す（Root非表示が必要）</string>
+    <string name="root_hide_target_apps">対象アプリ</string>
+    <string name="root_hide_target_apps_hint">タップしてアプリを選択</string>
+    <string name="root_hide_start">非表示開始</string>
+    <string name="root_hide_stop">非表示停止</string>
+    <string name="root_hide_no_apps">対象アプリを選択し、少なくとも1つの非表示オプションを有効にしてください</string>
+    <string name="root_hide_added_apps">追加済みのアプリ（%d）</string>
+    <string name="root_hide_remove_app">このアプリを削除</string>
+    <string name="root_hide_select_apps">対象アプリを選択</string>
+
+
+    <string name="app_name">KailLocation</string>
+    <string name="app_author">kail</string>
+    <string name="app_email">kailkali23143@gmail.com</string>
+    <string name="app_statement">学習目的のみ。自己責任でご利用ください！</string>
+    <string name="app_agreement_content">"1. 本ソフトウェアは Android 開発学習専用であり、ユーザーデータを収集することはありません。
+"    "2. 本ソフトウェアをプライバシー侵害やゲームでの不正利用に使用することを固く禁じます。遵守できない場合は直ちに削除してください。
+"    "3. 本ソフトウェアの使用により生じたプライバシー漏洩を含む一切の不利益は、ユーザー自身が負うものとし、作者は一切の責任を負いません。
+"    "4. ユーザーは本ソフトウェアのリバースエンジニアリング、逆コンパイル、逆アセンブルを行ってはなりません。違反者は著作権侵害となり、不利な結果を自ら負うものとします。
+"    "5. 本ソフトウェアにはウイルス、トロイの木馬などの悪意のあるコードは含まれていませんが、ネットワーク経由でのダウンロード・配布において、作者指定以外のサイトから入手したバージョンの安全性は保証できません。
+"    "6. 本ソフトウェアは継続的に更新され、新機能の提供とバグ修正が行われます。アップデートプロセスに悪意のあるコードは含まれていません。
+"    "7. ユーザーのコンピュータ環境の差異により、本ソフトウェアの機能がすべての状況で正常に動作することを保証できません。
+"    "8. 本ソフトウェアをインストールした場合、本契約の条項に同意したものとみなします。同意しない場合は直ちに削除してください。
+"    </string>
+    <string name="app_privacy_content">"1. 本ソフトウェアは Android 開発学習専用であり、ユーザーデータを収集することはありません。
+"    "2. ユーザーは本ソフトウェアのリバースエンジニアリング、逆コンパイル、逆アセンブルを行ってはなりません。
+"    "3. 本ソフトウェアにはウイルス、トロイの木馬などの悪意のあるコードは含まれていませんが、作者指定以外のサイトから入手したバージョンの安全性は保証できません。
+"    "4. 本ソフトウェアは継続的に更新されます。アップデートプロセスに悪意のあるコードは含まれていません。
+"    "5. ユーザーのコンピュータ環境の差異により、すべての状況で正常に動作することを保証できません。
+"    "6. 本ソフトウェアをインストールした場合、本契約に同意したものとみなします。同意しない場合は直ちに削除してください。
+"    </string>
+    <string name="setting_opencellid_key">OpenCellID API Key</string>
+    <string name="setting_opencellid_key_summary">经纬度から周辺基地局を検索するために使用。opencellid.org で登録が必要</string>
+    <string name="vm_system_not_ready">システムの準備ができていません。%1$d 秒後にお試しください（残り約 %2$d 秒）</string>
+    <string name="service_root_fallback_noroot">ROOT 注入に失敗しました。Root マネージャーで KailLocation を承認してから再試行してください</string>
+    <string name="service_root_fallback_binder">注入が適用されませんでした。後で再試行するか、デバイスを再起動してください</string>
+    <string name="cell_type_gsm">GSM</string>
+    <string name="cell_type_cdma">CDMA</string>
+    <string name="cell_type_lte">LTE</string>
+    <string name="cell_type_wcdma">WCDMA</string>
+    <string name="ind_sim_title">独立シミュレーション</string>
+    <string name="ind_sim_target_apps">対象アプリ</string>
+    <string name="ind_sim_target_apps_hint">タップしてシミュレートするアプリを選択</string>
+    <string name="ind_sim_sim_type">シミュレーション種類</string>
+    <string name="ind_sim_location">位置シミュレーション</string>
+    <string name="ind_sim_route">ルートシミュレーション</string>
+    <string name="ind_sim_wifi_mock">WiFi シミュレーション</string>
+    <string name="ind_sim_cell_mock">基地局シミュレーション</string>
+    <string name="ind_sim_gnss_mock">GPS 衛星状態シミュレーション</string>
+    <string name="ind_sim_gnss_mock_summary">GnssStatus 衛星データを偽装（検出防止）</string>
+    <string name="ind_sim_jitter_mock">位置ジッター</string>
+    <string name="ind_sim_jitter_mock_summary">シミュレート位置にランダムオフセットを追加</string>
+    <string name="ind_sim_start">独立シミュレーションを開始</string>
+    <string name="ind_sim_stop">独立シミュレーションを停止</string>
+    <string name="ind_sim_no_apps">先に対象アプリを選択してください</string>
+    <string name="ind_sim_select_apps">対象アプリを選択</string>
+    <string name="ind_sim_search_apps">アプリを検索</string>
+    <string name="ind_sim_selected_count">%d 個のアプリを選択</string>
+    <string name="ind_sim_selected_apps">選択されたアプリ（%d）</string>
+    <string name="wifi_sim_title">WiFi シミュレーション</string>
+    <string name="wifi_sim_enable">WiFi シミュレーションを有効にする</string>
+    <string name="wifi_sim_enable_summary">WiFi スキャン結果と接続情報を偽装</string>
+    <string name="wifi_sim_add">WiFi を追加</string>
+    <string name="wifi_sim_list">WiFi リスト</string>
+    <string name="wifi_sim_empty">WiFi データがありません。タップして追加</string>
+    <string name="wifi_sim_ssid">SSID</string>
+    <string name="wifi_sim_bssid">BSSID (MAC)</string>
+    <string name="wifi_sim_rssi">信号強度 (dBm)</string>
+    <string name="wifi_sim_frequency">周波数 (MHz)</string>
+    <string name="wifi_sim_capabilities">暗号化方式</string>
+    <string name="wifi_sim_delete">削除</string>
+    <string name="wifi_sim_edit">編集</string>
+    <string name="wifi_sim_name">名前</string>
+    <string name="wifi_sim_history">履歴</string>
+    <string name="wifi_sim_current_target">現在の対象 WiFi</string>
+    <string name="wifi_sim_select_prompt">以下の WiFi をタップして選択</string>
+    <string name="wifi_sim_rename">名前を変更</string>
+    <string name="wifi_sim_rename_title">WiFi の名前を変更</string>
+    <string name="wifi_sim_picker_title">WiFi を選択</string>
+    <string name="wifi_sim_scan_nearby">近くの WiFi をスキャン</string>
+    <string name="wifi_sim_scanning">スキャン中...</string>
+    <string name="wifi_sim_scan_prompt">上のボタンをタップして近くの WiFi をスキャン</string>
+    <string name="wifi_sim_scan_prompt2">または右下の + をタップして手動追加</string>
+    <string name="wifi_sim_manual_add">WiFi を手動追加</string>
+    <string name="wifi_sim_use">使用</string>
+    <string name="wifi_sim_scan_result_title">スキャン結果の WiFi</string>
+    <string name="wifi_sim_scan_empty">WiFi が見つかりませんでした。WiFi がオンで電波範囲内であることを確認してください</string>
+    <string name="cell_sim_title">基地局シミュレーション</string>
+    <string name="cell_sim_enable">基地局シミュレーションを有効にする</string>
+    <string name="cell_sim_enable_summary">基地局の位置と信号情報を偽装</string>
+    <string name="cell_sim_add">基地局を追加</string>
+    <string name="cell_sim_list">基地局リスト</string>
+    <string name="cell_sim_empty">基地局データがありません。タップして追加</string>
+    <string name="cell_sim_type">ネットワーク種類</string>
+    <string name="cell_sim_mcc">MCC</string>
+    <string name="cell_sim_mnc">MNC</string>
+    <string name="cell_sim_lac">LAC/TAC</string>
+    <string name="cell_sim_cid">CID/CellId</string>
+    <string name="cell_sim_psc">PSC/PCI</string>
+    <string name="cell_sim_lat">緯度</string>
+    <string name="cell_sim_lon">経度</string>
+    <string name="cell_sim_radius">カバレッジ半径 (m)</string>
+    <string name="cell_sim_delete">削除</string>
+    <string name="cell_sim_edit">編集</string>
+    <string name="cell_sim_scan_current">現在地の基地局を取得</string>
+    <string name="cell_sim_scanning">基地局をスキャン中...</string>
+    <string name="cell_sim_scan_result_title">スキャン結果の基地局</string>
+    <string name="cell_sim_scan_empty">基地局が見つかりませんでした。位置情報権限が付与されていて電波範囲内であることを確認してください</string>
+    <string name="cell_sim_scan_add_all">すべて追加</string>
+    <string name="cell_sim_fetch_network">ネットワークから基地局を取得</string>
+    <string name="cell_sim_fetching_network">取得中...</string>
+    <string name="cell_sim_history">履歴</string>
+    <string name="cell_sim_selected_count">追加済みの基地局（%d）</string>
+    <string name="wifi_sim_selected_count">追加済みの Wi-Fi（%d）</string>
+    <string-array name="array_sim_scheme">
+        <item>@string/setting_sim_fourier</item>
+        <item>@string/setting_sim_sine_noise</item>
+    </string-array>
+    <string-array name="array_sim_scheme_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="setting_group_personalization">パーソナライズ</string>
+    <string name="setting_floating_window_size">フローティングウィンドウサイズ</string>
+    <string name="setting_floating_window_width">幅</string>
+    <string name="setting_floating_window_height">高さ</string>
+
+    <!-- Route simulation: extend / waypoint wait -->
+    <string name="route_sim_extended">ルートを延長しました、シミュレーション継続</string>
+    <string name="route_sim_extend_empty">新しいルート地点が追加されていません</string>
+    <string name="route_waiting">待機中</string>
+    <string name="route_plan_wait_btn">待機</string>
+    <string name="route_plan_wait_title">経由地の待機時間</string>
+    <string name="route_plan_wait_point">経由地</string>
+    <string name="route_plan_wait_seconds">秒</string>
+    <string name="route_plan_wait_hint">この地点に指定秒数留まります。0 の場合は停止しません</string>
+
+    <!-- Navigation simulation -->
+    <string name="nav_sim_plan">ルートを計画</string>
+    <string name="nav_sim_planned">計画済み</string>
+    <string name="nav_sim_plan_title">出発地と目的地を設定</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_root_hide_menu">Open the side menu</string>
+    <string name="help_root_hide_hide_root_switch">Hide root permission toggle</string>
+    <string name="help_root_hide_hide_applist_switch">Hide app list toggle</string>
+    <string name="help_root_hide_add_app">Add apps to hide</string>
+    <string name="help_root_hide_delete_app">Remove this app</string>
+    <string name="help_root_hide_start_stop">Start or stop the hiding feature</string>
+</resources>

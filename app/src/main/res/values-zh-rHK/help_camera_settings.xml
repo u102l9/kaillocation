@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_settings_back">返回上一頁</string>
+    <string name="help_camera_settings_source_local">使用本機影片 / 圖片作為模擬來源</string>
+    <string name="help_camera_settings_source_stream">使用網路串流作為模擬來源</string>
+    <string name="help_camera_settings_stream_url">輸入串流位址</string>
+    <string name="help_camera_settings_mode_video">影片替換模式</string>
+    <string name="help_camera_settings_mode_image">圖片替換模式</string>
+    <string name="help_camera_settings_pick_image">選擇要替換的圖片</string>
+    <string name="help_camera_settings_rotation_0">旋轉 0°</string>
+    <string name="help_camera_settings_rotation_90">旋轉 90°</string>
+    <string name="help_camera_settings_rotation_180">旋轉 180°</string>
+    <string name="help_camera_settings_rotation_270">旋轉 270°</string>
+    <string name="help_camera_settings_photo_fake">開關照片偽造功能</string>
+    <string name="help_camera_settings_video_sound">開關影片聲音</string>
+    <string name="help_camera_settings_random_play">隨機播放影片清單</string>
+    <string name="help_camera_settings_mic_off">麥克風關閉</string>
+    <string name="help_camera_settings_mic_mute">麥克風靜音</string>
+    <string name="help_camera_settings_mic_replace">用音訊檔案替換麥克風</string>
+    <string name="help_camera_settings_mic_sync">麥克風與影片同步</string>
+    <string name="help_camera_settings_pick_audio">選擇要替換的音訊檔案</string>
+    <string name="help_camera_settings_notification">在通知欄顯示控制開關</string>
+    <string name="help_camera_settings_overlay">顯示懸浮窗控制</string>
+    <string name="help_camera_settings_search_apps">搜尋要模擬的目標應用</string>
+    <string name="help_camera_settings_target_apps">勾選要模擬相機效果的應用</string>
+</resources>

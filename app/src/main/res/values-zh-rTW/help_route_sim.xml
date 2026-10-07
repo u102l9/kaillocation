@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_sim_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_route_sim_add_extend">新增路線 / 延長目前模擬路線</string>
+    <string name="help_route_sim_start">開始 / 暫停 / 繼續 / 停止路線模擬</string>
+    <string name="help_route_sim_speed">開啟速度 / 頻率設定</string>
+    <string name="help_route_sim_loop">循環開關，開啟後路線循環模擬</string>
+    <string name="help_route_sim_tabs">切換「常用 / 歷史」路線清單</string>
+    <string name="help_route_sim_search">搜尋歷史路線</string>
+    <string name="help_route_sim_card_fav">收藏 / 取消收藏此路線</string>
+    <string name="help_route_sim_card_edit">編輯此路線的途經點</string>
+    <string name="help_route_sim_card_rename">重新命名此路線</string>
+    <string name="help_route_sim_card_delete">刪除此路線</string>
+</resources>

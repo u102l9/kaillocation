@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_settings_back">返回上一页</string>
+    <string name="help_settings_joystick">选择摇杆类型</string>
+    <string name="help_settings_walk">设置步行速度</string>
+    <string name="help_settings_run">设置跑步速度</string>
+    <string name="help_settings_bike">设置骑行速度</string>
+    <string name="help_settings_altitude">设置模拟海拔高度</string>
+    <string name="help_settings_mock_speed">设置模拟移动速度</string>
+    <string name="help_settings_accuracy">设置模拟定位精度</string>
+    <string name="help_settings_min_satellites">设置模拟卫星数量</string>
+    <string name="help_settings_report_interval">设置位置上报间隔</string>
+    <string name="help_settings_random_offset">随机位置偏移开关</string>
+    <string name="help_settings_lat_offset">设置纬度最大偏移量</string>
+    <string name="help_settings_lon_offset">设置经度最大偏移量</string>
+    <string name="help_settings_gps_satellite">模拟 GPS 卫星信号开关</string>
+    <string name="help_settings_step_sim">开启步频模拟</string>
+    <string name="help_settings_step_type">选择步频模拟方案</string>
+    <string name="help_settings_natural_jitter">自然抖动开关</string>
+    <string name="help_settings_enable_log">开启日志记录</string>
+    <string name="help_settings_debug_log">开启调试日志</string>
+    <string name="help_settings_export_log">导出日志文件</string>
+    <string name="help_settings_clear_log">清除日志缓存</string>
+    <string name="help_settings_baidu_key">设置百度地图密钥</string>
+    <string name="help_settings_opencellid_key">设置 OpenCellID API 密钥</string>
+    <string name="help_settings_history_expiration">设置历史记录保留时长</string>
+    <string name="help_settings_export_data">导出数据备份</string>
+    <string name="help_settings_import_data">导入数据备份</string>
+    <string name="help_settings_window_size">设置悬浮窗大小</string>
+    <string name="help_settings_map_zoom">设置地图缩放等级</string>
+</resources>

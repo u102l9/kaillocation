@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nfc_sim_menu">サイドメニューを開く</string>
+    <string name="help_nfc_sim_clear">現在の読み取り結果をクリア</string>
+    <string name="help_nfc_sim_send">模擬NFCデータを送信</string>
+    <string name="help_nfc_sim_clear_history">履歴をクリア</string>
+    <string name="help_nfc_sim_history_select">タップで履歴を選択</string>
+    <string name="help_nfc_sim_history_favorite">お気に入り登録 / 解除</string>
+    <string name="help_nfc_sim_history_rename">履歴を名前変更</string>
+    <string name="help_nfc_sim_history_delete">履歴を削除</string>
+</resources>

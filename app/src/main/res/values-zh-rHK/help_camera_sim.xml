@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_sim_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_camera_sim_settings">開啟相機模擬設定</string>
+    <string name="help_camera_sim_toggle">啟動 / 停止相機模擬</string>
+    <string name="help_camera_sim_pick_video">選擇要模擬的影片</string>
+    <string name="help_camera_sim_select_video">選取此影片作為模擬內容</string>
+    <string name="help_camera_sim_delete_video">刪除此影片</string>
+</resources>

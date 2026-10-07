@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_root_hide_menu">開啟側邊選單</string>
+    <string name="help_root_hide_hide_root_switch">隱藏 Root 權限開關</string>
+    <string name="help_root_hide_hide_applist_switch">隱藏應用程式清單開關</string>
+    <string name="help_root_hide_add_app">新增要隱藏的應用</string>
+    <string name="help_root_hide_delete_app">移除該應用</string>
+    <string name="help_root_hide_start_stop">啟動或停止隱藏功能</string>
+</resources>

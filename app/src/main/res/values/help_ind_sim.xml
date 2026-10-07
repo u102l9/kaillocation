@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_ind_sim_menu">打开功能菜单</string>
+    <string name="help_ind_sim_target_apps">选择需要模拟的应用</string>
+    <string name="help_ind_sim_toggle">开始 / 停止模拟</string>
+    <string name="help_ind_sim_add_app">添加要模拟的应用</string>
+    <string name="help_ind_sim_remove_app">移除该应用</string>
+</resources>

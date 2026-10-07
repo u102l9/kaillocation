@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_sim_menu">打开功能菜单，跳转到其他模块</string>
+    <string name="help_camera_sim_settings">打开相机模拟设置</string>
+    <string name="help_camera_sim_toggle">启动 / 停止相机模拟</string>
+    <string name="help_camera_sim_pick_video">选择要模拟的视频</string>
+    <string name="help_camera_sim_select_video">选中该视频作为模拟内容</string>
+    <string name="help_camera_sim_delete_video">删除该视频</string>
+</resources>

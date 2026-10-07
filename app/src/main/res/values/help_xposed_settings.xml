@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_xposed_menu">打开功能菜单，跳转到其他模块</string>
+    <string name="help_xposed_gps_satellite">模拟 GPS 卫星信号开关</string>
+    <string name="help_xposed_disable_fused">禁用 Fused 定位</string>
+    <string name="help_xposed_hide_mock">隐藏模拟定位标记</string>
+    <string name="help_xposed_disable_wifi_scan">禁用 WiFi 扫描</string>
+    <string name="help_xposed_downgrade_cdma">将 CDMA 信号降级</string>
+    <string name="help_xposed_anti_pullback">反回弹开关</string>
+    <string name="help_xposed_min_satellites">设置最小卫星数量</string>
+    <string name="help_xposed_report_interval">设置位置上报间隔</string>
+</resources>

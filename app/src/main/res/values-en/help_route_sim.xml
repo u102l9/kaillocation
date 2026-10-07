@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_sim_menu">Open the menu to jump to other modules</string>
+    <string name="help_route_sim_add_extend">Add a new route / extend the current one</string>
+    <string name="help_route_sim_start">Start / pause / resume / stop route simulation</string>
+    <string name="help_route_sim_speed">Open speed / frequency settings</string>
+    <string name="help_route_sim_loop">Loop toggle; loops the route when enabled</string>
+    <string name="help_route_sim_tabs">Switch Favorites / History route list</string>
+    <string name="help_route_sim_search">Search history routes</string>
+    <string name="help_route_sim_card_fav">Favorite / unfavorite this route</string>
+    <string name="help_route_sim_card_edit">Edit this route\'s waypoints</string>
+    <string name="help_route_sim_card_rename">Rename this route</string>
+    <string name="help_route_sim_card_delete">Delete this route</string>
+</resources>

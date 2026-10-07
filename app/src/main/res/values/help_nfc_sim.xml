@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nfc_sim_menu">打开侧边菜单</string>
+    <string name="help_nfc_sim_clear">清空当前读取结果</string>
+    <string name="help_nfc_sim_send">发送模拟 NFC 数据</string>
+    <string name="help_nfc_sim_clear_history">清空历史记录</string>
+    <string name="help_nfc_sim_history_select">点击选择历史记录</string>
+    <string name="help_nfc_sim_history_favorite">收藏或取消收藏</string>
+    <string name="help_nfc_sim_history_rename">重命名历史记录</string>
+    <string name="help_nfc_sim_history_delete">删除历史记录</string>
+</resources>

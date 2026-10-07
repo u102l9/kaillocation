@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nav_location_simulation" type="id"/>
+    <item name="nav_route_simulation" type="id"/>
+    <item name="nav_settings" type="id"/>
+    <item name="nav_dev" type="id"/>
+    <item name="nav_update" type="id"/>
+    <item name="nav_feedback" type="id"/>
+    <item name="nav_contact" type="id"/>
+    <item name="nav_github" type="id"/>
+    <item name="nav_sponsor" type="id"/>
+    <item name="nav_source_code" type="id"/>
+    <item name="nav_run_mode" type="id"/>
+    <item name="nav_nfc_simulation" type="id"/>
+    <item name="nav_independent_simulation" type="id"/>
+    <item name="nav_wifi_simulation" type="id"/>
+    <item name="nav_cell_simulation" type="id"/>
+    <item name="nav_navigation_simulation" type="id"/>
+    <item name="nav_sandbox" type="id"/>
+    <item name="nav_root_app_hide" type="id"/>
+    <item name="nav_camera_simulation" type="id"/>
+    <item name="nav_faq" type="id"/>
+</resources>

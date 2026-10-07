@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_plan_back">Back</string>
+    <string name="help_nav_plan_search">Search a place and set as start / end point</string>
+    <string name="help_nav_plan_locate">Go to your current location</string>
+    <string name="help_nav_plan_zoom_in">Zoom in</string>
+    <string name="help_nav_plan_zoom_out">Zoom out</string>
+    <string name="help_nav_plan_undo">Undo the last step (wait point first, then start / end)</string>
+    <string name="help_nav_plan_wait">Set wait time for the latest waypoint</string>
+    <string name="help_nav_plan_drop">Tap at the center cross to drop start / end points, then add wait points after planning</string>
+    <string name="help_nav_plan_confirm">Confirm the route and start simulation</string>
+    <string name="help_nav_plan_clear">Clear search content</string>
+    <string name="help_nav_plan_result">Tap a search result to set as start / end</string>
+</resources>

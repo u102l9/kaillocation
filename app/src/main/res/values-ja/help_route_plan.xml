@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_route_plan_back">前のページに戻る</string>
+    <string name="help_route_plan_search">場所を検索</string>
+    <string name="help_route_plan_map_type">地図タイプを切り替え（通常 / 衛星）</string>
+    <string name="help_route_plan_history">履歴から経由点を追加</string>
+    <string name="help_route_plan_input">座標を入力して移動</string>
+    <string name="help_route_plan_locate">現在地に移動</string>
+    <string name="help_route_plan_zoom_in">地図を拡大</string>
+    <string name="help_route_plan_zoom_out">地図を縮小</string>
+    <string name="help_route_plan_undo">最後の経由点を取り消し</string>
+    <string name="help_route_plan_mark_mode">マーキングモードを切り替え</string>
+    <string name="help_route_plan_wait">経由点の待ち時間を設定</string>
+    <string name="help_route_plan_confirm">ルートを確定して保存</string>
+</resources>

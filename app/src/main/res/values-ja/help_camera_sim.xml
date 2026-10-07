@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_camera_sim_menu">機能メニューを開き、他のモジュールへ移動</string>
+    <string name="help_camera_sim_settings">カメラシミュレーション設定を開く</string>
+    <string name="help_camera_sim_toggle">カメラシミュレーションを開始 / 停止</string>
+    <string name="help_camera_sim_pick_video">シミュレーションする動画を選択</string>
+    <string name="help_camera_sim_select_video">この動画をシミュレーション内容に選択</string>
+    <string name="help_camera_sim_delete_video">この動画を削除</string>
+</resources>

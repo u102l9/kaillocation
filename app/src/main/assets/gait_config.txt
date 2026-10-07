@@ -1,0 +1,3 @@
+steps_per_minute=120.0
+mode=walk
+enable=1

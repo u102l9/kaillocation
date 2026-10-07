@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_faq_back">Back</string>
+    <string name="help_faq_retry">Reload the FAQ list</string>
+    <string name="help_faq_card">Tap to expand / collapse the Q&amp;A content</string>
+</resources>

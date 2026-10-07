@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_nav_plan_back">返回上一页</string>
+    <string name="help_nav_plan_search">搜索地点并设为起点 / 终点</string>
+    <string name="help_nav_plan_locate">定位到当前位置</string>
+    <string name="help_nav_plan_zoom_in">放大地图</string>
+    <string name="help_nav_plan_zoom_out">缩小地图</string>
+    <string name="help_nav_plan_undo">撤销上一步（先撤销等待点，再撤销起点 / 终点）</string>
+    <string name="help_nav_plan_wait">为最新的等待点设置等待时间</string>
+    <string name="help_nav_plan_drop">点击中心十字处依次落下起点、终点，规划后点击添加等待点</string>
+    <string name="help_nav_plan_confirm">确认路线并开始模拟</string>
+    <string name="help_nav_plan_clear">清空搜索内容</string>
+    <string name="help_nav_plan_result">点击搜索结果设为起点 / 终点</string>
+</resources>

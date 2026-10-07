@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_cell_sim_menu">開啟功能選單，跳轉到其他模組</string>
+    <string name="help_cell_sim_add">新增基地台資訊</string>
+    <string name="help_cell_sim_scan_current">掃描目前連接的基地台</string>
+    <string name="help_cell_sim_fetch_network">從網路取得基地台清單</string>
+    <string name="help_cell_sim_select_all">全選 / 取消全選所有基地台</string>
+    <string name="help_cell_sim_start_stop">啟動 / 停止基地台模擬</string>
+    <string name="help_cell_sim_toggle_select">勾選該基地台參與模擬</string>
+    <string name="help_cell_sim_toggle_select_row">點擊整列勾選該基地台</string>
+    <string name="help_cell_sim_edit">編輯該基地台資訊</string>
+    <string name="help_cell_sim_delete">刪除該基地台</string>
+</resources>
