@@ -39,13 +39,13 @@ android {
             dimension = "abi"
             ndk { abiFilters += listOf("arm64-v8a") }
             // versionCode 加后缀，保证两个包版本号不同、且可区分
-            versionCode = (defaultConfig.versionCode ?: 0) * 100 + 1
+            versionCode = 4601
             buildConfigField("String", "KAIL_ABI", "\"arm64-v8a\"")
         }
         create("x86") {
             dimension = "abi"
             ndk { abiFilters += listOf("x86_64") }
-            versionCode = (defaultConfig.versionCode ?: 0) * 100 + 2
+            versionCode = 4602
             buildConfigField("String", "KAIL_ABI", "\"x86_64\"")
         }
     }
@@ -301,11 +301,9 @@ fun findD8Jar(): java.io.File? {
 
 androidComponents {
     onVariants { variant ->
-        // 让两个 ABI 包的文件名一眼可辨：kail-location-arm64-release.apk / kail-location-x86-release.apk
-        variant.outputs.forEach { output ->
-            output.outputFileName.set("kail-location-${variant.name}.apk")
-        }
-
+        // APK 重命名改在 CI 的 shell 步骤里做（mv）。
+        // AGP 8.13 已移除 VariantOutput.outputFileName，在 Kotlin DSL 里
+        // 直接引用会报 Unresolved reference，并让整个 onVariants 块连带编译失败。
         val variantNameCap = variant.name.replaceFirstChar { it.uppercase() }
         val outDir = layout.buildDirectory.dir("intermediates/inject_dex/${variant.name}")
         val outFile = outDir.map { it.file("inject.dex") }

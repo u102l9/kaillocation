@@ -64,6 +64,26 @@ jobs:
       - name: List outputs
         run: find app/build/outputs -name "*.apk" | sort
 
+      - name: Rename APKs with ABI suffix
+        run: |
+          set -e
+          # AGP 默认输出名为 app-<flavor>-<buildType>.apk，
+          # 统一改名成 kail-location-<flavor>-<buildType>.apk，便于分辨。
+          # （重命名放在 shell 里而不是 build.gradle.kts：
+          #   AGP 8.13 已移除 VariantOutput.outputFileName。）
+          for f in $(find app/build/outputs/apk -name "*.apk"); do
+            dir=$(dirname "$f")
+            base=$(basename "$f")
+            case "$base" in
+              app-arm64-*)  new="kail-location-${base#app-}" ;;
+              app-x86-*)    new="kail-location-${base#app-}" ;;
+              *)            echo "skip $f"; continue ;;
+            esac
+            mv -f "$f" "$dir/$new"
+            echo "renamed: $base -> $new"
+          done
+          find app/build/outputs/apk -name "*.apk" | sort
+
       - name: Show ABI contents
         run: |
           for apk in $(find app/build/outputs -name "*.apk" | sort); do
