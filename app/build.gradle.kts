@@ -22,6 +22,10 @@ android {
         
         buildConfigField("String", "ADMIN_API_URL", "\"https://adminkaillocation.kaillocation.xyz/admin-api\"")
         buildConfigField("String", "APP_API_URL", "\"https://adminkaillocation.kaillocation.xyz/app-api\"")
+
+        // multiArch 占位符默认值；arm64 / x86 flavor 各自覆盖。
+        // 见 AndroidManifest.xml 的 android:multiArch="${multiArch}"。
+        manifestPlaceholders["multiArch"] = "true"
     }
 
 
@@ -37,16 +41,30 @@ android {
     productFlavors {
         create("arm64") {
             dimension = "abi"
-            ndk { abiFilters += listOf("arm64-v8a") }
+            // 必须同时带 armeabi-v7a：manifest 里 <application android:multiArch="true">，
+            // Android 14+ 会校验 multiArch 应用的 native libs 是否覆盖设备支持的
+            // 全部 ABI。Redmi 等 ARM64 设备的 abilist 是 [arm64-v8a, armeabi-v7a, armeabi]，
+            // 只给 arm64-v8a 会直接安装失败：
+            //   INSTALL_FAILED_INTERNAL_ERROR: Error deriving application ABI:
+            //   The multiArch app's native libs don't support all the natively
+            //   supported ABIs of the device.
+            ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
             // versionCode 加后缀，保证两个包版本号不同、且可区分
             versionCode = 4601
             buildConfigField("String", "KAIL_ABI", "\"arm64-v8a\"")
+            // 设备 ABI 全覆盖 -> 保留 multiArch 校验
+            manifestPlaceholders["multiArch"] = "true"
         }
         create("x86") {
             dimension = "abi"
+            // x86_64 设备的 abilist 通常是 [x86_64, x86]，但仓库里没有 32 位 x86
+            // 的 ptrace 注入器源码（root/inject.cpp 是 ARM32 实现，用 regs.ARM_pc，
+            // 编到 x86 会失败），无法提供 x86 库。因此这里关掉 multiArch 校验，
+            // 让系统按 primary ABI (x86_64) 匹配即可安装。
             ndk { abiFilters += listOf("x86_64") }
             versionCode = 4602
             buildConfigField("String", "KAIL_ABI", "\"x86_64\"")
+            manifestPlaceholders["multiArch"] = "false"
         }
     }
 

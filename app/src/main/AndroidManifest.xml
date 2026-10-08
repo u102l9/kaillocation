@@ -93,7 +93,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:extractNativeLibs="true"
-        android:multiArch="true"
         android:usesCleartextTraffic="true">
 
         <uses-library
